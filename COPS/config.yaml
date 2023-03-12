@@ -1,0 +1,13 @@
+name: "COPS"
+version: "0.0.1"
+slug: "cops"
+description: "Minimal Calibre Library Web Interface"
+init: false
+arch:
+  - armv7
+  - armhf
+  - amd64
+  - aarch64
+  - i386
+ports:
+  8000/tcp: 8000
