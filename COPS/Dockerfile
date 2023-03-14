@@ -2,9 +2,9 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 # Install requirements for add-on
-# PHP7 required with libxml, intl, json sqlite3
+# PHP7 required with libxml (in base), intl, json (in base) and sqlite3
 RUN apk add --no-cache \
-  php php-common
+  php php-common php-intl php-sqlite3
 
 # Copy data for add-on
 COPY run.sh /
