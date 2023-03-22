@@ -11,4 +11,6 @@ COPY run.sh /
 COPY public_html /public_html/
 RUN chmod a+x /run.sh
 
+# Give add-on access to the Media/Books directory
+
 CMD ["/run.sh" ]
