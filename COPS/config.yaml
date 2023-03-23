@@ -1,5 +1,5 @@
 name: "COPS"
-version: "0.0.40"
+version: "0.0.62"
 slug: "cops"
 description: "Minimal Calibre Library Web Interface"
 init: false
@@ -11,3 +11,5 @@ arch:
   - i386
 ports:
   8000/tcp: 8000
+map:
+  - media

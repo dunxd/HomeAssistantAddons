@@ -14,13 +14,13 @@
      * containing all the formats.
      * BEWARE : it has to end with a /
      */
-    $config['calibre_directory'] = './';
-    
+    $config['calibre_directory'] = './library/';
+
     /*
      * Catalog's title
      */
     $config['cops_title_default'] = "COPS";
-    
+
     /*
      * use URL rewriting for downloading of ebook in HTML catalog
      * See README for more information
