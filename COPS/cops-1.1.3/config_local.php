@@ -19,7 +19,7 @@
     /*
      * Catalog's title
      */
-    $config['cops_title_default'] = "COPS";
+    $config['cops_title_default'] = 'Drury Family eBooks';
 
     /*
      * use URL rewriting for downloading of ebook in HTML catalog
@@ -28,3 +28,13 @@
      *  0 : disable
      */
     $config['cops_use_url_rewriting'] = "0";
+
+    $config['default_timezone'] = 'Europe/London';
+    $config['cops_prefered_format'] = array('EPUB', 'MOBI', 'PDF', 'AZW3', 'AZW', 'CBR', 'CBZ');
+    $config['cops_mail_configuration'] = array( "smtp.host"     => "smtp.gmail.com",
+                                                "smtp.username" => "d.drury@gmail.com",
+                                                "smtp.password" => "vuejjtvgudtbnscp",
+                                                "smtp.secure"   => "ssl",
+                                                "address.from"  => "d.drury@gmail.com"
+                                                );
+    $config ['cops_ignored_categories'] = array('publisher', 'rating', 'language');
