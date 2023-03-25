@@ -1,5 +1,5 @@
 name: "COPS"
-version: "0.0.89"
+version: "0.0.113"
 slug: "cops"
 description: "Minimal Calibre Library Web Interface"
 init: false
@@ -14,3 +14,21 @@ ports:
   873/tcp: 8873
 map:
   - media:rw
+
+options:
+  title: "COPS"
+  timezone: "Europe/London"
+  mail_host: ""
+  mail_username: ""
+  mail_password: ""
+ mail_secure: false
+ mail_from_address: ""
+
+schema:
+  title: str
+  timezone: str
+  mail_host: str?
+  mail_username: str?
+  mail_password: password?
+  mail_secure: bool
+  mail_from_address: str?
