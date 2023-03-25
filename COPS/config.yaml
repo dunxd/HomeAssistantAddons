@@ -1,5 +1,5 @@
 name: "COPS"
-version: "0.0.113"
+version: "0.0.114"
 slug: "cops"
 description: "Minimal Calibre Library Web Interface"
 init: false
@@ -21,8 +21,8 @@ options:
   mail_host: ""
   mail_username: ""
   mail_password: ""
- mail_secure: false
- mail_from_address: ""
+  mail_secure: false
+  mail_from_address: ""
 
 schema:
   title: str
