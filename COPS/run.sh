@@ -11,7 +11,7 @@ MAIL_PASSWORD=$(bashio::config 'mail_password')
 MAIL_SECURE=$(bashio::config 'mail_secure')
 
 
-# COPS_CONFIG="/cops/config_local.php"
+COPS_CONFIG="/cops/config_local.php"
 
 CONFIG_STR=$(
 cat << END_HEREDOC
@@ -42,7 +42,9 @@ END_HEREDOC3
 )
 fi
 
+echo "$CONFIG_STR" >> "$COPS_CONFIG"
 bashio::log.info "$(cat /cops/config_local.php)"
+
 
 mkdir -p /media/books
 cd /cops || return
