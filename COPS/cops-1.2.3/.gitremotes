@@ -1,3 +1,0 @@
-[remote "upstream"]
-	url = https://github.com/seblucas/cops.git
-	fetch = +refs/heads/*:refs/remotes/upstream/*
