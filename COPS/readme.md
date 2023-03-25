@@ -5,4 +5,12 @@
 # Config
 
 - Create an authorised key
-- Use scp to copy Calibre Library from computer to /media on homne assistant server
+- Use rsync to copy (and update) Calibre Library to HA Media folder as follows:
+
+```
+rsync -av ~/Calibre\ Library/* rsync://{server_address}:8873/books
+```
+
+# Know issues
+
+- ePub reader doesn't work with PHP 8
