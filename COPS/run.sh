@@ -14,6 +14,7 @@ cat << END_HEREDOC
 END_HEREDOC
 )
 
+: <<'comment'
 # If _all_ the mail variables (except secure) have been set, then add the string
 if [ -n "$(bashio::config 'mail_host')" ]; then
   MAIL_HOST=$(bashio::config 'mail_host')
@@ -26,6 +27,7 @@ if [ -n "$(bashio::config 'mail_host')" ]; then
 END_HEREDOC
   )
 fi
+comment
 
 echo "$CONFIG_STR" >> "$COPS_CONFIG"
 
