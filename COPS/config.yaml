@@ -1,5 +1,5 @@
 name: "COPS"
-version: "0.1.4"
+version: "0.1.5"
 slug: "cops"
 description: "Minimal Calibre Library Web Interface"
 init: false
@@ -18,19 +18,17 @@ map:
 options:
   title: "COPS"
   timezone: "Europe/London"
-  mail:
-    - host: ""
-      username: ""
-      password: ""
-      address: ""
-      secure: ""
+  mail_host: ""
+  mail_username: ""
+  mail_password: ""
+  mail_address: ""
+  mail_secure: ""
 
 schema:
   title: str
   timezone: str
-  mail:
-    - host: "str?"
-      username: "str?"
-      password: "password?"
-      address: "str?"
-      secure: "bool?"
+  mail_host: "str?"
+  mail_username: "str?"
+  mail_password: "password?"
+  mail_address: "str?"
+  mail_secure: "bool?"
