@@ -11,6 +11,6 @@
 rsync -av ~/Calibre\ Library/* rsync://{server_address}:8873/books
 ```
 
-# Know issues
+# Known issues
 
 - ePub reader doesn't work with PHP 8
