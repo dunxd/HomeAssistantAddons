@@ -100,10 +100,11 @@ if (!empty($config['cops_mail_configuration']["subject"])) {
 $mail->Subject .= $data->getUpdatedFilename();
 $mail->Body    = "<h1>" . $book->title . "</h1><h2>" . $book->getAuthorsName() . "</h2>" . $book->getComment();
 $mail->AltBody = "Sent by COPS";
+$mail->SMTPDebug = SMTP::DEBUG_SERVER
 
 if (!$mail->Send()) {
     echo localize("mail.messagenotsent");
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
+    echo 'Mailer Error: ' . $mail->ErrorInfo . $mail->SMTPDebug;
     exit;
 }
 
