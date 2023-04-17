@@ -15,14 +15,14 @@ END_HEREDOC
 )
 
 # If _all_ the mail variables (except secure) have been set, then add the string
-if [ ! -z $(bashio::config 'mail_host')]; then
+if [ -n "$(bashio::config 'mail_host')" ]; then
   MAIL_HOST=$(bashio::config 'mail_host')
   MAIL_USERNAME=$(bashio::config 'mail_username')
   MAIL_PASSWORD=$(bashio::config 'mail_password')
   MAIL_ADDRESS=$(bashio::config 'mail_address')
   CONFIG_STR+=$(
   cat << END_HEREDOC
-  \$config['cops_mail_configuration'] = array( "smtp.host" => "$MAIL_HOST", "smtp.username" => "$MAIL_USERNAME", "smtp.password" => "$MAIL_PASSWORD", "address.from" => "$MAIL_ADDRESS");
+  \$config['cops_mail_configuration'] = array( "smtp.host" => "$MAIL_HOST", "smtp.username" => "$MAIL_USERNAME", "smtp.password" => "$MAIL_PASSWORD", "address.from" => "$MAIL_ADDRESS", "smtp.secure" => "ssl");
 END_HEREDOC
   )
 fi
