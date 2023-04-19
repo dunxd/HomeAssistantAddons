@@ -3,14 +3,12 @@
 
 #Capture Options set by user
 TITLE=$(bashio::config 'title')
-TIMEZONE=$(bashio::config 'timezone')
 
 COPS_CONFIG="/cops/config_local.php"
 
 CONFIG_STR=$(
 cat << END_HEREDOC
 \$config['cops_title_default'] = '$TITLE';
-\$config['default_timezone'] = '$TIMEZONE';
 END_HEREDOC
 )
 
