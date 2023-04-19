@@ -1,5 +1,5 @@
 name: "COPS"
-version: "0.2.8"
+version: "0.2.10"
 slug: "cops"
 description: "Minimal Calibre Library Web Interface"
 init: false
