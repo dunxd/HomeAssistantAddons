@@ -16,9 +16,13 @@ rsync -av ~/Calibre\ Library/* rsync://{server_address}:8873/books
 
 Obviously you may need to change `~/Calibre\ Library` to where your Calibre library is stored. You can use this command to sync any changes made in Calibre - new books added, changes to metadata etc.
 
+## Accessing your library
+
+You can access your library at http://_haip-address-or-name_:8000. You can change the port if necessary. Ingress does not currently work.
+
 ## Security
 
-This Add-on is intended to be run in a home network, _not_ on the public internet. The PHP built in web server is not designed for scale and does not have security features. rsync is also not intended to be made available over the public internet. Sharing your books publically is also not advised.
+This Add-on is intended to be run in a home network, _not_ on the public internet. The PHP built in web server is not designed for scale and does not have security features. rsync is also not intended to be made available over the public internet. Sharing your books publically is also not advised. Pages are served over an unencrypted http connection.
 
 # Config
 
