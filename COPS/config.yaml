@@ -1,7 +1,7 @@
-name: "COPS"
+name: "HA COPS"
 version: "1.0"
 slug: "cops"
-description: "Minimal Calibre Library Web Interface"
+description: "Minimal Calibre library web interface"
 init: false
 arch:
   - armv7
