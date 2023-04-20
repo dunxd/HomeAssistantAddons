@@ -1,5 +1,5 @@
 name: "HA COPS"
-version: "1.1"
+version: "1.2"
 slug: "cops"
 description: "Minimal Calibre library web interface"
 init: false
@@ -14,8 +14,6 @@ ports:
   873/tcp: 8873
 map:
   - media:rw
-ingress: true
-ingress_port: 8000
 
 options:
   title: "COPS"
