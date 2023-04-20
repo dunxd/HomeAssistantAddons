@@ -74,7 +74,6 @@ class EPub
     {
         $spine = $this->xpath->query('//opf:spine')->item(0);
         $tocid = $spine->getAttribute('toc');
-        var_dump('Current tocid ' . $tocid);
         $tochref = $this->xpath->query('//opf:manifest/opf:item[@id="' . $tocid . '"]')->item(0)->attr('href');
         $tocpath = $this->getFullPath($tochref);
         // read epub toc
