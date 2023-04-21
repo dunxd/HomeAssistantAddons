@@ -1,7 +1,8 @@
 name: "HA COPS"
-version: "1.5"
+version: "1.6"
 slug: "ha-cops"
 description: "Minimal Calibre library web interface"
+url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
 init: false
 arch:
   - armv7
