@@ -18,11 +18,13 @@ Obviously you may need to change `~/Calibre\ Library` to where your Calibre libr
 
 ## Accessing your library
 
-You can access your library at http://_haip-address-or-name_:8000. You can change the port if necessary. Ingress does not currently work.
+You can access your library at http://_ha-ip-address-or-name_:8000. You can change the port if necessary. Ingress does not currently work.
 
 ## Security
 
 This Add-on is intended to be run in a home network, _not_ on the public internet. The PHP built in web server is not designed for scale and does not have security features. rsync is also not intended to be made available over the public internet. Sharing your books publically is also not advised. Pages are served over an unencrypted http connection.
+
+I use the Cloudflared Add-on to make my library available outside my home - this allows simple passcode logins using Cloudflare Zero Trust.
 
 # Config
 
