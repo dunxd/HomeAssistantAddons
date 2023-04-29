@@ -31,7 +31,9 @@ Obviously you may need to change `~/Calibre\ Library` to where your Calibre libr
 
 ## Accessing your library
 
-You can access your library at http://_ha-ip-address-or-name_:8000. You can change the port if necessary. Ingress does not currently work.
+You can access your library in your browser at http://_ha-ip-address-or-name_:8000. You can change the port if necessary. Ingress does not currently work.
+
+You can also access an OPDS feed of your library in apps like [Librera reader (Android)](https://play.google.com/store/apps/details?id=com.foobnix.pdf.reader) allowing you to easily download books into the reader. The feed is available at http://_ha-ip-address-or-name_:8000/feed.php
 
 ## Security
 
