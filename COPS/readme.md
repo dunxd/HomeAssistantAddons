@@ -35,6 +35,9 @@ You can access your library in your browser at http://_ha-ip-address-or-name_:80
 
 You can also access an OPDS feed of your library in apps like [Librera reader (Android)](https://play.google.com/store/apps/details?id=com.foobnix.pdf.reader) allowing you to easily download books into the reader. The feed is available at http://_ha-ip-address-or-name_:8000/feed.php
 
+## User side configuration
+It is possible for the user to adjust some settings in the web interface.  Currently this is only available in the Default template - click on the link at the top right to change to that template, then click on the spanner icon. Most of these aren't particularly interesting. Note that emailing books (e.g. to a Kindle email address) does not currently work so the option to add an email address does nothing.
+
 ## Security
 
 This Add-on is intended to be run in a home network, _not_ on the public internet. The PHP built in web server is not designed for scale and does not have security features. rsync is also not intended to be made available over the public internet. Sharing your books publically is also not advised. Pages are served over an unencrypted http connection.
