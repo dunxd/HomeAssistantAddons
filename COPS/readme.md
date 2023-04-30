@@ -24,10 +24,10 @@ Defaults should work, but you can change the display title of your library. If y
 rsync is included to allow copying your Calibre library onto the HA server for use in this add-on. Rsync is configured to only allow syncing to the `/media/books` directory that is created by the add-on. You will need rsync installed on the computer you normally run Calibre on. You can then use a command similar to this to copy all the required files across:
 
 ```
-rsync -av ~/Calibre\ Library/* rsync://{server_address}:8873/books
+rsync -av --exclude '*.original_epub' ~/Calibre\ Library/* rsync://{server_address}:8873/books
 ```
 
-Obviously you may need to change `~/Calibre\ Library` to where your Calibre library is stored. You can use this command to sync any changes made in Calibre - new books added, changes to metadata etc.
+Obviously you may need to change `~/Calibre\ Library` to where your Calibre library is stored. You can use this command to sync any changes made in Calibre - new books added, changes to metadata etc. You can exclude files from being transferred using [the `--exclude` option for rsync](https://www.man7.org/linux/man-pages/man1/rsync.1.html#FILTER_RULES). In the example above I have excluded original_epub type files, as mostly these are duplicates of epub files.
 
 ## Accessing your library
 
