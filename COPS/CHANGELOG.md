@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.7] - 2023-06-15
+
+Updated to COPS 1.3.4 which allows ePub v3 without NCX TOC
+
 ## [1.6.2] - 2023-04-28
 
 Added webui and descriptions for port config options
