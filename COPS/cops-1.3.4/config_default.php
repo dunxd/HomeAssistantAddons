@@ -325,9 +325,9 @@ $config['cops_basic_authentication'] = null;
  * Which template is used by default :
  * 'default'
  * 'bootstrap'
- * 'bootstrap2'
+ * 'bootstrap2' - this is nicer, but it doesn't work for Kindle Paperwhite first generation (and possibly others)
  */
-$config['cops_template'] = 'bootstrap2';
+$config['cops_template'] = 'default';
 
 /*
  * Which style is used by default :

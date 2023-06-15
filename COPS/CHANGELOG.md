@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.7.1] - 2023-06-15
+
+Changed default template to default as Kindle compatibility issue with Bootstrap2
+
 ## [1.7] - 2023-06-15
 
 Updated to COPS 1.3.4 which allows ePub v3 without NCX TOC
