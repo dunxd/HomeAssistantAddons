@@ -1,8 +1,9 @@
 # HA COPS Changelog
 
-## [1.7.1] - 2023-06-15
+## [1.7.2] - 2023-06-15
 
-Changed default template to default as Kindle compatibility issue with Bootstrap2
+- Changed default template to default as Kindle compatibility issue with Bootstrap2
+- Test to see if issue with changing format is down to single vs doublequotes
 
 ## [1.7] - 2023-06-15
 
