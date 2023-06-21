@@ -1,5 +1,11 @@
 # HA COPS Changelog
 
+## [1.8] - 2023-06-21
+
+- As of Home Assistant 2023.6 works with Calibre Library access over network share.
+- Added option to enable/disable rsync, which is not necessary if using a network share.
+- Improved documentation and config dialog.
+
 ## [1.7.5] - 2023-06-15
 
 - Changed default template to default as Kindle compatibility issue with Bootstrap2

@@ -1,0 +1,11 @@
+configuration:
+  title:
+    name: Library Title
+    description: The display name for your library, which will be displayed at the top of the library home.
+  rsync:
+    name: Enable rsync
+    description: Enable rsync server in the configuration - if your Calibre Library is on a network share you do NOT need this enabled.
+
+network:
+  8000/tcp: The port used to access the library web pages.
+  873/tcp: The port used for rsync.

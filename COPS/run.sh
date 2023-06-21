@@ -21,5 +21,14 @@ mkdir -p /media/books
 cd /cops || return
 # Create a link to the books directory called library
 ln -s /media/books library
-# Start rsync and php daemons
-rsync --daemon & php -S 0.0.0.0:8000
+
+# Start rsync and php daemons depending on rsync setting
+if [ "$(bashio::config 'rsync')" = "true" ]
+then
+
+    bashio::log.green 'starting rsync and php servers'
+    rsync --daemon & php -S 0.0.0.0:8000
+else
+    bashio::log.yellow 'starting php server only'
+    php -S 0.0.0.0:8000
+fi
