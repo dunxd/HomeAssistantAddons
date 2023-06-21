@@ -78,11 +78,11 @@ I use the Cloudflared Add-on to make my library available outside my home - this
 
 # Config
 
-- Currently you are able to change the display name of your library.
+- You are able to change the display name of your library.
+- You can disable rsync if you do not need it (i.e. you are using a network share to access your Calibre Library).
 
 # Known issues
 
-- Reading books in the browser only works for EPubs that have a NCX table of contents file. This is required for EPub v2, but not for EPub v3 books. Some EPub v3 books may include the NCX file in which case they work. Calibre does not create a NCX when converting to EPub v3, but does for EPub v2. A NCX file can be created for EPub v3 in Calibre by invoking the ToC Editor - this creates a NCX file which is saved when clicking Ok.
 - COPS has a built in system for emailing books - e.g. as Docs to your Kindle device. This does not yet work in the add-on as it was written for an older version of PHP, but may be added later.
 
 # Acknowledgements
