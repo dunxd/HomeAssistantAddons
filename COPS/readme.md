@@ -44,9 +44,13 @@ You can use this command to sync any changes made in Calibre - new books added, 
 As of Home Assistant 2023.6 it is possible to mount a network share onto your Home Assistant share. This is particularly useful if your Calibre Library is stored on Network Attached Storage.
 
 To use a Network Share you need to set it up in Home Assistant:
+
 [![Open your Home Assistant instance and show storage information.](https://my.home-assistant.io/badges/storage.svg)](https://my.home-assistant.io/redirect/storage/)
+
 Click on the Add Network Storage button and create a mount named `books` with Usage type of Media. This will mount the library to `/media/books` which is where the addon expects to find the necessary files.
+
 [![Network storage dialog with example settings](Assets/NetworkStorageDialog.png).
+
 Note that you do not need to escape spaces if the share name has them in it.
 
 If you are using this method, you can disable the rsync server in the add-on configuration.
