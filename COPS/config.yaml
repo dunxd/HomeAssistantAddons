@@ -1,5 +1,5 @@
 name: "HA COPS"
-version: "1.8"
+version: "1.8.2"
 slug: "ha-cops"
 description: "Minimal Calibre library web interface"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
@@ -20,7 +20,13 @@ map:
   - media:rw
 options:
   title: "COPS"
+  home_page:
+    - INDEX
+    - AUTHORS_FIRST_LETTER
+    - ALL_RECENT_BOOKS
+    - ALL_TAGS
   rsync: true
 schema:
   title: str
+  home_page: list(INDEX|AUTHORS_FIRST_LETTER|ALL_RECENT_BOOKS|ALL_TAGS)
   rsync: bool

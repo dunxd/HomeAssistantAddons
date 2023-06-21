@@ -5,7 +5,9 @@ configuration:
   rsync:
     name: Enable rsync
     description: Enable rsync server in the configuration - if your Calibre Library is on a network share you do NOT need this enabled.
-
+  home_page:
+    name: Home Page
+    description: "Choose your starting page from the following options: INDEX = menu of places to start; AUTHORS_FIRST_LETTER = list all Authors; ALL_RECENT_BOOKS = The last 50 books added; ALL_TAGS = Categories"
 network:
   8000/tcp: The port used to access the library web pages.
   873/tcp: The port used for rsync.
