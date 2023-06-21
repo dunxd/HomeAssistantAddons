@@ -21,7 +21,7 @@ if (preg_match('/(MantanoReader|FBReader|Stanza|Marvin|Aldiko|Moon\+ Reader|Chun
 
 initURLParam();
 
-$page     = getURLParam('page', constant('Base::' . $config['cops_home_page']));
+$page     = getURLParam('page', constant('Base::' . $config['cops_home_page'])); // Why does changing the default here not result in the index page changing?
 $query    = getURLParam('query');
 $qid      = getURLParam('id');
 $n        = getURLParam('n', '1');
