@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.8.1] - 2023-06-23
+
+- Automatically forward Librera to OPDS feed.
+
 ## [1.8] - 2023-06-21
 
 - As of Home Assistant 2023.6 works with Calibre Library access over network share.
