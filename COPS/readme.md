@@ -60,7 +60,7 @@ If you are using this method, you can disable the rsync server in the add-on con
 
 You can access your library in your browser at http://_ha-ip-address-or-name_:8000. You can change the port if necessary. Ingress does not currently work.
 
-You can also access an OPDS feed of your library in apps like [Librera reader (Android)](https://play.google.com/store/apps/details?id=com.foobnix.pdf.reader) allowing you to easily download books into the reader. The feed is available at http://_ha-ip-address-or-name_:8000/feed.php
+You can also access an OPDS feed of your library in apps like [Librera reader (Android)](https://librera.mobi/) allowing you to easily download books into the reader. The feed is available at http://_ha-ip-address-or-name_:8000/feed.php
 
 ## User side configuration
 
