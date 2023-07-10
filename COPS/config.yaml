@@ -1,5 +1,5 @@
 name: "HA COPS"
-version: "1.9"
+version: "1.8.1"
 slug: "ha-cops"
 description: "Minimal Calibre library web interface"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
@@ -24,9 +24,3 @@ options:
 schema:
   title: str
   rsync: bool
-  smtp_host: str?
-  smtp_username: str?
-  smtp_password: password?
-  smtp_secure: match(^$|ssl|tls)?
-  smtp_port: int?
-  address_from: email?

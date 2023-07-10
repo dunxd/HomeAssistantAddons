@@ -1,9 +1,5 @@
 # HA COPS Changelog
 
-## [1.9] - 2023-07-10
-
-- Enabled feature to send ePub, PDF or AZW3 files by email - allows transfer to Kindle by sending to Kindle's email address.
-
 ## [1.8.1] - 2023-06-23
 
 - Automatically forward Librera to OPDS feed.

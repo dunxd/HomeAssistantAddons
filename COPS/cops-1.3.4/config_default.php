@@ -218,7 +218,7 @@ $config['cops_provide_kepub'] = '0';
 /*
  * Enable and configure Send To Kindle (or Email) feature.
  *
- * Don't forget to authorize the sender email you configured in your Kindle's Approved Personal Document E-mail List.
+ * Don't forget to authorize the sender email you configured in your Kindle's  Approved Personal Document E-mail List.
  *
  * If you want to use a simple smtp server (provided by your ISP for example), you can configure it like that :
  * $config['cops_mail_configuration'] = array( "smtp.host"     => "smtp.free.fr",
