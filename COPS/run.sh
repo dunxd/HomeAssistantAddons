@@ -22,7 +22,7 @@ cat << END_HEREDOC2
                                              "smtp.username" => "$(bashio::config 'smtp_username')",
                                              "smtp.password" => "$(bashio::config 'smtp_password')",
                                              "address.from" => "$(bashio::config 'address_from')"
-                                             };
+                                             );
 END_HEREDOC2
 )
     # Enable ssl if smtp_secure set to true
