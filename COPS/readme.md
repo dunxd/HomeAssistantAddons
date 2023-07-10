@@ -76,7 +76,7 @@ Once this is done, your users can add their email address (where they will recie
 
 ### Receiving emailed ePubs on your Kindle
 
-If you have an Amazon Kindle or use one of the Kindle apps, it will have its own email address. ePub files received at this address will be converted and added to your Personal Docs library, and can then be downloaded to your Kindle.
+If you have an Amazon Kindle or use one of the Kindle apps, it will have its own email address. ePub files received at this address will be converted and added to your Personal Docs library, and can then be downloaded to your Kindle. You need to [add the email address that will be sending files to your Kindle account in your Amazon settings](https://www.amazon.com/gp/help/customer/display.html%3FnodeId%3DGX9XLEVV8G4DB28H).
 
 ## User side configuration
 
