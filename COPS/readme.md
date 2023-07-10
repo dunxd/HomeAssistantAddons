@@ -1,6 +1,5 @@
 # ![HA-COPS logo](icon.png) HA COPS
 
-
 COPS is a lightweight system for providing access to your Calibre Library via a web browser. It is built in PHP. It uses less resources than the full Calibre Web Server - ideal for running on a small server such as Home Assistant. That is what this Add-on enables.
 
 The motivation for this was realising that I could easily make my music and video collection available to my family and friends when visiting my home, but my ePub collection was not available. I have happy childhood memories of discovering books in my parents book collection, but since I mainly buy eBooks now that experience isn't so easy for my kids.
@@ -61,6 +60,23 @@ If you are using this method, you can disable the rsync server in the add-on con
 You can access your library in your browser at http://_ha-ip-address-or-name_:8000. You can change the port if necessary. Ingress does not currently work.
 
 You can also access an OPDS feed of your library in apps like [Librera reader (Android)](https://librera.mobi/) allowing you to easily download books into the reader. The feed is available at http://_ha-ip-address-or-name_:8000/feed.php
+
+## Emailing ePubs
+
+As of 1.9 you can send ePub books by email from the server. To do this you need to enable _Show unused optional configuration options_ on the Options page, then set the mail server options appropriately. For example, to send using a Gmail account you will need to:
+
+- [create an app password](https://support.google.com/accounts/answer/185833?hl=en) specifically for this function
+- set the _Mail Server Host_ to `smtp.gmail.com`
+- Set your google account login in _Mail Server Username_
+- Put the app password you created in the _Mail Server Password_ field
+- Set _Secure SMTP_ to `ssl`
+- Set the sending email address to your gmail address
+
+Once this is done, your users can add their email address (where they will recieve the ePubs) in the field from the Settings page within COPS. This can be a simple way to download books onto a Kindle.
+
+### Receiving emailed ePubs on your Kindle
+
+If you have an Amazon Kindle or use one of the Kindle apps, it will have its own email address. ePub files received at this address will be converted and added to your Personal Docs library, and can then be downloaded to your Kindle. You need to [add the email address that will be sending files to your Kindle account in your Amazon settings](https://www.amazon.com/gp/help/customer/display.html%3FnodeId%3DGX9XLEVV8G4DB28H).
 
 ## User side configuration
 
