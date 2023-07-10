@@ -74,17 +74,17 @@ As of 1.9 you can send ePub books by email from the server. To do this you need 
 
 Once this is done, your users can add their email address (where they will recieve the ePubs) in the field from the Settings page within COPS. This can be a simple way to download books onto a Kindle.
 
-### Receiving emailed ePubs on your Kindle
-
-If you have an Amazon Kindle or use one of the Kindle apps, it will have its own email address. ePub files received at this address will be converted and added to your Personal Docs library, and can then be downloaded to your Kindle. You need to [add the email address that will be sending files to your Kindle account in your Amazon settings](https://www.amazon.com/gp/help/customer/display.html%3FnodeId%3DGX9XLEVV8G4DB28H).
-
 ## User side configuration
 
-It is possible for the user to adjust some settings in the web interface. Currently this is only available in the Default template - click on the link at the top right to change to that template, then click on the spanner icon. Most of these aren't particularly interesting. Note that emailing books (e.g. to a Kindle email address) does not currently work so the option to add an email address does nothing.
+It is possible for the user to adjust some settings in the web interface. Currently this is only available in the Default template - click on the link at the top right to change to that template, then click on the spanner icon. If you want to email ePubs to your Kindle from within COPS you set your Kindle's email address in the *Set your email (to allow book emailing)* box.
 
 ## Accessing the library from a Kindle
 
-The library can be accessed using the Web Browser in an Amazon Kindle, and MOBI and AZW format files can be downloaded. Unfortunately the Kindle web browser does not work well with the nicer Bootstrap2 template, and it is also not easy to switch back to Default. As a result, I have made the Default template the initial template. If you find yourself stuck in the Bootstrap2 template, clear your cookies and you should get the Default template again.
+The library can be accessed using the Web Browser in an Amazon Kindle, and MOBI and AZW format files can be downloaded. Unfortunately the Kindle web browser does not work well with the nicer Bootstrap2 template, and it is also not easy to switch back to Default. As a result, I have made the Default template the initial template. If you find yourself stuck in the Bootstrap2 template, clear your cookies and you should get the Default template again. If you reset your cookies, you need to add your Kindle email address back in Settings.
+
+### Receiving emailed ePubs on your Kindle
+
+If you have an Amazon Kindle or use one of the Kindle apps, it will have its own email address. ePub files received at this address will be converted and added to your Personal Docs library, and can then be downloaded to your Kindle. You need to [add the email address that will be sending files to your Kindle account in your Amazon settings](https://www.amazon.com/gp/help/customer/display.html%3FnodeId%3DGX9XLEVV8G4DB28H).
 
 ## Security
 
