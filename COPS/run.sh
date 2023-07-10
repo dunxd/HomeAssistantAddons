@@ -30,7 +30,7 @@ END_HEREDOC2
     then
     CONFIG_STR+=$(
         cat << END_HEREDOC3
-        \$config['cops_mail_configuration'][smtp.secure] = "$(bashio::config 'smtp_secure')";
+        \$config['cops_mail_configuration']['smtp.secure'] = "$(bashio::config 'smtp_secure')";
 END_HEREDOC3
     )
         fi
@@ -40,7 +40,7 @@ END_HEREDOC3
     then
     CONFIG_STR+=$(
         cat << END_HEREDOC4
-        \$config['cops_mail_configuration'][smtp.port] = "$(bashio::config 'smtp_port')";
+        \$config['cops_mail_configuration']['smtp.port'] = "$(bashio::config 'smtp_port')";
 END_HEREDOC4
     )
     fi
