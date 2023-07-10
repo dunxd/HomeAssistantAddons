@@ -48,7 +48,6 @@ END_HEREDOC4
 fi
 
 # Write the config lines to the end of the config file
-bashio::log.yellow $CONFIG_STR
 echo "$CONFIG_STR" >> "$COPS_CONFIG"
 
 # Create a books directory in /media on the host if it doesn't already exist
