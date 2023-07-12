@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.9.2] - 2023-07-12
+
+- Prefer EPUB but allow sending MOBI, AZW3 or PDF in absence of EPUB
+
 ## [1.9] - 2023-07-10
 
 - Enabled feature to send ePub, PDF or AZW3 files by email - allows transfer to Kindle by sending to Kindle's email address.
