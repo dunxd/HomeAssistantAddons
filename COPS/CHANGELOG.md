@@ -1,8 +1,9 @@
 # HA COPS Changelog
 
-## [1.9.2] - 2023-07-12
+## [1.9.3] - 2023-07-12
 
 - Prefer EPUB but allow sending MOBI, AZW3 or PDF in absence of EPUB
+- Restrict sending emails to 5 addresses at one time
 
 ## [1.9] - 2023-07-10
 

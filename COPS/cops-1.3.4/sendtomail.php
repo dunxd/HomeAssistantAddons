@@ -82,11 +82,18 @@ if (!empty($config['cops_mail_configuration']["smtp.port"])) {
 $mail->From = $config['cops_mail_configuration']["address.from"];
 $mail->FromName = $config['cops_title_default'];
 
-foreach (explode(";", $emailDest) as $emailAddress) {
-    if (empty($emailAddress)) {
-        continue;
+# Limit sending to 5 email addresses
+$emailAddresses = explode(";", $emailDest);
+if(count($emailAddresses) <= 5){
+    foreach ($emailAddresses as $emailAddress) {
+        if (empty($emailAddress)) {
+            continue;
+        }
+        $mail->AddAddress($emailAddress);
     }
-    $mail->AddAddress($emailAddress);
+} else {
+    echo "You can send to a maximum of 5 email addresses. Please update your email address";
+    exit;
 }
 
 $mail->AddAttachment($data->getLocalPath());
