@@ -1,9 +1,13 @@
 # HA COPS Changelog
 
+## [1.9.4] - 2023-07-13
+
+- Bug fix so address to send books by mail to is displayed on customisation page
+- Check that email address is valid before sending
+
 ## [1.9.3] - 2023-07-12
 
 - Prefer EPUB but allow sending MOBI, AZW3 or PDF in absence of EPUB
-- Restrict sending emails to 5 addresses at one time
 
 ## [1.9] - 2023-07-10
 

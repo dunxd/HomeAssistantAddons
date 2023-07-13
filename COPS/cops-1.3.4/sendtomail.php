@@ -89,10 +89,14 @@ if(count($emailAddresses) <= 5){
         if (empty($emailAddress)) {
             continue;
         }
+        if (!filter_var($emailAddress, FILTER_VALIDATE_EMAIL)) {
+            echo  $emailAddress . " is an unsupported email address. Update the email address on the settings page.";
+            exit;
+        }
         $mail->AddAddress($emailAddress);
     }
 } else {
-    echo "You can send to a maximum of 5 email addresses. Please update your email address";
+    echo "You can send to a maximum of 5 email addresses. Please update your email address list.";
     exit;
 }
 
