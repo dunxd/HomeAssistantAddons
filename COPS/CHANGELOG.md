@@ -3,6 +3,7 @@
 ## [1.9.4] - 2023-07-13
 
 - Bug fix so address to send books by mail to is displayed on customisation page
+- Limit sending books to a single email address
 - Check that email address is valid before sending
 
 ## [1.9.3] - 2023-07-12
