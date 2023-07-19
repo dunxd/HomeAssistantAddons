@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.10] - 2023-07-19
+
+- Incorporate COPS 1.3.6
+
 ## [1.9.4] - 2023-07-13
 
 - Bug fix so address to send books by mail to is displayed on customisation page
