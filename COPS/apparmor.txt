@@ -1,6 +1,6 @@
 #include <tunables/global>
 
-profile ha-cops flags=(complain,attach_disconnected,mediate_deleted) {
+profile ha-cops flags=(attach_disconnected,mediate_deleted) {
   #include <abstractions/base>
 
   # Capabilities
@@ -32,7 +32,7 @@ profile ha-cops flags=(complain,attach_disconnected,mediate_deleted) {
   /usr/bin/php cx -> php,
   /usr/bin/rsync cx -> rsync,
 
-  profile php {
+  profile php flags=(attach_disconnected,mediate_deleted) {
     #include <abstractions/base>
 
     # Receive signals from S6-Overlay
@@ -43,16 +43,17 @@ profile ha-cops flags=(complain,attach_disconnected,mediate_deleted) {
 
     # Access required for service functionality
     /usr/bin/php r,
+    /cops r,
   }
 
-  profile rsync {
+  profile rsync flags=(attach_disconnected,mediate_deleted) {
     #include <abstractions/base>
 
     # Receive signals from S6-Overlay
     signal (receive) peer=*_ha-cops,
 
     # ReadWrite access to directory where library is stored
-    /media/books/** r,
+    /media/books/** rw,
 
     # Access required for service functionality
     /usr/bin/rsync r,
