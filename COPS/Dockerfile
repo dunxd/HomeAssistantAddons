@@ -2,10 +2,10 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 # Install requirements for add-on
-# PHP81 required with GD image processing, libxml (in base), intl, json (in base), PDO sqlite3, DOM, openssl
+# PHP82 required with GD image processing, libxml (in base), intl, json (in base), PDO sqlite3, DOM, openssl
 # Also install rsync
 RUN apk add --no-cache \
-  php81 php81-intl php81-sqlite3 php81-pdo_sqlite php81-gd php81-mbstring php81-zip php81-dom php81-openssl php81-xmlwriter rsync
+  php82 php82-intl php82-sqlite3 php82-pdo_sqlite php82-gd php82-mbstring php82-zip php82-dom php82-openssl php82-xmlwriter rsync
 
 # Copy data for add-on
 COPY run.sh /
