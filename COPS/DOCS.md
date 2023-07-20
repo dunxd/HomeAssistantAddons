@@ -1,4 +1,4 @@
-# ![HA-COPS logo](icon.png) HA COPS
+# ![HA-COPS logo](https://raw.githubusercontent.com/dunxd/HomeAssistantAddons/improve-docs/COPS/icon.png) HA COPS
 
 ## Configuration
 
@@ -33,7 +33,7 @@ To use a Network Share you need to set it up in Home Assistant:
 
 Click on the Add Network Storage button and create a mount named `books` with Usage type of Media. This will mount the library to `/media/books` which is where the addon expects to find the necessary files.
 
-[![Network storage dialog with example settings](Assets/NetworkStorageDialog.png).
+[![Network storage dialog with example settings](https://raw.githubusercontent.com/dunxd/HomeAssistantAddons/main/COPS/Assets/NetworkStorageDialog.png).
 
 Note that you do not need to escape spaces if the share name has them in it.
 

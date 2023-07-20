@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.10.1] - 2023-07-20
+
+- Fix documentation so that images appear in Home Assistant interface
+
 ## [1.10] - 2023-07-19
 
 - Incorporate COPS 1.3.6
