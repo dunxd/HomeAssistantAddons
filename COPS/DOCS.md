@@ -1,20 +1,4 @@
-# ![HA-COPS logo](icon.png) HA COPS
-
-COPS is a lightweight system for providing access to your Calibre Library via a web browser. It is built in PHP. It uses less resources than the full Calibre Web Server - ideal for running on a small server such as Home Assistant. That is what this Add-on enables.
-
-The motivation for this was realising that I could easily make my music and video collection available to my family and friends when visiting my home, but my ePub collection was not available. I have happy childhood memories of discovering books in my parents book collection, but since I mainly buy eBooks now that experience isn't so easy for my kids.
-
-This Add-on runs COPS using PHP's built in webserver, as well as providing rsync to get books onto your Home Assistant server - a books folder will be created in the `/media` directory of your home assistant server.
-
-## Installation
-
-1. Install this repository
-
-[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fdunxd%2FHomeAssistantAddons)
-
-2. Install the add-on
-
-[![Open your Home Assistant instance and show the dashboard of a Supervisor add-on.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=670b30ea_ha-cops&repository_url=https%3A%2F%2Fgithub.com%2Fdunxd%2FHomeAssistantAddons)
+# ![HA-COPS logo](https://raw.githubusercontent.com/dunxd/HomeAssistantAddons/improve-docs/COPS/icon.png) HA COPS
 
 ## Configuration
 
@@ -49,7 +33,7 @@ To use a Network Share you need to set it up in Home Assistant:
 
 Click on the Add Network Storage button and create a mount named `books` with Usage type of Media. This will mount the library to `/media/books` which is where the addon expects to find the necessary files.
 
-[![Network storage dialog with example settings](Assets/NetworkStorageDialog.png).
+[![Network storage dialog with example settings](https://raw.githubusercontent.com/dunxd/HomeAssistantAddons/main/COPS/Assets/NetworkStorageDialog.png).
 
 Note that you do not need to escape spaces if the share name has them in it.
 
@@ -76,7 +60,7 @@ Once this is done, your users can add their email address (where they will recie
 
 ## User side configuration
 
-It is possible for the user to adjust some settings in the web interface. Currently this is only available in the Default template - click on the link at the top right to change to that template, then click on the spanner icon. If you want to email ePubs to your Kindle from within COPS you set your Kindle's email address in the *Set your email (to allow book emailing)* box.
+It is possible for the user to adjust some settings in the web interface. Currently this is only available in the Default template - click on the link at the top right to change to that template, then click on the spanner icon. If you want to email ePubs to your Kindle from within COPS you set your Kindle's email address in the _Set your email (to allow book emailing)_ box.
 
 ## Accessing the library from a Kindle
 
@@ -96,11 +80,4 @@ I use the Cloudflared Add-on to make my library available outside my home - this
 
 - You are able to change the display name of your library.
 - You can disable rsync if you do not need it (i.e. you are using a network share to access your Calibre Library).
-
-# Known issues
-
-- COPS has a built in system for emailing books - e.g. as Docs to your Kindle device. This does not yet work in the add-on as it was written for an older version of PHP, but may be added later.
-
-# Acknowledgements
-
-This is based on [COPS](https://github.com/seblucas/cops) written by Sebastian Lucas, but [updated to use PHP8 by Matt's Pub](https://github.com/mikespub-org/seblucas-cops).
+- You can set mail server settings if you want to send ebooks from this addon to an email address - e.g. a @kindle.com address.
