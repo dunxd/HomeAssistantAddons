@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.10.2] - 2023-07-20
+
+- Minor change to how PHP is installed in addon to allow upgrading inline with Alpine default PHP version
+
 ## [1.10.1] - 2023-07-20
 
 - Fix documentation so that images appear in Home Assistant interface
