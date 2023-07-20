@@ -1,4 +1,4 @@
-# ![HA-COPS logo](https://raw.githubusercontent.com/dunxd/HomeAssistantAddons/improve-docs/COPS/icon.png) HA COPS
+# ![HA-COPS logo](https://raw.githubusercontent.com/dunxd/HomeAssistantAddons/main/COPS/icon.png) HA COPS
 
 COPS is a lightweight system for providing access to your Calibre Library via a web browser. It is built using PHP. It uses less resources than the full Calibre Web Server - ideal for running on a small server such as Home Assistant. This add-on makes COPS available as a web application running on your Home Assistant server.
 

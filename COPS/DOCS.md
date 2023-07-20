@@ -1,4 +1,4 @@
-# ![HA-COPS logo](https://raw.githubusercontent.com/dunxd/HomeAssistantAddons/improve-docs/COPS/icon.png) HA COPS
+# ![HA-COPS logo](https://raw.githubusercontent.com/dunxd/HomeAssistantAddons/main/COPS/icon.png) HA COPS
 
 ## Configuration
 
