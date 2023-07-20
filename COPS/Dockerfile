@@ -5,7 +5,7 @@ FROM $BUILD_FROM
 # PHP82 required with GD image processing, libxml (in base), intl, json (in base), PDO sqlite3, DOM, openssl
 # Also install rsync
 RUN apk add --no-cache \
-  php82 php82-intl php82-sqlite3 php82-pdo_sqlite php82-gd php82-mbstring php82-zip php82-dom php82-openssl php82-xmlwriter rsync
+  php php-intl php-sqlite3 php-pdo_sqlite php-gd php-mbstring php-zip php-dom php-openssl php-xmlwriter rsync
 
 # Copy data for add-on
 COPY run.sh /
