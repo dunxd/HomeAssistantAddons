@@ -1,5 +1,35 @@
 # HA COPS Changelog
 
+## [1.10.2] - 2023-07-20
+
+- Minor change to how PHP is installed in addon to allow upgrading inline with Alpine default PHP version
+
+## [1.10.1] - 2023-07-20
+
+- Fix documentation so that images appear in Home Assistant interface
+
+## [1.10] - 2023-07-19
+
+- Incorporate COPS 1.3.6
+
+## [1.9.4] - 2023-07-13
+
+- Bug fix so address to send books by mail to is displayed on customisation page
+- Limit sending books to a single email address
+- Check that email address is valid before sending
+
+## [1.9.3] - 2023-07-12
+
+- Prefer EPUB but allow sending MOBI, AZW3 or PDF in absence of EPUB
+
+## [1.9] - 2023-07-10
+
+- Enabled feature to send ePub, PDF or AZW3 files by email - allows transfer to Kindle by sending to Kindle's email address.
+
+## [1.8.1] - 2023-06-23
+
+- Automatically forward Librera to OPDS feed.
+
 ## [1.8] - 2023-06-21
 
 - As of Home Assistant 2023.6 works with Calibre Library access over network share.

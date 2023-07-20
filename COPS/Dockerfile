@@ -2,14 +2,15 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 # Install requirements for add-on
-# PHP81 required with GD image processing, libxml (in base), intl, json (in base), PDO sqlite3, DOM, openssl
-# Also install rsync
+# PHP^8 required with GD image processing, libxml (in base), intl, json (in base), PDO sqlite3, DOM, openssl
+# Also install rsync. `apk add php` will install 8.1 today (July 2023), and assume in future alpine releases may install more
+# recent version.
 RUN apk add --no-cache \
-  php81 php81-intl php81-sqlite3 php81-pdo_sqlite php81-gd php81-mbstring php81-zip php81-dom php81-openssl php81-xmlwriter rsync
+  php php-intl php-sqlite3 php-pdo_sqlite php-gd php-mbstring php-zip php-dom php-openssl php-xmlwriter rsync
 
 # Copy data for add-on
 COPY run.sh /
-COPY cops-1.3.4 /cops/
+COPY cops-1.3.6 /cops/
 COPY rsyncd.conf /etc/
 RUN chmod a+x /run.sh
 

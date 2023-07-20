@@ -8,6 +8,24 @@ configuration:
   home_page:
     name: Home Page
     description: "Choose your starting page from the following options: INDEX = menu of places to start; AUTHORS_FIRST_LETTER = list all Authors; ALL_RECENT_BOOKS = The last 50 books added; ALL_TAGS = Categories"
+  smtp_host:
+    name: Mail Server Host
+    description: If you want to enable sending books by email (e.g. to a Kindle email address) add the server name here. E.g. for Gmail use smtp.gmail.com.
+  smtp_username:
+    name: Mail Server Username
+    description: The username you use to login to your mail server. E.g. for Gmail this will be your email address.
+  smtp_password:
+    name: Mail Server Password
+    description: The password to login to your mail server.
+  smtp_secure:
+    name: Secure SMTP
+    description: If your mail server uses encryption, specify either ssl or tls. Gmail uses ssl.
+  smtp_port:
+    name: SMTP Port
+    description: Specify the port used by your SMTP server if it uses a non-standard port. If using TLS specify 587.
+  address_from:
+    name: Sending Email Address
+    description: The email address that files you send will appear to come from. Don't forget to authorize the sender email you configured in your Kindle's Approved Personal Document E-mail List.
 network:
   8000/tcp: The port used to access the library web pages.
   873/tcp: The port used for rsync.
