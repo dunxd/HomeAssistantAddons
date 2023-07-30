@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.10.3] - 2023-07-30
+
+- Restore Librera detection
+
 ## [1.10.2] - 2023-07-20
 
 - Minor change to how PHP is installed in addon to allow upgrading inline with Alpine default PHP version
