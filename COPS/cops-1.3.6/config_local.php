@@ -38,3 +38,8 @@
      * Specify categories not to display as options in top level of COPS library
      */
     $config['cops_ignored_categories'] = array('publisher', 'rating', 'language');
+
+    /* Specify the preferred home page
+     *
+     */
+    $config['cops_home_page'] = 'PAGE_ALL_RECENT_BOOKS';

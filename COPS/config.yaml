@@ -20,9 +20,15 @@ map:
   - media:rw
 options:
   title: "COPS"
+  home_page:
+    - INDEX
+    - AUTHORS_FIRST_LETTER
+    - ALL_RECENT_BOOKS
+    - ALL_TAGS
   rsync: true
 schema:
   title: str
+  home_page: list(INDEX|AUTHORS_FIRST_LETTER|ALL_RECENT_BOOKS|ALL_TAGS)
   rsync: bool
   smtp_host: str?
   smtp_username: str?
