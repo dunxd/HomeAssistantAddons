@@ -1,8 +1,9 @@
 # HA COPS Changelog
 
-## [1.10.3] - 2023-07-30
+## [1.11] - 2023-08-31
 
-- Restore Librera detection
+- Incorporate COPS 1.4.3 which adds improvements to templates, and sorting to OPDS
+- New Bootstrap5 template - note this is known not to work well in Kindle Paperwhite Experimental Browser. Feedback about other browsers more than welcome!
 
 ## [1.10.2] - 2023-07-20
 
