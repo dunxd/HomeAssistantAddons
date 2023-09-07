@@ -3,7 +3,6 @@
 ## [1.12] - 2023-09-07
 
 - Incorporate COPS 1.4.5 with fixes for OPDS feeds on older reader software
-- Improvements to Bootstrap5 template
 
 ## [1.11] - 2023-08-31
 
