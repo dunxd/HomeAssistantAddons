@@ -38,3 +38,6 @@
      * Specify categories not to display as options in top level of COPS library
      */
     $config['cops_ignored_categories'] = array('publisher', 'rating', 'language');
+
+    /* debugging server side */
+    //$config['cops_server_side_render'] = ".";
