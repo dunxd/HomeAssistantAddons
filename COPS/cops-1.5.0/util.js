@@ -530,13 +530,13 @@ function initiateAjax (url, theme) {
     });
 }
 
-function initiateTwig(url, theme) {
+/* function initiateTwig(url, theme) {
     Twig.extendFunction("str_format", str_format);
 
     let template = Twig.twig({
         id: 'page',
         href: 'templates/' + theme + '/page.html',
-        async: false 
+        async: false
      });
 
      templatePage = function (data) {
@@ -553,4 +553,4 @@ function initiateTwig(url, theme) {
         }
         handleLinks ();
     });
-}
+} */
