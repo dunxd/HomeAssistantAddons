@@ -1,0 +1,28 @@
+.git/
+*.zip
+test/
+# keep the test database in the image here
+!test/BaseWithSomeBooks/
+vendor/
+# remove docker files
+docker/
+docker-compose.yaml
+docker-compose-dev.yaml
+# remove development files
+.vscode/
+.yarn/
+#!.yarn/releases
+#!.yarn/plugins
+.pnp.*
+# remove unused directories
+resources/epub-loader/cache/
+resources/epub-loader/test/
+resources/epub-loader/vendor/
+resources/tbszip/stuffs/
+resources/php-epub-meta/assets/
+resources/php-epub-meta/test/
+resources/php-epub-meta/vendor/
+tools/
+clover.xml
+coverage/
+*.cache
