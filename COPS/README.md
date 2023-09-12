@@ -20,7 +20,7 @@ Once installed see [DOCS.md](DOCS.md) for further details of how to configure.
 
 # Known issues
 
-- The Bootstrap based templates do not work with the Kindle web browser - they do not display pages with books on them.
+- Search does not work on Kindle in bootstrap template. default, bootstrap2 and bootstrap5 have been fixed so it works. default template works best with Kindle eInk experimental browser.
 
 # Acknowledgements
 
