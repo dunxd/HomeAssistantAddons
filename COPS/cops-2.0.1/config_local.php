@@ -39,5 +39,10 @@
      */
     $config['cops_ignored_categories'] = array('publisher', 'rating', 'language');
 
+    /*
+     * Use "default" template as default - this works best with eReaders.  Config page allows change to template used
+     */
+    $config['cops_template'] = 'default';
+
     /* debugging server side */
     //$config['cops_server_side_render'] = ".";
