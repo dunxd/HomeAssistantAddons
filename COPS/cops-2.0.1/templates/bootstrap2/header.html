@@ -34,14 +34,18 @@
         {{?}}
       {{?}}
     </div>
-    <form id="searchForm" class="navbar-form navbar-form-margin navbar-left" role="search">
+    <form id="searchForm" class="navbar-form navbar-form-margin navbar-left" role="search" action="index.php" method="get">
+      <input type="hidden" name="page" value="9">
+      {{? it.databaseId != ""}}
+        <input type="hidden" name="db" value="{{=it.databaseId}}">
+      {{?}}
       <div class="input-group">
-        <input id="queryInput" type="text" class="form-control" placeholder="{{=it.c.i18n.searchAlt}}" name="query">
+        <input id="queryInput" type="text" class="form-control" placeholder="{{=it.c.i18n.searchAlt}}" name="query" data-type="search" required="required">
         <div class="input-group-btn">
           <button id="searchButton" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
         </div>
       </div>
-    </form>     
+    </form>
     <div class="collapse navbar-collapse">
       {{? it.containsBook != 0}}
       <!-- show sort options -->
