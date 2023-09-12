@@ -1,5 +1,11 @@
 # HA COPS Changelog
 
+## [1.13] - 2023-09-12
+
+- Incorporate COPS 2.0.1
+- Fix bootstrap5 template so it works with server side rendering - note that it is not well suited for Kindle eInk readers
+- Currently the default template (named "default") is best suited to eInk readers. The customise page can be used to select a different template. If you selected a different template with a previous version, this setting is preserved.
+
 ## [1.11] - 2023-08-31
 
 - Incorporate COPS 1.4.3 which adds improvements to templates, and sorting to OPDS
@@ -49,16 +55,16 @@
 
 ## [1.7] - 2023-06-15
 
-Updated to COPS 1.3.4 which allows ePub v3 without NCX TOC
+- Updated to COPS 1.3.4 which allows ePub v3 without NCX TOC
 
 ## [1.6.2] - 2023-04-28
 
-Added webui and descriptions for port config options
+- Added webui and descriptions for port config options
 
 ## [1.6.1] - 2023-04-27
 
-Set language for ePubreader to undetermined
+- Set language for ePubreader to undetermined
 
 ## [1.6] - 2023-04-21
 
-Initial public release
+- Initial public release
