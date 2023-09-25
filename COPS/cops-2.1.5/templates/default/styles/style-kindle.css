@@ -568,6 +568,14 @@ footer a {
   border: 1px solid #000;
 }
 
+input[type="radio"],
+input[type="checkbox"] {
+  /* Make radio buttons easier to hit with touchscreen */
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
 @media only screen and (min-width: 1100px) {
   body .container,
   body .mfp-content {
