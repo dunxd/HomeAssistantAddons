@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.15] - 2023-09-25
+
+- Incorporate COPS 2.1.5 - small bug fixes
+
 ## [1.14] - 2023-09-24
 
 - Incorporate COPS 2.1.4

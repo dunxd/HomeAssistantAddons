@@ -3,7 +3,7 @@
         'name' => 'mikespub/seblucas-cops',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'c623b6798fe2ccfbdb737806d7a9fad4ae8d9564',
+        'reference' => '6f6a9f89387899e78634213cdc58e907b69168d4',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'mikespub/seblucas-cops' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'c623b6798fe2ccfbdb737806d7a9fad4ae8d9564',
+            'reference' => '6f6a9f89387899e78634213cdc58e907b69168d4',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
