@@ -1,5 +1,14 @@
 # HA COPS Changelog
 
+## [1.16] - 2023-11-30
+
+- Incorporate COPS 2.2.1 which includes the following improvements
+  - Support display settings for custom columns
+  - Add Japanese translations
+  - Use server side rendering for Kobo
+  - Add bootstrap2 Kindle theme
+  - General improvements when viewing COPS through Kindle Experimental Web Browser
+
 ## [1.15] - 2023-09-25
 
 - Incorporate COPS 2.1.5 - small bug fixes
