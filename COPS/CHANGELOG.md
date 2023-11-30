@@ -8,6 +8,7 @@
   - Use server side rendering for Kobo
   - Add bootstrap2 Kindle theme
   - General improvements when viewing COPS through Kindle Experimental Web Browser
+  - Updated Bootstrap5 template to use Bootstrap 5.3.2
 
 ## [1.15] - 2023-09-25
 
