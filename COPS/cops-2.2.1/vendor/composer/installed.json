@@ -1,0 +1,839 @@
+{
+    "packages": [
+        {
+            "name": "maennchen/zipstream-php",
+            "version": "3.1.0",
+            "version_normalized": "3.1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maennchen/ZipStream-PHP.git",
+                "reference": "b8174494eda667f7d13876b4a7bfef0f62a7c0d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maennchen/ZipStream-PHP/zipball/b8174494eda667f7d13876b4a7bfef0f62a7c0d1",
+                "reference": "b8174494eda667f7d13876b4a7bfef0f62a7c0d1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "ext-zlib": "*",
+                "php-64bit": "^8.1"
+            },
+            "require-dev": {
+                "ext-zip": "*",
+                "friendsofphp/php-cs-fixer": "^3.16",
+                "guzzlehttp/guzzle": "^7.5",
+                "mikey179/vfsstream": "^1.6",
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpunit/phpunit": "^10.0",
+                "vimeo/psalm": "^5.0"
+            },
+            "suggest": {
+                "guzzlehttp/psr7": "^2.4",
+                "psr/http-message": "^2.0"
+            },
+            "time": "2023-06-21T14:59:35+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ZipStream\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Duncan",
+                    "email": "pabs@pablotron.org"
+                },
+                {
+                    "name": "Jonatan Männchen",
+                    "email": "jonatan@maennchen.ch"
+                },
+                {
+                    "name": "Jesse Donat",
+                    "email": "donatj@gmail.com"
+                },
+                {
+                    "name": "András Kolesár",
+                    "email": "kolesar@kolesar.hu"
+                }
+            ],
+            "description": "ZipStream is a library for dynamically streaming dynamic zip files from PHP without writing to the disk at all on the server.",
+            "keywords": [
+                "stream",
+                "zip"
+            ],
+            "support": {
+                "issues": "https://github.com/maennchen/ZipStream-PHP/issues",
+                "source": "https://github.com/maennchen/ZipStream-PHP/tree/3.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/maennchen",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/zipstream",
+                    "type": "open_collective"
+                }
+            ],
+            "install-path": "../maennchen/zipstream-php"
+        },
+        {
+            "name": "mikespub/php-epub-meta",
+            "version": "2.2.0",
+            "version_normalized": "2.2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mikespub-org/php-epub-meta.git",
+                "reference": "537c2d3f4dd3cdd365934c2abd79ed043df109df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mikespub-org/php-epub-meta/zipball/537c2d3f4dd3cdd365934c2abd79ed043df109df",
+                "reference": "537c2d3f4dd3cdd365934c2abd79ed043df109df",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-mbstring": "*",
+                "ext-xml": "*",
+                "ext-zip": "*",
+                "ext-zlib": "*",
+                "maennchen/zipstream-php": "~3.1",
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "9.*"
+            },
+            "suggest": {
+                "mikespub/epub-loader": "epub-loader is a utility resource for ebooks",
+                "mikespub/seblucas-cops": "COPS - Calibre OPDS (and HTML) PHP Server"
+            },
+            "time": "2023-09-25T15:32:43+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andreas Gohr",
+                    "email": "andi@splitbrain.org",
+                    "homepage": "https://www.splitbrain.org/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sébastien Lucas",
+                    "email": "sebastien@slucas.fr",
+                    "homepage": "http://www.slucas.fr/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "mikespub",
+                    "homepage": "https://github.com/mikespub-org/php-epub-meta",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Reading and writing metadata included in the EPub ebook format",
+            "homepage": "https://github.com/mikespub-org/php-epub-meta",
+            "keywords": [
+                "ebook",
+                "epub",
+                "metadata"
+            ],
+            "support": {
+                "issues": "https://github.com/mikespub-org/php-epub-meta/issues",
+                "source": "https://github.com/mikespub-org/php-epub-meta/tree/2.2.0"
+            },
+            "install-path": "../mikespub/php-epub-meta"
+        },
+        {
+            "name": "nikic/fast-route",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/FastRoute.git",
+                "reference": "7a2713cd21389e280b75af9a9ad646f75124890c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikic/FastRoute/zipball/7a2713cd21389e280b75af9a9ad646f75124890c",
+                "reference": "7a2713cd21389e280b75af9a9ad646f75124890c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1.0"
+            },
+            "require-dev": {
+                "lcobucci/coding-standard": "^11.0",
+                "phpbench/phpbench": "^1.2",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan": "^1.10",
+                "phpstan/phpstan-deprecation-rules": "^1.1",
+                "phpstan/phpstan-phpunit": "^1.3",
+                "phpstan/phpstan-strict-rules": "^1.5",
+                "phpunit/phpunit": "^10.3"
+            },
+            "suggest": {
+                "ext-apcu": "To be able to use APCu cache driver"
+            },
+            "time": "2023-10-21T13:46:54+00:00",
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "FastRoute\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Nikita Popov",
+                    "email": "nikic@php.net"
+                }
+            ],
+            "description": "Fast request router for PHP",
+            "keywords": [
+                "router",
+                "routing"
+            ],
+            "support": {
+                "issues": "https://github.com/nikic/FastRoute/issues",
+                "source": "https://github.com/nikic/FastRoute/tree/master"
+            },
+            "install-path": "../nikic/fast-route"
+        },
+        {
+            "name": "npm-asset/babel--runtime",
+            "version": "v7.21.3",
+            "version_normalized": "7.21.3.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:babel/babel.git",
+                "reference": "fbfbd1da8c288551103fa59064ce7429ac1ff75b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/babel/babel/zipball/fbfbd1da8c288551103fa59064ce7429ac1ff75b",
+                "reference": "fbfbd1da8c288551103fa59064ce7429ac1ff75b"
+            },
+            "type": "npm-asset",
+            "installation-source": "dist",
+            "install-path": "../npm-asset/babel--runtime"
+        },
+        {
+            "name": "npm-asset/balanced-match",
+            "version": "1.0.2",
+            "version_normalized": "1.0.2.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"
+            },
+            "type": "npm-asset",
+            "installation-source": "dist",
+            "license": [
+                "MIT"
+            ],
+            "install-path": "../npm-asset/balanced-match"
+        },
+        {
+            "name": "npm-asset/bootstrap",
+            "version": "3.4.1",
+            "version_normalized": "3.4.1.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/bootstrap/-/bootstrap-3.4.1.tgz"
+            },
+            "type": "npm-asset",
+            "installation-source": "dist",
+            "license": [
+                "MIT"
+            ],
+            "install-path": "../npm-asset/bootstrap"
+        },
+        {
+            "name": "npm-asset/brace-expansion",
+            "version": "1.1.11",
+            "version_normalized": "1.1.11.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz"
+            },
+            "require": {
+                "npm-asset/balanced-match": ">=1.0.0,<2.0.0",
+                "npm-asset/concat-map": "0.0.1"
+            },
+            "type": "npm-asset",
+            "installation-source": "dist",
+            "license": [
+                "MIT"
+            ],
+            "install-path": "../npm-asset/brace-expansion"
+        },
+        {
+            "name": "npm-asset/concat-map",
+            "version": "0.0.1",
+            "version_normalized": "0.0.1.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz"
+            },
+            "type": "npm-asset",
+            "installation-source": "dist",
+            "license": [
+                "MIT"
+            ],
+            "install-path": "../npm-asset/concat-map"
+        },
+        {
+            "name": "npm-asset/corejs-typeahead",
+            "version": "1.3.3",
+            "version_normalized": "1.3.3.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/corejs-typeahead/-/corejs-typeahead-1.3.3.tgz"
+            },
+            "require": {
+                "npm-asset/jquery": ">=1.11"
+            },
+            "type": "npm-asset",
+            "installation-source": "dist",
+            "license": [
+                "MIT"
+            ],
+            "install-path": "../npm-asset/corejs-typeahead"
+        },
+        {
+            "name": "npm-asset/dot",
+            "version": "1.1.3",
+            "version_normalized": "1.1.3.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/dot/-/dot-1.1.3.tgz"
+            },
+            "type": "npm-asset",
+            "installation-source": "dist",
+            "license": [
+                "MIT"
+            ],
+            "install-path": "../npm-asset/dot"
+        },
+        {
+            "name": "npm-asset/foreachasync",
+            "version": "3.0.0",
+            "version_normalized": "3.0.0.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/foreachasync/-/foreachasync-3.0.0.tgz"
+            },
+            "type": "npm-asset",
+            "installation-source": "dist",
+            "license": [
+                "Apache2"
+            ],
+            "install-path": "../npm-asset/foreachasync"
+        },
+        {
+            "name": "npm-asset/jquery",
+            "version": "3.7.1",
+            "version_normalized": "3.7.1.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/jquery/-/jquery-3.7.1.tgz"
+            },
+            "type": "npm-asset",
+            "installation-source": "dist",
+            "license": [
+                "MIT"
+            ],
+            "install-path": "../npm-asset/jquery"
+        },
+        {
+            "name": "npm-asset/js-cookie",
+            "version": "2.2.1",
+            "version_normalized": "2.2.1.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/js-cookie/-/js-cookie-2.2.1.tgz"
+            },
+            "type": "npm-asset",
+            "installation-source": "dist",
+            "license": [
+                "MIT"
+            ],
+            "install-path": "../npm-asset/js-cookie"
+        },
+        {
+            "name": "npm-asset/locutus",
+            "version": "2.0.16",
+            "version_normalized": "2.0.16.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/locutus/-/locutus-2.0.16.tgz"
+            },
+            "type": "npm-asset",
+            "installation-source": "dist",
+            "license": [
+                "MIT"
+            ],
+            "install-path": "../npm-asset/locutus"
+        },
+        {
+            "name": "npm-asset/lru-fast",
+            "version": "0.2.2",
+            "version_normalized": "0.2.2.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/lru-fast/-/lru-fast-0.2.2.tgz"
+            },
+            "type": "npm-asset",
+            "installation-source": "dist",
+            "license": [
+                "MIT"
+            ],
+            "install-path": "../npm-asset/lru-fast"
+        },
+        {
+            "name": "npm-asset/magnific-popup",
+            "version": "1.1.0",
+            "version_normalized": "1.1.0.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/magnific-popup/-/magnific-popup-1.1.0.tgz"
+            },
+            "type": "npm-asset",
+            "installation-source": "dist",
+            "license": [
+                "MIT"
+            ],
+            "install-path": "../npm-asset/magnific-popup"
+        },
+        {
+            "name": "npm-asset/minimatch",
+            "version": "3.0.8",
+            "version_normalized": "3.0.8.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/minimatch/-/minimatch-3.0.8.tgz"
+            },
+            "require": {
+                "npm-asset/brace-expansion": ">=1.1.7,<2.0.0"
+            },
+            "type": "npm-asset",
+            "installation-source": "dist",
+            "license": [
+                "ISC"
+            ],
+            "install-path": "../npm-asset/minimatch"
+        },
+        {
+            "name": "npm-asset/normalize.css",
+            "version": "8.0.1",
+            "version_normalized": "8.0.1.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/normalize.css/-/normalize.css-8.0.1.tgz"
+            },
+            "type": "npm-asset",
+            "installation-source": "dist",
+            "license": [
+                "MIT"
+            ],
+            "install-path": "../npm-asset/normalize.css"
+        },
+        {
+            "name": "npm-asset/twig",
+            "version": "1.16.0",
+            "version_normalized": "1.16.0.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/twig/-/twig-1.16.0.tgz"
+            },
+            "require": {
+                "npm-asset/babel--runtime": ">=7.8.4,<8.0.0",
+                "npm-asset/locutus": ">=2.0.11,<3.0.0",
+                "npm-asset/minimatch": "dev-3.0.x|3.0.x",
+                "npm-asset/walk": "dev-2.3.x|2.3.x"
+            },
+            "type": "npm-asset",
+            "installation-source": "dist",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "install-path": "../npm-asset/twig"
+        },
+        {
+            "name": "npm-asset/walk",
+            "version": "2.3.15",
+            "version_normalized": "2.3.15.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/walk/-/walk-2.3.15.tgz"
+            },
+            "require": {
+                "npm-asset/foreachasync": ">=3.0.0,<4.0.0"
+            },
+            "type": "npm-asset",
+            "installation-source": "dist",
+            "license": [
+                "(MIT OR Apache-2.0)"
+            ],
+            "install-path": "../npm-asset/walk"
+        },
+        {
+            "name": "phpmailer/phpmailer",
+            "version": "v6.8.1",
+            "version_normalized": "6.8.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPMailer/PHPMailer.git",
+                "reference": "e88da8d679acc3824ff231fdc553565b802ac016"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/e88da8d679acc3824ff231fdc553565b802ac016",
+                "reference": "e88da8d679acc3824ff231fdc553565b802ac016",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-filter": "*",
+                "ext-hash": "*",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+                "doctrine/annotations": "^1.2.6 || ^1.13.3",
+                "php-parallel-lint/php-console-highlighter": "^1.0.0",
+                "php-parallel-lint/php-parallel-lint": "^1.3.2",
+                "phpcompatibility/php-compatibility": "^9.3.5",
+                "roave/security-advisories": "dev-latest",
+                "squizlabs/php_codesniffer": "^3.7.2",
+                "yoast/phpunit-polyfills": "^1.0.4"
+            },
+            "suggest": {
+                "ext-mbstring": "Needed to send email in multibyte encoding charset or decode encoded addresses",
+                "ext-openssl": "Needed for secure SMTP sending and DKIM signing",
+                "greew/oauth2-azure-provider": "Needed for Microsoft Azure XOAUTH2 authentication",
+                "hayageek/oauth2-yahoo": "Needed for Yahoo XOAUTH2 authentication",
+                "league/oauth2-google": "Needed for Google XOAUTH2 authentication",
+                "psr/log": "For optional PSR-3 debug logging",
+                "symfony/polyfill-mbstring": "To support UTF-8 if the Mbstring PHP extension is not enabled (^1.2)",
+                "thenetworg/oauth2-azure": "Needed for Microsoft XOAUTH2 authentication"
+            },
+            "time": "2023-08-29T08:26:30+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "PHPMailer\\PHPMailer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1-only"
+            ],
+            "authors": [
+                {
+                    "name": "Marcus Bointon",
+                    "email": "phpmailer@synchromedia.co.uk"
+                },
+                {
+                    "name": "Jim Jagielski",
+                    "email": "jimjag@gmail.com"
+                },
+                {
+                    "name": "Andy Prevost",
+                    "email": "codeworxtech@users.sourceforge.net"
+                },
+                {
+                    "name": "Brent R. Matzelle"
+                }
+            ],
+            "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
+            "support": {
+                "issues": "https://github.com/PHPMailer/PHPMailer/issues",
+                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.8.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Synchro",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../phpmailer/phpmailer"
+        },
+        {
+            "name": "symfony/polyfill-ctype",
+            "version": "v1.28.0",
+            "version_normalized": "1.28.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-ctype.git",
+                "reference": "ea208ce43cbb04af6867b4fdddb1bdbf84cc28cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/ea208ce43cbb04af6867b4fdddb1bdbf84cc28cb",
+                "reference": "ea208ce43cbb04af6867b4fdddb1bdbf84cc28cb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "provide": {
+                "ext-ctype": "*"
+            },
+            "suggest": {
+                "ext-ctype": "For best performance"
+            },
+            "time": "2023-01-26T09:26:14+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.28-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gert de Pagter",
+                    "email": "BackEndTea@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for ctype functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "ctype",
+                "polyfill",
+                "portable"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.28.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/polyfill-ctype"
+        },
+        {
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.28.0",
+            "version_normalized": "1.28.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "42292d99c55abe617799667f454222c54c60e229"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/42292d99c55abe617799667f454222c54c60e229",
+                "reference": "42292d99c55abe617799667f454222c54c60e229",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "provide": {
+                "ext-mbstring": "*"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "time": "2023-07-28T09:04:16+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.28-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.28.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/polyfill-mbstring"
+        },
+        {
+            "name": "twig/twig",
+            "version": "v3.7.1",
+            "version_normalized": "3.7.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "a0ce373a0ca3bf6c64b9e3e2124aca502ba39554"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a0ce373a0ca3bf6c64b9e3e2124aca502ba39554",
+                "reference": "a0ce373a0ca3bf6c64b9e3e2124aca502ba39554",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/polyfill-ctype": "^1.8",
+                "symfony/polyfill-mbstring": "^1.3"
+            },
+            "require-dev": {
+                "psr/container": "^1.0|^2.0",
+                "symfony/phpunit-bridge": "^5.4.9|^6.3"
+            },
+            "time": "2023-08-28T11:09:02+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Twig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Twig Team",
+                    "role": "Contributors"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "https://twig.symfony.com",
+            "keywords": [
+                "templating"
+            ],
+            "support": {
+                "issues": "https://github.com/twigphp/Twig/issues",
+                "source": "https://github.com/twigphp/Twig/tree/v3.7.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/twig/twig",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../twig/twig"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}
