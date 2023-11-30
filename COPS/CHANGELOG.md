@@ -10,6 +10,8 @@
   - General improvements when viewing COPS through Kindle Experimental Web Browser
   - Updated Bootstrap5 template to use Bootstrap 5.3.2
 
+_Note that some PiHole filterlists started blocking `cdn.jsdelivr.net` which is used by the bootstrap5 template to get the Bootstrap files used only in that template. If this template looks odd, you may need to whitelist `cdn.jsdelivr.net`._
+
 ## [1.15] - 2023-09-25
 
 - Incorporate COPS 2.1.5 - small bug fixes
