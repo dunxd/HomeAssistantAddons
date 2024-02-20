@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.17] - 2024-02-20
+
+- Incorporate [COPS 2.3.1](https://github.com/mikespub-org/seblucas-cops/releases/tag/2.3.1)
+
 ## [1.16] - 2023-11-30
 
 - Incorporate COPS 2.2.1 which includes the following improvements
