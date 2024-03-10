@@ -4,7 +4,7 @@
 
 - Incorporate [COPS 2.5.0](https://github.com/mikespub-org/seblucas-cops/releases/tag/2.5.0)
   - Category notes added to Calibre 7.x are now visible
-    ToDo: Changes to configuration options to support virtual libraries and new epubreader
+- ToDo: Changes to configuration options to support virtual libraries and new epubreader
 
 ## [1.18] - 2024-02-26
 
