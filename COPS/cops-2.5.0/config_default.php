@@ -534,4 +534,4 @@ $config['cops_api_key'] = '';
  * 'monocle' (default)
  * 'epubjs'
  */
-$config['cops_epub_reader'] = 'monocle';
+$config['cops_epub_reader'] = 'epubjs';

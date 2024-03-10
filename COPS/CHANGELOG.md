@@ -4,7 +4,9 @@
 
 - Incorporate [COPS 2.5.0](https://github.com/mikespub-org/seblucas-cops/releases/tag/2.5.0)
   - Category notes added to Calibre 7.x are now visible
-- ToDo: Changes to configuration options to support virtual libraries and new epubreader
+  - Switched from monocle to Intity browser based epub reader - **feedback appreciated**. This allows bookmarks and notes in the browser. These are stored local to the browser and persistant - however you will not see them in other browsers.
+  - **Not** implemented
+    - virtual library support - I'm not sure how to support this via rsync without making things complicated. I will investigate this if users request it.
 
 ## [1.18] - 2024-02-26
 
