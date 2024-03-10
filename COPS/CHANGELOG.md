@@ -1,5 +1,11 @@
 # HA COPS Changelog
 
+## [1.19] - 2024-03-10
+
+- Incorporate [COPS 2.5.0](https://github.com/mikespub-org/seblucas-cops/releases/tag/2.5.0)
+  - Category notes added to Calibre 7.x are now visible
+    ToDo: Changes to configuration options to support virtual libraries and new epubreader
+
 ## [1.18] - 2024-02-26
 
 - Incorporate [COPS 2.4.1](https://github.com/mikespub-org/seblucas-cops/releases/tag/2.4.1)

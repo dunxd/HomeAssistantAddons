@@ -1,0 +1,57 @@
+<header>
+    <a class="headleft" href="{{=it.homeurl}}" {{=it.c.config.kindleHack}}>
+        <div title="{{=it.c.i18n.homeAlt}}" class="hicon hicon64"><i class="fas fa-home"></i></div>
+    </a>
+    {{? it.c.config.server_side_rendering == 0}}
+    <div title="{{=it.c.i18n.cogAlt}}" class="hicon hicon64 headright"><i class="fas fa-search" id="searchImage"></i></div>
+    {{?}}
+    <div class="headcenter">
+        {{? it.parenturl != ""}}
+            <h1><a href="{{=it.parenturl}}" {{=it.c.config.kindleHack}}>{{=it.title}}</a></h1>
+        {{??}}
+            <h1>{{=it.title}}</h1>
+        {{?}}
+    </div>
+    <div id="tool" {{? it.c.config.server_side_rendering == 0}}style="display: none"{{?}}>
+        <div style="float: left; width: 50%">
+            <form id="searchForm" action="{{=it.baseurl}}" method="get">
+                <div class="stop">
+                    <input type="hidden" name="page" value="9" />
+                    {{? it.databaseId != ""}}
+                        <input type="hidden" name="db" value="{{=it.databaseId}}" />
+                    {{?}}
+                    {{? it.libraryId != ""}}
+                        <input type="hidden" name="vl" value="{{=it.libraryId}}" />
+                    {{?}}
+                    <input id="queryInput" type="text" data-type="search" required="required" name="query" />
+                </div>
+                <button id="searchButton" title="{{=it.c.i18n.searchAlt}}" type="submit" class="hicon hicon32 submit">
+                    <i class="fas fa-search fa-2x"></i>
+                </button>
+            </form>
+        </div>
+        {{? it.c.config.server_side_rendering == 0}}
+        <div id="sortForm" style="float: right; width: 45%; display: none">
+            <div style="float: right">
+                <div title="{{=it.c.i18n.sortAlt}}" id="sort" class="hicon hicon32"><i class="fas fa-sort fa-2x"></i></div>
+            </div>
+            <div class="stop">
+                <select id="sortchoice">
+                    <option value="st">{{=it.c.i18n.bookwordTitle}}</option>
+                    <option value="sa">{{=it.c.i18n.authorsTitle}}</option>
+                    <option value="ss">{{=it.c.i18n.seriesTitle}}</option>
+                    <option value="sp">{{=it.c.i18n.pubdateTitle}}</option>
+                </select>
+                <select id="sortorder">
+                    <option value="asc">{{=it.c.i18n.sortorderAsc}}</option>
+                    <option value="desc">{{=it.c.i18n.sortorderDesc}}</option>
+                </select> 
+            </div>
+        </div>
+        <div id="filter">
+            <ul>
+            </ul>
+        </div>
+        {{?}}
+    </div>
+</header>
