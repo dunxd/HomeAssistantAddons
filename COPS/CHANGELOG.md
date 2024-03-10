@@ -1,5 +1,13 @@
 # HA COPS Changelog
 
+## [1.19] - 2024-03-10
+
+- Incorporate [COPS 2.5.0](https://github.com/mikespub-org/seblucas-cops/releases/tag/2.5.0)
+  - Category notes added to Calibre 7.x are now visible
+  - Switched from monocle to Intity browser based epub reader - **feedback appreciated**. This allows bookmarks and notes in the browser. These are stored local to the browser and persistant - however you will not see them in other browsers.
+  - **Not** implemented
+    - virtual library support - I'm not sure how to support this via rsync without making things complicated. I will investigate this if users request it.
+
 ## [1.18] - 2024-02-26
 
 - Incorporate [COPS 2.4.1](https://github.com/mikespub-org/seblucas-cops/releases/tag/2.4.1)
