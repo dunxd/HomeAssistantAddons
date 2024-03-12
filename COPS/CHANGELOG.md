@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.20] - 2024-03-12
+
+- Revert epubreader to Monocle - issues with mobile browser view with Intity that need resolving.
+
 ## [1.19] - 2024-03-10
 
 - Incorporate [COPS 2.5.0](https://github.com/mikespub-org/seblucas-cops/releases/tag/2.5.0)
