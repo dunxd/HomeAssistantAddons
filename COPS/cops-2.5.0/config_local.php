@@ -81,3 +81,10 @@ $config['cops_download_series'] = ['EPUB', 'MOBI'];
  * Specify which formats to show download all buttons on pages listing all books by an author
  */
 $config['cops_download_author'] = ['EPUB', 'MOBI'];
+
+/*
+ * Choose preferred epub reader when viewing epub files online:
+ * 'monocle' (default)
+ * 'epubjs'
+ */
+$config['cops_epub_reader'] = 'epubjs';
