@@ -1,13 +1,13 @@
-@import url('toolbar.css');
-@import url('sidebar.css');
+@import url("toolbar.css");
+@import url("sidebar.css");
 
 @font-face {
-	font-family: 'fontello';
-	src: url('../font/fontello.eot?60518104');
-	src: url('../font/fontello.eot?60518104#iefix') format('embedded-opentype'),
-		url('../font/fontello.woff?60518104') format('woff'),
-		url('../font/fontello.ttf?60518104') format('truetype'),
-		url('../font/fontello.svg?60518104#fontello') format('svg');
+	font-family: "fontello";
+	src: url("../font/fontello.eot?60518104");
+	src: url("../font/fontello.eot?60518104#iefix") format("embedded-opentype"),
+		url("../font/fontello.woff?60518104") format("woff"),
+		url("../font/fontello.ttf?60518104") format("truetype"),
+		url("../font/fontello.svg?60518104#fontello") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -49,24 +49,24 @@ body {
 	width: calc(100% - 300px);
 }
 
-#content.closed> #viewer {
+#content.closed > #viewer {
 	width: calc(100% - 116px);
 }
 
 #viewer {
-    display: flex;
-	width: calc(100% - 416px);
-	height: calc(100% - 116px);
+	display: flex;
+	width: calc(100% - 50px);
+	height: calc(100% - 90px);
 	margin: 0 auto;
 	z-index: 2;
 	overflow: hidden;
 	align-items: center;
 	vertical-align: middle;
-    border: 1px solid #777;
+	border: 1px solid #777;
 }
 
 #viewer .epub-view {
-    width: auto !important;
+	width: auto !important;
 }
 
 #viewer iframe {
@@ -92,7 +92,7 @@ body {
 }
 
 .arrow span {
-	color: #E2E2E2;
+	color: #e2e2e2;
 	cursor: pointer;
 	overflow: hidden;
 	font-size: 64px;
@@ -132,7 +132,7 @@ body {
 	height: 64px;
 	position: absolute;
 	background-size: 64px;
-	background-image: url('../img/loader.gif');
+	background-image: url("../img/loader.gif");
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -148,7 +148,7 @@ body {
     opacity: 0;
     background: rgba(255,255,255,0.8);
 
-    transition: all 0.3s;    
+    transition: all 0.3s;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
