@@ -8,30 +8,37 @@ COPS_CONFIG="/cops/config_local.php"
 
 # Create lines for the config file here
 CONFIG_STR=$(
-cat << END_HEREDOC
+cat << END_HEREDOC_TITLE
 \$config['cops_title_default'] = '$TITLE';
-END_HEREDOC
+END_HEREDOC_TITLE
+)
+
+# Specify which eReader to use
+CONFIG_STR+=$(
+    cat << END_HEREDOC_READER
+    \$config['cops_epub_reader'] = "$(bashio::config 'reader')";
+END_HEREDOC_READER
 )
 
 # Set up mail server details to allow emailing of books
 if [ "$(bashio::config 'smtp_host')" != "null" ]
 then
 CONFIG_STR+=$(
-cat << END_HEREDOC2
+cat << END_HEREDOC_SMTP_HOST
 \$config['cops_mail_configuration'] = array( "smtp.host" => "$(bashio::config 'smtp_host')",
                                              "smtp.username" => "$(bashio::config 'smtp_username')",
                                              "smtp.password" => "$(bashio::config 'smtp_password')",
                                              "address.from" => "$(bashio::config 'address_from')"
                                              );
-END_HEREDOC2
+END_HEREDOC_SMTP_HOST
 )
     # Enable ssl if smtp_secure set to true
     if [ "$(bashio::config 'smtp_secure')" != "null" ]
     then
     CONFIG_STR+=$(
-        cat << END_HEREDOC3
+        cat << END_HEREDOC_SMTP_SECURE
         \$config['cops_mail_configuration']['smtp.secure'] = "$(bashio::config 'smtp_secure')";
-END_HEREDOC3
+END_HEREDOC_SMTP_SECURE
     )
         fi
 
@@ -39,12 +46,11 @@ END_HEREDOC3
     if [ "$(bashio::config 'smtp_port')" != "null" ]
     then
     CONFIG_STR+=$(
-        cat << END_HEREDOC4
+        cat << END_HEREDOC_SMTP_PORT
         \$config['cops_mail_configuration']['smtp.port'] = "$(bashio::config 'smtp_port')";
-END_HEREDOC4
+END_HEREDOC_SMTP_PORT
     )
     fi
-
 fi
 
 # Write the config lines to the end of the config file
