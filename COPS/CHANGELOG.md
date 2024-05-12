@@ -3,7 +3,7 @@
 ## [1.21] - 2024-05-12
 
 - Incorporate [COPS 2.6.1](https://github.com/mikespub-org/seblucas-cops/releases/tag/2.6.1)
-  - Inity epubjs as default in browser reader - switch back to monocle in Configuration.
+  - Inity _epubjs_ as default in-browser reader - switch back to _monocle_ in Configuration.
   - Support for books in TXT format.
   - Various backend changes
 
