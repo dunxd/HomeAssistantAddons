@@ -5,6 +5,9 @@ configuration:
   rsync:
     name: Enable rsync
     description: Enable rsync server in the configuration - if your Calibre Library is on a network share you do NOT need this enabled.
+  reader:
+    name: In --Browser Reader
+    description: Select between more feature rich epubjs or original monocle reader for in-browser reading.
   smtp_host:
     name: Mail Server Host
     description: If you want to enable sending books by email (e.g. to a Kindle email address) add the server name here. E.g. for Gmail use smtp.gmail.com.

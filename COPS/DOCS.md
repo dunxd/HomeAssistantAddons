@@ -62,6 +62,10 @@ Once this is done, your users can add their email address (where they will recie
 
 It is possible for the user to adjust some settings in the web interface. Currently this is only available in the Default template - click on the link at the top right to change to that template, then click on the spanner icon. If you want to email ePubs to your Kindle from within COPS you set your Kindle's email address in the _Set your email (to allow book emailing)_ box.
 
+### In-browser reader
+
+You can select from the original _monocle_ HTML reader for in-browser reading, and a more modern _epubjs_ reader, which allows bookmarking and notes. The bookmarks and notes are _only_ stored in the local web browser - if you open the book in a different web browser or on a different device the bookmarks and notes will not be the same.
+
 ## Accessing the library from a Kindle
 
 The library can be accessed using the Web Browser in an Amazon Kindle, and MOBI and AZW format files can be downloaded. Unfortunately the Kindle web browser does not work well with the nicer Bootstrap2 template, and it is also not easy to switch back to Default. As a result, I have made the Default template the initial template. If you find yourself stuck in the Bootstrap2 template, clear your cookies and you should get the Default template again. If you reset your cookies, you need to add your Kindle email address back in Settings.

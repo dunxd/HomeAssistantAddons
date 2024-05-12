@@ -1,5 +1,12 @@
 # HA COPS Changelog
 
+## [1.21] - 2024-05-12
+
+- Incorporate [COPS 2.6.1](https://github.com/mikespub-org/seblucas-cops/releases/tag/2.6.1)
+  - Inity _epubjs_ as default in-browser reader - switch back to _monocle_ in Configuration.
+  - Support for books in TXT format.
+  - Various backend changes
+
 ## [1.20] - 2024-03-12
 
 - Revert epubreader to Monocle - issues with mobile browser view with Intity that need resolving.
