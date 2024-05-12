@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.21.1] - 2024-05-12
+
+- Switch back to _monocle_ as default in-browser reader as it still doesn't support small screens well enough
+
 ## [1.21] - 2024-05-12
 
 - Incorporate [COPS 2.6.1](https://github.com/mikespub-org/seblucas-cops/releases/tag/2.6.1)
