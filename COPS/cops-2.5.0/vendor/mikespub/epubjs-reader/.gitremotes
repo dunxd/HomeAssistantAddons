@@ -1,3 +1,0 @@
-[remote "upstream"]
-	url = https://github.com/intity/epubjs-reader.git
-	fetch = +refs/heads/*:refs/remotes/upstream/*
