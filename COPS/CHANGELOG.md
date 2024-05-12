@@ -2,7 +2,7 @@
 
 ## [1.21.2] - 2024-05-12
 
-- Resolved issue with _epubjs_ and reverted to using it as default
+- Better testing of _epubjs_ revealed problem was person in the chair so reverted to using it as default :-)
 
 ## [1.21.1] - 2024-05-12
 
