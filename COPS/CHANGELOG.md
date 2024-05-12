@@ -1,5 +1,11 @@
 # HA COPS Changelog
 
+## [1.21] - 2024-05-12
+
+- Incorporate [COPS 2.6.0](https://github.com/mikespub-org/seblucas-cops/releases/tag/2.6.1)
+  - Support for TXT files
+  - Option to select Inity browser based epub reader instead of monocle
+
 ## [1.20] - 2024-03-12
 
 - Revert epubreader to Monocle - issues with mobile browser view with Intity that need resolving.
