@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.21.2] - 2024-05-12
+
+- Resolved issue with _epubjs_ and reverted to using it as default
+
 ## [1.21.1] - 2024-05-12
 
 - Switch back to _monocle_ as default in-browser reader as it still doesn't support small screens well enough
