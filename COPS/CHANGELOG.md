@@ -1,6 +1,6 @@
 # HA COPS Changelog
 
-## [1.21.2] - 2024-05-13
+## [1.22] - 2024-05-13
 
 - Config settings to improve _ebpubjs-reader_ page turns on mobile phones.
 
