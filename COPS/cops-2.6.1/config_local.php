@@ -81,3 +81,12 @@ $config['cops_download_series'] = ['EPUB', 'MOBI'];
  * Specify which formats to show download all buttons on pages listing all books by an author
  */
 $config['cops_download_author'] = ['EPUB', 'MOBI'];
+
+/*
+ * Change epubjs-reader settings to be more mobile friendly
+ */
+$config['cops_epubjs_reader_settings'] = '{
+    arrows: "content",
+    flow: "paginated",
+    openbook: false
+}';

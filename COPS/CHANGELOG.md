@@ -1,8 +1,12 @@
 # HA COPS Changelog
 
+## [1.21.2] - 2024-05-13
+
+- Config settings to improve _ebpubjs-reader_ page turns on mobile phones.
+
 ## [1.21.1] - 2024-05-12
 
-- Switch back to _monocle_ as default in-browser reader as it still doesn't support small screens well enough
+- Switch back to _monocle_ as default in-browser reader as _epubjs-reader_ still doesn't support small screens well enough
 
 ## [1.21] - 2024-05-12
 
