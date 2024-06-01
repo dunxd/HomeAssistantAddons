@@ -21,6 +21,7 @@ Once installed see [DOCS.md](DOCS.md) for further details of how to configure.
 # Known issues
 
 - Search does not work on Kindle in bootstrap template. default, bootstrap2 and bootstrap5 have been fixed so it works. default template works best with Kindle eInk experimental browser.
+- epubjs browser based epub reader has some great features but doesn't work great on small screens such as smart phones. Currently monocle is the default reader, but you can switch to epubjs in the config to check it out.
 
 # Acknowledgements
 
