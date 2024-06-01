@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.23] - 2024-06-01
+
+- Incorporate [COPS 2.7.1](https://github.com/mikespub-org/seblucas-cops/releases/tag/2.7.2)
+
 ## [1.22] - 2024-05-13
 
 - Config settings to improve _ebpubjs-reader_ page turns on mobile phones.
