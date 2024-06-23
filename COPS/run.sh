@@ -3,6 +3,7 @@
 
 #Capture Options set by user
 TITLE=$(bashio::config 'title')
+LIBRARY_PATH="/media/$(bashio::config 'library_folder')"
 
 COPS_CONFIG="/cops/config_local.php"
 
@@ -57,15 +58,14 @@ fi
 echo "$CONFIG_STR" >> "$COPS_CONFIG"
 
 # Create a books directory in /media on the host if it doesn't already exist
-mkdir -p /media/books
+mkdir -p $LIBRARY_PATH
 cd /cops || return
-# Create a link to the books directory called library
-ln -s /media/books library
+# Create a link to the configured directory called library
+ln -s $LIBRARY_PATH library
 
 # Start rsync and php daemons depending on rsync setting
 if [ "$(bashio::config 'rsync')" = "true" ]
 then
-
     bashio::log.green 'starting rsync and php servers'
     rsync --daemon & php -S 0.0.0.0:8000
 else
