@@ -3,10 +3,9 @@
 
 #Capture Options set by user
 TITLE=$(bashio::config 'title')
-LIBRARY_PATH="/media/$(bashio::config 'library_folder')"
+LIBRARY_FOLDER="/media/$(bashio::config 'library_folder')"
 
 COPS_CONFIG="/cops/config_local.php"
-RSYNCD_CONFIG="/etc/rsncd.conf"
 
 # Create lines for the config file here
 CONFIG_STR=$(
@@ -59,10 +58,11 @@ fi
 echo "$CONFIG_STR" >> "$COPS_CONFIG"
 
 # Create a books directory in /media on the host if it doesn't already exist
-mkdir -p "$LIBRARY_PATH"
+mkdir -p "$LIBRARY_FOLDER"
 cd /cops || return
-# Create a link to the configured directory called library
-ln -s "$LIBRARY_PATH" library
+# Create a link to the configured directory called library - this works with
+# rsync as well as for locating the Calibre Library
+ln -s "$LIBRARY_FOLDER" library
 
 # Start rsync and php daemons depending on rsync setting
 if [ "$(bashio::config 'rsync')" = "true" ]
