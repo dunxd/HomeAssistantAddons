@@ -19,7 +19,7 @@ This is useful if you don't want to run another computer 24/7 or if storage spac
 rsync -av --exclude '*.original_*' ~/Calibre\ Library/* rsync://{server_address}:8873/books
 ```
 
-You may need to change `~/Calibre\ Library` to where your Calibre library is stored - the above example works for a Mac running a standard install of Calibre.
+You may need to change `~/Calibre\ Library` to where your Calibre library is stored - the above example works for a Mac running a standard install of Calibre. The rsync path always ends in `/books`, even if you changed the folder path in the add-on config.
 
 You can use this command to sync any changes made in Calibre - new books added, changes to metadata etc. You can exclude files from being transferred using [the `--exclude` option for rsync](https://www.man7.org/linux/man-pages/man1/rsync.1.html#FILTER_RULES). In the example above I have excluded file types starting `.original_*` type files, as mostly these are duplicates of files converted in Calibre, and original_epub and original_azw are ignored by COPS anyway. Suggestions for improving this are welcome.
 

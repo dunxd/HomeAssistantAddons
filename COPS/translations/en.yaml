@@ -2,6 +2,9 @@ configuration:
   title:
     name: Library Title
     description: The display name for your library, which will be displayed at the top of the library home.
+  library_folder:
+    name: Library Folder
+    description: The name of the folder inside media where your books will be stored.  If your Calibre Library is on a network share, this is where it is mounted. If local this is the relative path within HA's media folder. By default, this is set to books, mapping to /media/books/.
   rsync:
     name: Enable rsync
     description: Enable rsync server in the configuration - if your Calibre Library is on a network share you do NOT need this enabled.

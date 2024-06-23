@@ -1,5 +1,5 @@
 name: "HA COPS"
-version: "1.23"
+version: "1.24"
 slug: "ha-cops"
 description: "Minimal Calibre library web interface"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
@@ -20,15 +20,17 @@ map:
   - media:rw
 options:
   title: "COPS"
+  library_folder: books
   rsync: true
   reader: monocle
 schema:
   title: str
+  library_folder: str
   rsync: bool
   reader: list(monocle|epubjs)
   smtp_host: str?
   smtp_username: str?
   smtp_password: password?
-  smtp_secure: match(^$|ssl|tls)?
+  smtp_secure: list(ssl|tls)?
   smtp_port: int?
   address_from: email?

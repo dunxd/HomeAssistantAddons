@@ -17,7 +17,7 @@ if (!isset($config)) {
  * containing all the formats.
  * BEWARE : it has to end with a /
  */
-$config['calibre_directory'] = '/media/books/';
+$config['calibre_directory'] = 'library/';
 
 /*
  * use URL rewriting for downloading of ebook in HTML catalog

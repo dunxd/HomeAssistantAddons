@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.24] - 2024-06-23
+
+- Allow specifying a different path within HA's media folder - this is useful if you mounted your Calibre Libary somewhere other than books, or have uploaded it to a different directory
+
 ## [1.23] - 2024-06-01
 
 - Incorporate [COPS 2.7.1](https://github.com/mikespub-org/seblucas-cops/releases/tag/2.7.2)
