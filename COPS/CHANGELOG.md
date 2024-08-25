@@ -1,5 +1,10 @@
 # HA COPS Changelog
 
+## [1.25] - 2024-08-25
+
+- Incorporate [COPS 2.7.3](https://github.com/mikespub-org/seblucas-cops/releases/tag/2.7.3)
+- Set initial page to Recent Additions - you can still get back to the top level menu from the home link in the top left, but when you go to index.php it will now show the most recently added 50 books.
+
 ## [1.24] - 2024-06-23
 
 - Allow specifying a different path within HA's media folder - this is useful if you mounted your Calibre Libary somewhere other than books, or have uploaded it to a different directory
