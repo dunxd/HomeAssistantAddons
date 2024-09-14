@@ -80,5 +80,31 @@
     </ul>
 </nav>
 {{?}}
+{{? it.extra }}
+    {{? it.extra.series }}
+    <div class="card">
+        <h5 class="card-title">{{=it.c.i18n.seriesTitle}}</h5>
+        <ul class="list-group list-group-flush">
+        {{~it.extra.series:series:idx}}
+            <li class="list-group-item"><a href="{{=series.navlink}}" class="card-link">{{=series.title}}</a> ({{=series.number}})</li>
+        {{~}}
+        </ul>
+    </div>
+    {{?}}
+    {{? it.extra.title }}
+    <div class="card">
+        <h5 class="card-title">{{=it.extra.title}}</h5>
+        {{? it.extra.link }}
+        <p class="card-text">{{=it.c.i18n.linkTitle}}: <a rel="external" target="_blank" href="{{=it.extra.link}}" class="card-link">{{=it.extra.link}}</a></p>
+        {{?}}
+        {{? it.extra.content }}
+        <div class="card-body">
+            {{=it.extra.content}}
+        {{?}}
+        </div>
+    </div>
+    {{?}}
+
+{{?}}
 </div>
 <div id="error"></div>
