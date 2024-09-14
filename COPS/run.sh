@@ -71,5 +71,5 @@ then
     rsync --daemon & php -S 0.0.0.0:8000
 else
     bashio::log.yellow 'starting php server only'
-    php -S 0.0.0.0:8000
+    php -S 0.0.0.0:8000 router.php
 fi
