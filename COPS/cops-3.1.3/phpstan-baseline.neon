@@ -1,0 +1,41 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Static method SebLucas\\\\Cops\\\\Calibre\\\\Annotation\\:\\:forgetAboutConvertAnnotations\\(\\) is unused\\.$#"
+			count: 1
+			path: src/Calibre/Annotation.php
+
+		-
+			message: "#^Property SebLucas\\\\Cops\\\\Calibre\\\\CustomColumn\\:\\:\\$value \\(string\\) on left side of \\?\\? is not nullable\\.$#"
+			count: 1
+			path: src/Calibre/CustomColumn.php
+
+		-
+			message: "#^Call to an undefined method DOMNode\\:\\:getAttribute\\(\\)\\.$#"
+			count: 1
+			path: src/Calibre/Metadata.php
+
+		-
+			message: "#^Call to an undefined method DOMNode\\:\\:getElementsByTagName\\(\\)\\.$#"
+			count: 1
+			path: src/Calibre/Metadata.php
+
+		-
+			message: "#^Anonymous function has an unused use \\$request\\.$#"
+			count: 1
+			path: src/Handlers/GraphQLHandler.php
+
+		-
+			message: "#^Negated boolean expression is always false\\.$#"
+			count: 1
+			path: src/Output/Format.php
+
+		-
+			message: "#^Call to an undefined method SebLucas\\\\Cops\\\\Pages\\\\Page\\:\\:getContent\\(\\)\\.$#"
+			count: 1
+			path: src/Output/JsonRenderer.php
+
+		-
+			message: "#^Comparison operation \"\\>\" between 0 and 0 is always false\\.$#"
+			count: 1
+			path: src/Output/JsonRenderer.php
