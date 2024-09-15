@@ -1,6 +1,6 @@
 # HA COPS Changelog
 
-## [1.26.2] - 2024-09-14
+## [1.26.3] - 2024-09-14
 
 - Incorporate [COPS 3.1.3](https://github.com/mikespub-org/seblucas-cops/releases/tag/3.1.3)
 - Add list of all series by author to author page in Bootstrap5 (bootstrap2 and twigged templates already include this with 3.1.3)
