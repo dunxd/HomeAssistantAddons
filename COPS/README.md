@@ -25,4 +25,4 @@ Once installed see [DOCS.md](DOCS.md) for further details of how to configure.
 
 # Acknowledgements
 
-This is based on [COPS](https://github.com/seblucas/cops) written by Sebastian Lucas, but [updated to use PHP8 by mikespub-org](https://github.com/mikespub-org/seblucas-cops).
+This is based on [COPS](https://github.com/seblucas/cops) written by Sebastian Lucas, but [updated to use PHP8 by mikespub-org](https://github.com/mikespub-org/seblucas-cops). Thanks [horus68](https://github.com/horus68) for the Portuguese translation for the add-on configuration options!
