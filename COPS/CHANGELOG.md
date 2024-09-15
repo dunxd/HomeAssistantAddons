@@ -1,5 +1,10 @@
 # HA COPS Changelog
 
+## [1.26.4] - 2024-09-15
+
+- Portuguese translation for add-on settings - thanks @horus68!
+- Fix bootstrap integrity hashes
+
 ## [1.26.3] - 2024-09-14
 
 - Incorporate [COPS 3.1.3](https://github.com/mikespub-org/seblucas-cops/releases/tag/3.1.3)
