@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>EPub Manager</title>
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/smoothness/jquery-ui-1.13.2.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/cleditor/jquery.cleditor-1.4.5.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+
+    <script type="text/javascript">
+        {{ alert }}
+    </script>
+</head>
+<body>
+
+<div id="wrapper">
+    <ul id="booklist">
+        {{ booklist }}
+    </ul>
+
+    <h1>EPub Manager</h1>
+
+    <p>View and edit epub books stored in <code>{{ bookdir }}</code>.</p>
+    <div class="license">
+    <p>{{ license }}</p>
+    </div>
+
+    <!-- load at the end, for faster site load -->
+    <script type="text/javascript" src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-ui-1.13.2.custom.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.cleditor-1.4.5.min.js"></script>
+    <script type="text/javascript" src="../assets/js/script.js"></script>
+
+</div>
+</body>
+</html>

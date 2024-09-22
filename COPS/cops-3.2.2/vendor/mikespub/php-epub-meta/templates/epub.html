@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>EPub Manager</title>
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/smoothness/jquery-ui-1.13.2.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/cleditor/jquery.cleditor-1.4.5.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+
+    <script type="text/javascript">
+        {{ alert }}
+    </script>
+</head>
+<body>
+
+<div id="wrapper">
+    <ul id="booklist">
+        {{ booklist }}
+    </ul>
+
+    <form action="" method="post" id="bookpanel" enctype="multipart/form-data">
+        <input type="hidden" name="book" value="{{ book }}" />
+
+        <table>
+            <tr>
+                <th>Title</th>
+                <td><input type="text" name="title" value="{{ title }}" /></td>
+            </tr>
+            <tr>
+                <th>Authors</th>
+                <td id="authors">
+                    {{ authors }}
+                </td>
+            </tr>
+            <tr>
+                <th>Description<br />
+                    <img src="{{ cover }}" id="cover" width="90"
+                         class="{{ imgclass }}" />
+                </th>
+                <td><textarea name="description">{{ description }}</textarea></td>
+            </tr>
+            <tr>
+                <th>Subjects</th>
+                <td><input type="text" name="subjects"  value="{{ subjects }}" /></td>
+            </tr>
+            <tr>
+                <th>Publisher</th>
+                <td><input type="text" name="publisher" value="{{ publisher }}" /></td>
+            </tr>
+            <tr>
+                <th>Copyright</th>
+                <td><input type="text" name="copyright" value="{{ copyright }}" /></td>
+            </tr>
+            <tr>
+                <th>Language</th>
+                <td><p><input type="text" name="language"  value="{{ language }}" /></p></td>
+            </tr>
+            <tr>
+                <th>ISBN</th>
+                <td><p><input type="text" name="isbn"      value="{{ isbn }}" /></p></td>
+            </tr>
+            <tr>
+                <th>Cover Image</th>
+                <td><p>
+                    <input type="file" name="coverfile" />
+                    URL: <input type="text" name="coverurl" value="" />
+                </p></td>
+        </table>
+        <div class="center">
+            <input name="save" type="submit" />
+        </div>
+    </form>
+
+    <!-- load at the end, for faster site load -->
+    <script type="text/javascript" src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-ui-1.13.2.custom.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.cleditor-1.4.5.min.js"></script>
+    <script type="text/javascript" src="../assets/js/script.js"></script>
+
+</div>
+</body>
+</html>

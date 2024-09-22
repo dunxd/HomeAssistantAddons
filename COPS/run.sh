@@ -5,7 +5,7 @@
 TITLE=$(bashio::config 'title')
 LIBRARY_FOLDER="/media/$(bashio::config 'library_folder')"
 
-COPS_CONFIG="/cops/config_local.php"
+COPS_CONFIG="/cops/config/config.php"
 
 # Create lines for the config file here
 CONFIG_STR=$(
