@@ -1,5 +1,10 @@
 # HA COPS Changelog
 
+## [1.27] - 2024-09-22
+
+- Incorporate [COPS 3.2.2](https://github.com/mikespub-org/seblucas-cops/releases/tag/3.2.2)
+- Fix to new locaation for config file
+
 ## [1.26.4] - 2024-09-15
 
 - Portuguese translation for add-on settings - thanks @horus68!
