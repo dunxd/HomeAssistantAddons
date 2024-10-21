@@ -1,5 +1,8 @@
 # HA COPS Changelog
 
+## [1.28] - 2024-10-21
+- Incorporate [COPS 3.3.1](https://github.com/mikespub-org/seblucas-cops/releases/tag/3.3.1)
+
 ## [1.27.1] - 2024-09-22
 
 - Incorporate [COPS 3.2.2](https://github.com/mikespub-org/seblucas-cops/releases/tag/3.2.2)
