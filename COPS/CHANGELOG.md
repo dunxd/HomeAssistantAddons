@@ -1,6 +1,12 @@
 # HA COPS Changelog
 
+## [1.29] - 2024-11-24
+
+- Incorporate [COPS 3.4.5](https://github.com/mikespub-org/seblucas-cops/releases/tag/3.4.5)
+- Use minified bootstrap icons css in Bootstrap5 template
+
 ## [1.28] - 2024-10-21
+
 - Incorporate [COPS 3.3.1](https://github.com/mikespub-org/seblucas-cops/releases/tag/3.3.1)
 
 ## [1.27.1] - 2024-09-22

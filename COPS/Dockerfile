@@ -10,7 +10,7 @@ RUN apk add --no-cache \
 
 # Copy data for add-on
 COPY run.sh /
-COPY cops-3.3.1 /cops/
+COPY cops-3.4.5 /cops/
 COPY rsyncd.conf /etc/
 RUN chmod a+x /run.sh
 
