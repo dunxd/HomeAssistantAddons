@@ -1,5 +1,5 @@
 name: "HA COPS"
-version: "1.29"
+version: "1.30"
 slug: "ha-cops"
 description: "Minimal Calibre library web interface"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
