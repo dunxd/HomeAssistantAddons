@@ -3,6 +3,7 @@
 ## [1.30] - 2024-12-14
 
 - Incorporate [COPS 3.4.6](https://github.com/mikespub-org/seblucas-cops/releases/tag/3.4.6)
+- Enable route URLs in PHP dev server
 
 ## [1.29] - 2024-11-24
 

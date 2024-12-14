@@ -68,7 +68,7 @@ ln -s "$LIBRARY_FOLDER" library
 if [ "$(bashio::config 'rsync')" = "true" ]
 then
     bashio::log.green 'starting rsync and php servers'
-    rsync --daemon & php -S 0.0.0.0:8000
+    rsync --daemon & php -S 0.0.0.0:8000 router.php
 else
     bashio::log.yellow 'starting php server only'
     php -S 0.0.0.0:8000 router.php
