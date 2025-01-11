@@ -1,0 +1,31 @@
+{# filters.html is used for it.isFilterPage #}
+{% extends 'mainlist.html' %}
+
+{% block content %}
+<div id="content" class="container-fluid">
+    <div class="row">
+        <!-- group entries by filter group -->
+        {% for group in it.filterGroups %}
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 col-half-padding">
+            {% block filtergroup %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <a href="{{group.header.navlink}}">
+                        {{group.header.title|escape}}
+                    </a>
+                </div>
+                {% for entry in group.entries %}
+                    <a href="{{entry.navlink}}">
+                        <div class="panel-body">
+                            {{entry.title|escape}}
+                            <span class="badge pull-right">{{entry.number}}</span>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+            {% endblock filtergroup %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
