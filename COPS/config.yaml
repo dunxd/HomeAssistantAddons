@@ -21,13 +21,13 @@ map:
 options:
   title: "COPS"
   library_folder: books
-  library_string: 
+  library_string: "./"
   rsync: true
   reader: monocle
 schema:
   title: str
   library_folder: str
-  library_string: 
+  library_string: str
   rsync: bool
   reader: list(monocle|epubjs)
   smtp_host: str?
