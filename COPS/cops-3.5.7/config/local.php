@@ -91,3 +91,16 @@ $config['cops_download_author'] = ['EPUB', 'MOBI'];
  *      INDEX to use the default
  */
 $config['cops_home_page'] = 'ALL_RECENT_BOOKS';
+
+/*
+ * Set front controller to remove index.php/ from route URLs generated in COPS
+ *
+ * Note: this assumes your web server config will rewrite /... to /index.php/...
+ * - Apache: .htaccess
+ * - Nginx: nginx.conf
+ * - PHP built-in: router.php
+ * - ...
+ *
+ * $config['cops_front_controller'] = 'index.php';
+ */
+$config['cops_front_controller'] = 'router.php';
