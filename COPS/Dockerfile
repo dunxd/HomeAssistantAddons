@@ -9,7 +9,7 @@ RUN apk add --no-cache \
   php php-intl php-sqlite3 php-pdo_sqlite php-gd php-mbstring php-zip php-dom php-openssl php-xmlwriter rsync
 
 # Install kepubify
-RUN curl -o /usr/bin/kepubify -L "https://github.com/pgaskin/kepubify/releases/download/v4.0.4/kepubify-linux-64bit" && \
+RUN curl -o /usr/bin/kepubify -L "https://github.com/pgaskin/kepubify/releases/latest/download/kepubify-linux-64bit" && \
     chmod 755 /usr/bin/kepubify
 
 # Copy data for add-on
