@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.33] - 2025-04-05
+
+- Add support for kepub files
+
 ## [1.32] - 2025-03-17
 
 - Incorporate [COPS 3.5.7](https://github.com/mikespub-org/seblucas-cops/releases/tag/3.5.7)

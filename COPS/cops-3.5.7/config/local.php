@@ -104,3 +104,5 @@ $config['cops_home_page'] = 'ALL_RECENT_BOOKS';
  * $config['cops_front_controller'] = 'index.php';
  */
 $config['cops_front_controller'] = 'router.php';
+
+$config['cops_kepubify_path'] = '/usr/bin/kepubify';
