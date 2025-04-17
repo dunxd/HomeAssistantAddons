@@ -8,7 +8,7 @@
 // Remember - Kindle Experimental does not support greater than EC5 features.
 
 var templatePage,
-  templateBookDetail,
+  templateBookDetail, 
   templateMain,
   templateSuggestion,
   currentData,
