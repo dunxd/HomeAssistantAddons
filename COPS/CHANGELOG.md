@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.34] - 2025-04-21
+
+- Add PHP Session to container to fix customize link
+
 ## [1.33] - 2025-04-21
 
 - Incorporate [COPS 3.6.1](https://github.com/mikespub-org/seblucas-cops/releases/tag/3.6.1)
