@@ -1,5 +1,12 @@
 # HA COPS Changelog
 
+## [1.35] - 2025-05-15
+
+- Incorporate [COPS 3.6.5](https://github.com/mikespub-org/seblucas-cops/releases/tag/3.6.5)
+- Set default style to kindle - this style works well with eReaders where changing style may be more difficult, so this is a safe choice. If you prefer a different style you are still able to change this and the preference will be stored as a cookie.
+- Tweaks to README and DOCS to align with previous changes I forgot to document
+- Added PHP session which is needed in COPS now
+
 ## [1.34] - 2025-04-21
 
 - Add PHP Session to container to fix customize link

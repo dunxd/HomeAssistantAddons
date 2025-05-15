@@ -27,7 +27,7 @@ You can use this command to sync any changes made in Calibre - new books added, 
 
 As of Home Assistant 2023.6 it is possible to mount a network share onto your Home Assistant share. This is particularly useful if your Calibre Library is stored on Network Attached Storage.
 
-To use a Network Share you need to set it up in Home Assistant:
+To use a Network Share with HA COPS you need to first set it up in Home Assistant:
 
 [![Open your Home Assistant instance and show storage information.](https://my.home-assistant.io/badges/storage.svg)](https://my.home-assistant.io/redirect/storage/)
 
@@ -37,13 +37,13 @@ Click on the Add Network Storage button and create a mount named `books` with Us
 
 Note that you do not need to escape spaces if the share name has them in it.
 
-If you are using this method, you can disable the rsync server in the add-on configuration.
+If you are using this method, you should probably disable the rsync server in the add-on configuration, as you don't need it.
 
 ## Accessing your library
 
 You can access your library in your browser at http://_ha-ip-address-or-name_:8000. You can change the port if necessary. Ingress does not currently work.
 
-You can also access an OPDS feed of your library in apps like [Librera reader (Android)](https://librera.mobi/) allowing you to easily download books into the reader. The feed is available at http://_ha-ip-address-or-name_:8000/feed.php
+You can also access an OPDS feed of your library in apps like [Librera reader (Android)](https://librera.mobi/) or [KOReader])https://koreader.rocks/) allowing you to easily browse your library and download books into the reader. The feed is available at http://_ha-ip-address-or-name_:8000/feed
 
 ## Emailing ePubs
 
@@ -60,7 +60,7 @@ Once this is done, your users can add their email address (where they will recie
 
 ## User side configuration
 
-It is possible for the user to adjust some settings in the web interface. Currently this is only available in the Default template - click on the link at the top right to change to that template, then click on the spanner icon. If you want to email ePubs to your Kindle from within COPS you set your Kindle's email address in the _Set your email (to allow book emailing)_ box.
+It is possible for each user to adjust some settings in the web interface. Currently this is only available in the Default template - click on the link at the top right to change to that template, then click on the spanner icon. If you want to email ePubs to your Kindle from within COPS you set your Kindle's email address in the _Set your email (to allow book emailing)_ box.
 
 ### In-browser reader
 
@@ -68,7 +68,7 @@ You can select from the original _monocle_ HTML reader for in-browser reading, a
 
 ## Accessing the library from a Kindle
 
-The library can be accessed using the Web Browser in an Amazon Kindle, and MOBI and AZW format files can be downloaded. Unfortunately the Kindle web browser does not work well with the nicer Bootstrap2 template, and it is also not easy to switch back to Default. As a result, I have made the Default template the initial template. If you find yourself stuck in the Bootstrap2 template, clear your cookies and you should get the Default template again. If you reset your cookies, you need to add your Kindle email address back in Settings.
+The library can be accessed using the Web Browser in an Amazon Kindle, and MOBI and AZW format files can be downloaded. Unfortunately the Kindle web browser does not work well with the nicer Bootstrap2 template, and it is also not easy to switch back to Default. As a result, I have made the Default template the initial template with the kindle style. If you find yourself stuck in the Bootstrap2 template, clear your cookies and you should get the Default template again. If you reset your cookies, you need to add your Kindle email address back in Settings.
 
 ### Receiving emailed ePubs on your Kindle
 
@@ -76,7 +76,7 @@ If you have an Amazon Kindle or use one of the Kindle apps, it will have its own
 
 ## Security
 
-This Add-on is intended to be run in a home network, _not_ on the public internet. The PHP built in web server is not designed for scale and does not have security features. rsync is also not intended to be made available over the public internet. Sharing your books publically is also not advised. Pages are served over an unencrypted http connection.
+This Add-on is intended to be run in a home network, _not_ on the public internet. The PHP built in web server is not designed for scale and does not have any security features. rsync is also not intended to be made available over the public internet. Sharing your books publically is not advised and possibly illegal. Pages are served over an unencrypted http connection.
 
 I use the Cloudflared Add-on to make my library available outside my home - this allows simple passcode logins using Cloudflare Zero Trust.
 
@@ -85,4 +85,4 @@ I use the Cloudflared Add-on to make my library available outside my home - this
 - You are able to change the display name of your library.
 - You can disable rsync if you do not need it (i.e. you are using a network share to access your Calibre Library).
 - You can set mail server settings if you want to send ebooks from this addon to an email address - e.g. a @kindle.com address.
-- You can switch browser based reader between monocle (original) and epubjs (more feature full but not extensively tested yet)
+- You can switch browser based reader between monocle (original) and epubjs (more featureful but may not work well on all browsers). epubjs is now the default as it works well in most places you might want to use it.
