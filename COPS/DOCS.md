@@ -85,4 +85,4 @@ I use the Cloudflared Add-on to make my library available outside my home - this
 - You are able to change the display name of your library.
 - You can disable rsync if you do not need it (i.e. you are using a network share to access your Calibre Library).
 - You can set mail server settings if you want to send ebooks from this addon to an email address - e.g. a @kindle.com address.
-- You can switch browser based reader between monocle (original) and epubjs (more featureful but may not work well on all browsers). epubjs is now the default as it works well in most places you might want to use it.
+- You can switch browser based reader between monocle (original) and epubjs (more featureful but may not work well on all browsers).
