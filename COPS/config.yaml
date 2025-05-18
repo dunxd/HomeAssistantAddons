@@ -1,6 +1,6 @@
-name: "HA COPS (Kepub)"
-version: "1.33b2"
-slug: "ha-cops-kepub"
+name: "HA COPS"
+version: "1.36"
+slug: "ha-cops"
 description: "Minimal Calibre library web interface"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
 init: false
