@@ -1,6 +1,6 @@
 # HA COPS Changelog
 
-## [1.36] - 2025-04-05
+## [1.35-kepub] - 2025-04-05
 
 - Add support for kepub files
 
