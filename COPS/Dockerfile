@@ -6,11 +6,10 @@ FROM $BUILD_FROM
 # Also install rsync. `apk add php` will install 8.1 today (July 2023), and assume in future alpine releases may install more
 # recent version.
 RUN apk add --no-cache \
-  php php-intl php-sqlite3 php-pdo_sqlite php-gd php-mbstring php-zip php-dom php-openssl php-xmlwriter php-session rsync
+  php php-intl php-sqlite3 php-pdo_sqlite php-gd php-mbstring php-zip php-dom php-openssl php-xmlwriter php-session rsync go
 
 # Install kepubify
-RUN curl -o /usr/bin/kepubify -L "https://github.com/pgaskin/kepubify/releases/latest/download/kepubify-linux-64bit" && \
-    chmod 755 /usr/bin/kepubify
+RUN go install github.com/pgaskin/kepubify@latest
 
 # Copy data for add-on
 COPY run.sh /
