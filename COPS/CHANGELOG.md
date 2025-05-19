@@ -2,7 +2,7 @@
 
 ## [1.35-kepub] - 2025-04-05
 
-- Add support for kepub files
+- Add support for kepub files - epub files requested by a Kobo e-reader should now be delivered as a special kepub file. **I don't have a Kobo to test this on, so [please provide feedback](https://github.com/dunxd/HomeAssistantAddons/issues) especially if this doesn't work!**
 
 ## [1.35] - 2025-05-15
 
