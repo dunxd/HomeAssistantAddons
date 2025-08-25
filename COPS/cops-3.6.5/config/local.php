@@ -57,7 +57,7 @@ $config['cops_opds_filter_links'] = ['author', 'language', 'rating', 'tag'];
 /*
  * Specify the formats preferred to make available for download
  */
-$config['cops_prefered_format'] = array('EPUB', 'MOBI', 'PDF', 'AZW3', 'AZW', 'CBR', 'CBZ');
+$config['cops_prefered_format'] = ['EPUB', 'MOBI', 'PDF', 'AZW3', 'AZW', 'CBR', 'CBZ'];
 
 /*
  * Use "default" template as default - this works best with eReaders.  Customize page allows change to template used
