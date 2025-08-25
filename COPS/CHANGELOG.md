@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.37] - 2025-08-25
+
+- Fix format of `prefered_order` in `config/local.php` - see [issue #84](https://github.com/dunxd/HomeAssistantAddons/issues/84)
+
 ## [1.36] - 2025-05-19
 
 - Add support for kepub files - epub files requested by a Kobo e-reader should now be delivered as a special kepub file. **I don't have a Kobo to test this on, so [please provide feedback](https://github.com/dunxd/HomeAssistantAddons/issues) especially if this doesn't work!**
