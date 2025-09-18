@@ -13,7 +13,7 @@ RUN go install github.com/pgaskin/kepubify@latest
 
 # Copy data for add-on
 COPY run.sh /
-COPY cops-3.6.5 /cops/
+COPY cops-3.7.2 /cops/
 COPY rsyncd.conf /etc/
 RUN chmod a+x /run.sh
 

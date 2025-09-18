@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.38] - 2025-09-18
+
+- Incorporate [COPS 3.7.2](https://github.com/mikespub-org/seblucas-cops/releases/tag/3.7.2)
+
 ## [1.37] - 2025-08-25
 
 - Fix format of `prefered_order` in `config/local.php` - see [issue #84](https://github.com/dunxd/HomeAssistantAddons/issues/84)
