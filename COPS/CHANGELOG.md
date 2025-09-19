@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.39] - 2025-09-19
+
+- Add support for custom columns in Configuration
+
 ## [1.38] - 2025-09-18
 
 - Incorporate [COPS 3.7.2](https://github.com/mikespub-org/seblucas-cops/releases/tag/3.7.2)
