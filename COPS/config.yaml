@@ -1,5 +1,5 @@
 name: "HA COPS"
-version: "1.39"
+version: "1.39-multidb4"
 slug: "ha-cops"
 description: "Minimal Calibre library web interface"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
@@ -23,6 +23,7 @@ options:
   library_folder: books
   rsync: true
   reader: monocle
+  database: "./"
 schema:
   title: str
   library_folder: str
@@ -35,3 +36,4 @@ schema:
   smtp_port: int?
   address_from: email?
   custom_cols: str?
+  database: str
