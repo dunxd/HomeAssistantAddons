@@ -29,6 +29,9 @@ configuration:
   address_from:
     name: Sending Email Address
     description: The email address that files you send will appear to come from. Don't forget to authorize the sender email you configured in your Kindle's Approved Personal Document E-mail List.
+  custom_cols:
+    name: Custom columns
+    description: This must be a string listing the columns you want to display in the format "column_name1", "column_name2". The names are case sensitive. If you aren't using custom columns leave this blank. If you want to see all custom columns enter "*".
 network:
   8000/tcp: The port used to access the library web pages.
   873/tcp: The port used for rsync.
