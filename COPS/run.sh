@@ -54,6 +54,18 @@ END_HEREDOC_SMTP_PORT
     fi
 fi
 
+# If custom columns are set, add that option
+if [ "$(bashio::config 'custom_cols')" != "null" ]
+then
+    CONFIG_STR+=$(
+        cat << END_HEREDOC_CUSTOM_COLUMNS
+        \$config['cops_calibre_custom_column'] = [$(bashio::config 'custom_cols')];
+        \$config['cops_calibre_custom_column_list'] = [$(bashio::config 'custom_cols')];
+        \$config['cops_calibre_custom_column_preview'] = [$(bashio::config 'custom_cols')];
+END_HEREDOC_CUSTOM_COLUMNS
+    )
+fi
+
 # Write the config lines to the end of the config file
 echo "$CONFIG_STR" >> "$COPS_CONFIG"
 
