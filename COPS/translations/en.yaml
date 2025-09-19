@@ -32,6 +32,9 @@ configuration:
   custom_cols:
     name: Custom columns
     description: This must be a string listing the columns you want to display in the format "column_name1", "column_name2". The names are case sensitive. If you aren't using custom columns leave this blank. If you want to see all custom columns enter "*".
+  database:
+    name: Database(s)
+    description: Specify the location of the metadata.db file.  For most users leave this as `./`.  You can use this to specify multiple databases, using an array. See https://community.home-assistant.io/t/new-add-on-minimal-calibre-library-ha-cops/562830/38 for an example.
 network:
   8000/tcp: The port used to access the library web pages.
   873/tcp: The port used for rsync.

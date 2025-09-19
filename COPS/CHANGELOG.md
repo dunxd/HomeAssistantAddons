@@ -1,8 +1,12 @@
 # HA COPS Changelog
 
+## [1.40] - 2025-09
+
+- Add support for multiple databases
+
 ## [1.39] - 2025-09-19
 
-- Add support for custom columns in Configuration
+- Add support for custom columns in Configuration.
 
 ## [1.38] - 2025-09-18
 
