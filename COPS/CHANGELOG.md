@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [1.40] - 2025-12-05
+
+- Incorporate [COPS 3.8.2](https://github.com/mikespub-org/seblucas-cops/releases/tag/3.8.2). I have not yet incorporated new features relating to Authentication or comic readers into HA COPS. If you are keen to see either of these please raise an issue or pull request!
+
 ## [1.39] - 2025-09-19
 
 - Add support for custom columns in Configuration
