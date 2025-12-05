@@ -2,7 +2,7 @@
 
 ## [1.40] - 2025-12-05
 
-- Incorporate [COPS 3.8.2](https://github.com/mikespub-org/seblucas-cops/releases/tag/3.8.2). I have not incorporated new features relating to Authentication or comic readers yet. If you want to see this please raise and issue or pull request!
+- Incorporate [COPS 3.8.2](https://github.com/mikespub-org/seblucas-cops/releases/tag/3.8.2). I have not yet incorporated new features relating to Authentication or comic readers into HA COPS. If you are keen to see either of these please raise an issue or pull request!
 
 ## [1.39] - 2025-09-19
 
