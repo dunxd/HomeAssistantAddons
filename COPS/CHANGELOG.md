@@ -2,7 +2,7 @@
 
 ## [1.41] - 2026-01-12
 
-- Fix sending books by email
+- Fix sending books by email - Implement fix by mikespub-org in util.js to allow router.php in PHP Built in Server
 
 ## [1.40] - 2025-12-05
 
