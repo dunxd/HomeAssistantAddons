@@ -1,12 +1,29 @@
 ARG BUILD_FROM
+ARG PHP_VERSION=84
 FROM $BUILD_FROM
+
+ARG PHP_VERSION
 
 # Install requirements for add-on
 # PHP^8 required with GD image processing, libxml (in base), intl, json (in base), PDO sqlite3, DOM, openssl
 # Also install rsync. `apk add php` will install 8.1 today (July 2023), and assume in future alpine releases may install more
 # recent version.
 RUN apk add --no-cache \
-  php php-intl php-sqlite3 php-pdo_sqlite php-gd php-mbstring php-zip php-dom php-openssl php-xmlwriter php-session rsync go
+  nginx php${PHP_VERSION} php${PHP_VERSION}-fpm php${PHP_VERSION}-intl php${PHP_VERSION}-sqlite3 php${PHP_VERSION}-pdo_sqlite php${PHP_VERSION}-gd php${PHP_VERSION}-mbstring php${PHP_VERSION}-zip php${PHP_VERSION}-dom php${PHP_VERSION}-openssl php${PHP_VERSION}-xmlwriter php${PHP_VERSION}-session rsync go
+
+RUN ln -sf /usr/bin/php${PHP_VERSION} /usr/bin/php && \
+    ln -sf /usr/sbin/php-fpm${PHP_VERSION} /usr/sbin/php-fpm
+
+# Force PHP-FPM to log to stderr (which Docker captures)
+RUN sed -i 's/;error_log = log\/php84\/error.log/error_log = \/dev\/stderr/g' /etc/php${PHP_VERSION}/php-fpm.conf && \
+    sed -i 's/;catch_workers_output = yes/catch_workers_output = yes/g' /etc/php${PHP_VERSION}/php-fpm.d/www.conf && \
+    sed -i 's/;decorate_workers_output = no/decorate_workers_output = no/g' /etc/php${PHP_VERSION}/php-fpm.d/www.conf
+
+# Configure PHP-FPM to listen on 127.0.0.1:9000 instead of a socket
+RUN sed -i "s|listen = /.*|listen = 127.0.0.1:9000|g" /etc/php${PHP_VERSION}/php-fpm.d/www.conf
+
+# Copy NGINX config
+COPY nginx.conf /etc/nginx/http.d/default.conf
 
 # Install kepubify
 RUN go install github.com/pgaskin/kepubify@latest
@@ -16,5 +33,8 @@ COPY run.sh /
 COPY cops-3.8.2 /cops/
 COPY rsyncd.conf /etc/
 RUN chmod a+x /run.sh
+
+# NGINX needs the run directory to exist
+RUN mkdir -p /run/nginx
 
 CMD ["/run.sh" ]

@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [2.0] - 2026-02-01
+
+- Replace PHP built in web server with the more robust NGINX
+
 ## [1.41] - 2026-01-12
 
 - Fix sending books by email - Implement fix by mikespub-org in util.js to allow router.php in PHP Built in Server

@@ -20,14 +20,6 @@ if (!isset($config)) {
 $config['calibre_directory'] = 'library/';
 
 /*
- * use URL rewriting for downloading of ebook in HTML catalog
- * See README for more information
- *  1 : enable
- *  0 : disable
- */
-$config['cops_use_url_rewriting'] = "0";
-
-/*
  * Specify the ignored formats that will never display in COPS
  */
 $config['cops_ignored_formats'] = ['ORIGINAL_EPUB', 'ORIGINAL_AZW3'];
@@ -110,7 +102,7 @@ $config['cops_home_page'] = 'ALL_RECENT_BOOKS';
  *
  * $config['cops_front_controller'] = 'index.php';
  */
-$config['cops_front_controller'] = 'router.php';
+$config['cops_front_controller'] = '';
 
 /* Add kepubify path to support converting kepub files */
 $config['cops_kepubify_path'] = '/root/go/bin/kepubify';

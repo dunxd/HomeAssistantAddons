@@ -76,12 +76,16 @@ cd /cops || return
 # rsync as well as for locating the Calibre Library
 ln -s "$LIBRARY_FOLDER" library
 
-# Start rsync and php daemons depending on rsync setting
-if [ "$(bashio::config 'rsync')" = "true" ]
-then
-    bashio::log.green 'starting rsync and php servers'
-    rsync --daemon & php -S 0.0.0.0:8000 router.php
-else
-    bashio::log.yellow 'starting php server only'
-    php -S 0.0.0.0:8000 router.php
+# Start rsync if enabled
+if [ "$(bashio::config 'rsync')" = "true" ]; then
+    bashio::log.green 'Starting rsync daemon...'
+    rsync --daemon
 fi
+
+# Start PHP-FPM (always required for the web UI)
+bashio::log.green "Starting PHP-FPM..."
+php-fpm -D -R
+
+# Start NGINX in the foreground
+bashio::log.green 'Starting NGINX web server...'
+exec nginx -g "daemon off;"
