@@ -3,6 +3,7 @@
 ## [2.0] - 2026-02-01
 
 - Replace PHP built in web server with the more robust NGINX
+- Specify PHP 8.4 rather than relying on latest version provided by Alpine repo
 
 ## [1.41] - 2026-01-12
 
