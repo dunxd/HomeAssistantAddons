@@ -1,5 +1,13 @@
 # HA COPS Changelog
 
+## [2.0] - 2026-02-01
+
+- Replace PHP built in web server with the more robust NGINX
+- Specify PHP 8.4 rather than relying on latest version provided by Alpine repo
+- Remove support for i386, armhf and armv7 architectures, inline with what Home Assistant supports
+- Changed the way that kepubify is installed, reducing the size of the image - more room for books - and speeding up the install
+- Incorporate [COPS 4.0.4](https://github.com/mikespub-org/seblucas-cops/releases/tag/4.0.2)
+
 ## [1.41] - 2026-01-12
 
 - Fix sending books by email - Implement fix by mikespub-org in util.js to allow router.php in PHP Built in Server
