@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [2.0.1] - 2026-02-02
+
+- Update bootstrap in bootstrap5 tempate to 5.3.8
+
 ## [2.0] - 2026-02-01
 
 - Replace PHP built in web server with the more robust NGINX
