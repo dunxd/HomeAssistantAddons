@@ -8,11 +8,8 @@ panel_icon: mdi:library
 webui: "http://[HOST]:[PORT:8000]/index.php"
 watchdog: "http://[HOST]:[PORT:8000]/index.php"
 arch:
-  - armv7
-  - armhf
   - amd64
   - aarch64
-  - i386
 ports:
   8000/tcp: 8000
   873/tcp: 8873

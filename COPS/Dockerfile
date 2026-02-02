@@ -3,13 +3,14 @@ ARG PHP_VERSION=84
 FROM $BUILD_FROM
 
 ARG PHP_VERSION
+ARG BUILD_ARCH
 
 # Install requirements for add-on
 # PHP^8 required with GD image processing, libxml (in base), intl, json (in base), PDO sqlite3, DOM, openssl
 # Also install rsync. `apk add php` will install 8.1 today (July 2023), and assume in future alpine releases may install more
 # recent version.
 RUN apk add --no-cache \
-  nginx php${PHP_VERSION} php${PHP_VERSION}-fpm php${PHP_VERSION}-intl php${PHP_VERSION}-sqlite3 php${PHP_VERSION}-pdo_sqlite php${PHP_VERSION}-gd php${PHP_VERSION}-mbstring php${PHP_VERSION}-zip php${PHP_VERSION}-dom php${PHP_VERSION}-openssl php${PHP_VERSION}-xmlwriter php${PHP_VERSION}-session rsync go
+  nginx php${PHP_VERSION} php${PHP_VERSION}-fpm php${PHP_VERSION}-intl php${PHP_VERSION}-sqlite3 php${PHP_VERSION}-pdo_sqlite php${PHP_VERSION}-gd php${PHP_VERSION}-mbstring php${PHP_VERSION}-zip php${PHP_VERSION}-dom php${PHP_VERSION}-openssl php${PHP_VERSION}-xmlwriter php${PHP_VERSION}-session rsync curl
 
 RUN ln -sf /usr/bin/php${PHP_VERSION} /usr/bin/php && \
     ln -sf /usr/sbin/php-fpm${PHP_VERSION} /usr/sbin/php-fpm
@@ -26,7 +27,13 @@ RUN sed -i "s|listen = /.*|listen = 127.0.0.1:9000|g" /etc/php${PHP_VERSION}/php
 COPY nginx.conf /etc/nginx/http.d/default.conf
 
 # Install kepubify
-RUN go install github.com/pgaskin/kepubify@latest
+RUN \
+    case "{BUILD_ARCH}" in \
+        "amd64")   ARCH="64bit" ;; \
+        "aarch65") ARCH="arm64" ;; \
+        *)         ARCH="arm64" ;; \
+    esac \
+    && curl -L -s -o /usr/bin/kepubify
 
 # Copy data for add-on
 COPY run.sh /

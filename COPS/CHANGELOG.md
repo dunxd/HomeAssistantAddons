@@ -4,6 +4,7 @@
 
 - Replace PHP built in web server with the more robust NGINX
 - Specify PHP 8.4 rather than relying on latest version provided by Alpine repo
+- Remove support for i386, armhf and armv7 architectures, inline with what Home Assistant supports
 
 ## [1.41] - 2026-01-12
 
