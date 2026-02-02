@@ -7,7 +7,6 @@
 - Remove support for i386, armhf and armv7 architectures, inline with what Home Assistant supports
 - Changed the way that kepubify is installed, reducing the size of the image - more room for books - and speeding up the install
 - Incorporate [COPS 4.0.4](https://github.com/mikespub-org/seblucas-cops/releases/tag/4.0.2)
-- Update Bootstrap5 template to use Bootstrap 5.3.8
 
 ## [1.41] - 2026-01-12
 
