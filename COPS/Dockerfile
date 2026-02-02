@@ -10,7 +10,7 @@ ARG BUILD_ARCH
 # Also install rsync. `apk add php` will install 8.1 today (July 2023), and assume in future alpine releases may install more
 # recent version.
 RUN apk add --no-cache \
-  nginx php${PHP_VERSION} php${PHP_VERSION}-fpm php${PHP_VERSION}-intl php${PHP_VERSION}-sqlite3 php${PHP_VERSION}-pdo_sqlite php${PHP_VERSION}-gd php${PHP_VERSION}-mbstring php${PHP_VERSION}-zip php${PHP_VERSION}-dom php${PHP_VERSION}-openssl php${PHP_VERSION}-xmlwriter php${PHP_VERSION}-session rsync curl
+  nginx php${PHP_VERSION} php${PHP_VERSION}-fpm php${PHP_VERSION}-intl php${PHP_VERSION}-sqlite3 php${PHP_VERSION}-pdo_sqlite php${PHP_VERSION}-gd php${PHP_VERSION}-mbstring php${PHP_VERSION}-zip php${PHP_VERSION}-dom php${PHP_VERSION}-openssl php${PHP_VERSION}-xmlwriter php${PHP_VERSION}-session rsync
 
 RUN ln -sf /usr/bin/php${PHP_VERSION} /usr/bin/php && \
     ln -sf /usr/sbin/php-fpm${PHP_VERSION} /usr/sbin/php-fpm
@@ -26,14 +26,16 @@ RUN sed -i "s|listen = /.*|listen = 127.0.0.1:9000|g" /etc/php${PHP_VERSION}/php
 # Copy NGINX config
 COPY nginx.conf /etc/nginx/http.d/default.conf
 
-# Install kepubify
+# Install kepubify - curl is already in alpine base image
 RUN \
     case "{BUILD_ARCH}" in \
         "amd64")   ARCH="64bit" ;; \
         "aarch65") ARCH="arm64" ;; \
         *)         ARCH="arm64" ;; \
     esac \
-    && curl -L -s -o /usr/bin/kepubify
+    && curl -L -s -o /usr/bin/kepubify \
+       "https://github.com/pgaskin/kepubify/releases/download/v4.0.4/kepubify-linux-${ARCH}" \
+    && chmod a+x /usr/bin/kepubify
 
 # Copy data for add-on
 COPY run.sh /
