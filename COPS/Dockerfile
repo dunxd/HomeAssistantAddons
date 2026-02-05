@@ -30,7 +30,7 @@ COPY nginx.conf /etc/nginx/http.d/default.conf
 RUN \
     case "{BUILD_ARCH}" in \
         "amd64")   ARCH="64bit" ;; \
-        "aarch65") ARCH="arm64" ;; \
+        "aarch64") ARCH="arm64" ;; \
         *)         ARCH="arm64" ;; \
     esac \
     && curl -L -s -o /usr/bin/kepubify \
