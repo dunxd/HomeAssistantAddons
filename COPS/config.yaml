@@ -20,6 +20,7 @@ options:
   library_folder: books
   rsync: true
   reader: monocle
+  koreader_sync: true
 schema:
   title: str
   library_folder: str
@@ -32,3 +33,4 @@ schema:
   smtp_port: int?
   address_from: email?
   custom_cols: str?
+  koreader_sync: bool
