@@ -82,6 +82,25 @@ if [ "$(bashio::config 'rsync')" = "true" ]; then
     rsync --daemon
 fi
 
+# --- Korrosync Sync Server Section ---
+if bashio::config.has_value 'koreader_sync'; then
+    if [ "$(bashio::config 'koreader_sync')" = "true" ]; then
+        bashio::log.green "Starting Korrosync (KOReader Sync Server)..."
+
+        # Ensure the data directory exists in the persistent /data partition
+        mkdir -p /data/korrosync
+
+        # Configure Korrosync via Environment Variables
+        export KORROSYNC_DB_PATH="/data/korrosync/sync.redb"
+        export KORROSYNC_SERVER_ADDRESS="0.0.0.0:8081"
+
+        # Start in background with '&' so the script continues to Nginx
+        # We redirect output to stdout/stderr so it shows in the HA logs
+        /usr/bin/korrosync > /dev/stdout 2> /dev/stderr &
+    fi
+fi
+# --- End Korrosync Section ---
+
 # Start PHP-FPM (always required for the web UI)
 bashio::log.green "Starting PHP-FPM..."
 php-fpm -D -R
