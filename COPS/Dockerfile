@@ -1,8 +1,12 @@
 ARG BUILD_FROM
 ARG PHP_VERSION=84
+ARG KEPUBIFY_VERSION=4.0.4
+ARG KORROSYNC_VERSION=0.2.0
 FROM $BUILD_FROM
 
 ARG PHP_VERSION
+ARG KEPUBIFY_VERSION
+ARG KORROSYNC_VERSION
 ARG BUILD_ARCH
 
 # Install requirements for add-on
@@ -26,16 +30,21 @@ RUN sed -i "s|listen = /.*|listen = 127.0.0.1:9000|g" /etc/php${PHP_VERSION}/php
 # Copy NGINX config
 COPY nginx.conf /etc/nginx/http.d/default.conf
 
-# Install kepubify - curl is already in alpine base image
+# Install kepubify and korrosync- curl is already in alpine base image
 RUN \
-    case "{BUILD_ARCH}" in \
-        "amd64")   ARCH="64bit" ;; \
-        "aarch64") ARCH="arm64" ;; \
-        *)         ARCH="arm64" ;; \
+    case "${BUILD_ARCH}" in \
+        "amd64")   KEPUB_ARCH="64bit" ; KORROSYNC_ARCH="x86_64" ;; \
+        "aarch64") KEPUB_ARCH="arm64" ; KORROSYNC_ARCH="aarch64" ;; \
+        *)         KEPUB_ARCH="arm64" ; KORROSYNC_ARCH="aarch64" ;; \
     esac \
     && curl -L -s -o /usr/bin/kepubify \
-       "https://github.com/pgaskin/kepubify/releases/download/v4.0.4/kepubify-linux-${ARCH}" \
-    && chmod a+x /usr/bin/kepubify
+       "https://github.com/pgaskin/kepubify/releases/download/v${KEPUBIFY_VERSION}/kepubify-linux-${KEPUB_ARCH}" \
+    && chmod a+x /usr/bin/kepubify \
+    && curl -L -s -o /tmp/korrosync.tar.gz \
+       "https://github.com/szaffarano/korrosync/releases/download/v${KORROSYNC_VERSION}/korrosync-${KORROSYNC_ARCH}-unknown-linux-musl.tar.gz" \
+    && tar -xzf /tmp/korrosync.tar.gz -C /usr/bin/ \
+    && chmod a+x /usr/bin/korrosync \
+    && rm /tmp/korrosync.tar.gz
 
 # Copy data for add-on
 COPY run.sh /
