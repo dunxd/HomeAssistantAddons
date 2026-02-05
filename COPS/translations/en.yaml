@@ -32,6 +32,10 @@ configuration:
   custom_cols:
     name: Custom columns
     description: This must be a string listing the columns you want to display in the format "column_name1", "column_name2". The names are case sensitive. If you aren't using custom columns leave this blank. If you want to see all custom columns enter "*".
+  koreader_sync:
+    name: Activate Koreader sync server
+    description: This enables the Korrosync server allowing users of your library who use Koreader to sync their reading progress across devices
 network:
   8000/tcp: The port used to access the library web pages.
   873/tcp: The port used for rsync.
+  8001/tcp: The port used for korrosync.
