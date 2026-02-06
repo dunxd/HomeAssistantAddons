@@ -102,7 +102,7 @@ $config['cops_home_page'] = 'ALL_RECENT_BOOKS';
  *
  * $config['cops_front_controller'] = 'index.php';
  */
-$config['cops_front_controller'] = '';
+$config['cops_front_controller'] = 'index.php';
 
 /* Add kepubify path to support converting kepub files */
 $config['cops_kepubify_path'] = '/root/go/bin/kepubify';
