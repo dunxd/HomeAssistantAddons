@@ -1,8 +1,10 @@
 # HA COPS Changelog
 
-## [2.0.1] - 2026-02-02
+## [2.1] - 2026-02-06
 
-- Update bootstrap in bootstrap5 tempate to 5.3.8
+- Add korrasync feature to allow synchronising reading progress from koreader - see DOCS.md for more info
+- Improving handling of user passed strings from HA conf - it should be hearder to accidentally break the server now
+- Fixed routing so that http://server-address:8000/feeds type URLs work again. http://server-address:8000/index.php/feeds will also work.
 
 ## [2.0] - 2026-02-01
 
