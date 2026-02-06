@@ -41,14 +41,16 @@ COPS_CONFIG="/cops/config/local.php"
 # Create lines for the config file here
 CONFIG_STR=$(
 cat << END_HEREDOC_TITLE
+
 \$config['cops_title_default'] = '$TITLE';
 END_HEREDOC_TITLE
 )
 
 # Specify which eReader to use
 CONFIG_STR+=$(
-    cat << END_HEREDOC_READER
-    \$config['cops_epub_reader'] = '$READER';
+cat << END_HEREDOC_READER
+
+\$config['cops_epub_reader'] = '$READER';
 END_HEREDOC_READER
 )
 
@@ -56,17 +58,19 @@ END_HEREDOC_READER
 if bashio::config.has_value 'smtp_host';then
 CONFIG_STR+=$(
 cat << END_HEREDOC_SMTP_HOST
+
 \$config['cops_mail_configuration'] = array( "smtp.host" => '$SMTP_HOST',
-                                             "smtp.username" => '$SMTP_USERNAME',
-                                             "smtp.password" => '$SMTP_PASSWORD',
-                                             "address.from" => '$ADDRESS_FROM'
-                                             );
+                                            "smtp.username" => '$SMTP_USERNAME',
+                                            "smtp.password" => '$SMTP_PASSWORD',
+                                            "address.from" => '$ADDRESS_FROM'
+                                            );
 END_HEREDOC_SMTP_HOST
 )
     # Enable ssl if smtp_secure set to true
     if bashio::config.has_value 'smtp_secure'; then
     CONFIG_STR+=$(
 cat << END_HEREDOC_SMTP_SECURE
+
 \$config['cops_mail_configuration']['smtp.secure'] = '$SMTP_SECURE';
 END_HEREDOC_SMTP_SECURE
     )
@@ -75,6 +79,7 @@ END_HEREDOC_SMTP_SECURE
     if bashio::config.has_value 'smtp_port'; then
     CONFIG_STR+=$(
 cat << END_HEREDOC_SMTP_PORT
+
 \$config['cops_mail_configuration']['smtp.port'] = '$SMTP_PORT';
 END_HEREDOC_SMTP_PORT
     )
@@ -94,6 +99,7 @@ if bashio::config.has_value 'custom_cols'; then
     FORMATTED_COLS=$(echo "$CLEAN_COLS" | sed 's/,/","/g; s/^/"/; s/$/"/')
     CONFIG_STR+=$(
 cat << END_HEREDOC_CUSTOM_COLUMNS
+
 \$config['cops_calibre_custom_column'] = [$FORMATTED_COLS];
 \$config['cops_calibre_custom_column_list'] = [$FORMATTED_COLS];
 \$config['cops_calibre_custom_column_preview'] = [$FORMATTED_COLS];
