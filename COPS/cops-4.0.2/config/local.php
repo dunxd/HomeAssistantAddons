@@ -107,3 +107,5 @@ $config['cops_front_controller'] = '';
 /* Add kepubify path to support converting kepub files */
 $config['cops_kepubify_path'] = '/root/go/bin/kepubify';
 $config['cops_provide_kepub'] = '1';
+
+/* HA-COPS add-on config gets added after this line */
