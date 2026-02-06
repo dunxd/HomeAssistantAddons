@@ -66,17 +66,16 @@ END_HEREDOC_SMTP_HOST
     # Enable ssl if smtp_secure set to true
     if bashio::config.has_value 'smtp_secure'; then
     CONFIG_STR+=$(
-        cat << END_HEREDOC_SMTP_SECURE
-        \$config['cops_mail_configuration']['smtp.secure'] = '$SMTP_SECURE';
+cat << END_HEREDOC_SMTP_SECURE
+\$config['cops_mail_configuration']['smtp.secure'] = '$SMTP_SECURE';
 END_HEREDOC_SMTP_SECURE
     )
-        fi
-
+    fi
     # If port set, add that option
     if bashio::config.has_value 'smtp_port'; then
     CONFIG_STR+=$(
-        cat << END_HEREDOC_SMTP_PORT
-        \$config['cops_mail_configuration']['smtp.port'] = '$SMTP_PORT';
+cat << END_HEREDOC_SMTP_PORT
+\$config['cops_mail_configuration']['smtp.port'] = '$SMTP_PORT';
 END_HEREDOC_SMTP_PORT
     )
     fi
@@ -94,10 +93,10 @@ if bashio::config.has_value 'custom_cols'; then
     # Result: "col1","col2","col3"
     FORMATTED_COLS=$(echo "$CLEAN_COLS" | sed 's/,/","/g; s/^/"/; s/$/"/')
     CONFIG_STR+=$(
-        cat << END_HEREDOC_CUSTOM_COLUMNS
-        \$config['cops_calibre_custom_column'] = [$FORMATTED_COLS];
-        \$config['cops_calibre_custom_column_list'] = [$FORMATTED_COLS];
-        \$config['cops_calibre_custom_column_preview'] = [$FORMATTED_COLS];
+cat << END_HEREDOC_CUSTOM_COLUMNS
+\$config['cops_calibre_custom_column'] = [$FORMATTED_COLS];
+\$config['cops_calibre_custom_column_list'] = [$FORMATTED_COLS];
+\$config['cops_calibre_custom_column_preview'] = [$FORMATTED_COLS];
 END_HEREDOC_CUSTOM_COLUMNS
     )
 fi
