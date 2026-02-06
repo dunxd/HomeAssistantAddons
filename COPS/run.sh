@@ -127,7 +127,7 @@ if bashio::config.true 'koreader_sync'; then
 
         # Configure Korrosync via Environment Variables
         export KORROSYNC_DB_PATH="/data/korrosync/sync.redb"
-        export KORROSYNC_SERVER_ADDRESS="0.0.0.0:8001"
+        export KORROSYNC_SERVER_ADDRESS="127.0.0.1:3000"
 
         # Start in background with '&' so the script continues to Nginx
         # We redirect output to stdout/stderr so it shows in the HA logs

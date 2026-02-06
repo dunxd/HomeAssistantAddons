@@ -1,5 +1,5 @@
 name: "HA COPS"
-version: "2.0.1c"
+version: "2.0.1"
 slug: "ha-cops"
 description: "Minimal Calibre library web interface"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
@@ -13,7 +13,6 @@ arch:
 ports:
   8000/tcp: 8000
   873/tcp: 8873
-  8001/tcp: 8001
 map:
   - media:rw
 options:
