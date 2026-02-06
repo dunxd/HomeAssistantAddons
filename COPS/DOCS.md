@@ -45,6 +45,12 @@ You can access your library in your browser at http://_ha-ip-address-or-name_:80
 
 You can also access an OPDS feed of your library in apps like [Librera reader (Android)](https://librera.mobi/) or [KOReader])https://koreader.rocks/) allowing you to easily browse your library and download books into the reader. The feed is available at http://_ha-ip-address-or-name_:8000/feed
 
+## Syncing reading progress
+
+Users of koreader can now sync their reading progress across multiple devices. To do this, first Activate Koreader sync server from the Add-on config page and restart.
+
+Then configure koreader's Progress Sync feature to specify http://_ha-ip-address-or-name_:8000/sync, and use the Register/Login feature to set up a sync account. Then on your other devices, use the same server location, username and password to sync progress. You need to have copies of the book/document on both the device you started reading on and on the device you want to continue reading on. Each person that uses the library can sync their own devices by using a different username and password
+
 ## Emailing ePubs
 
 As of 1.9 you can send ePub books by email from the server. To do this you need to enable _Show unused optional configuration options_ on the Options page, then set the mail server options appropriately. For example, to send using a Gmail account you will need to:
