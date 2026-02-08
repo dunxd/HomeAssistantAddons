@@ -49,7 +49,7 @@ You can also access an OPDS feed of your library in apps like [Librera reader (A
 
 Users of koreader can now sync their reading progress across multiple devices. To do this, first Activate Koreader sync server from the Add-on config page and restart.
 
-Then configure koreader's Progress Sync feature to specify http://_ha-ip-address-or-name_:8000/sync, and use the Register/Login feature to set up a sync account. Then on your other devices, use the same server location, username and password to sync progress. You need to have copies of the book/document on both the device you started reading on and on the device you want to continue reading on. Each person that uses the library can sync their own devices by using a different username and password
+Then configure koreader's Progress Sync feature to specify http://_ha-ip-address-or-name_:8000/sync, and use the Register/Login feature to set up a sync account. Then on your other devices, use the same server location, username and password to sync progress. You need to have copies of the book/document you are syncing on both the device you started reading on and on the device you want to continue reading on. Each person that uses the library can sync their own devices by using a different username and password
 
 ## Emailing ePubs
 
