@@ -48,7 +48,7 @@ RUN \
 
 # Copy data for add-on
 COPY run.sh /
-COPY cops-4.0.2 /cops/
+COPY cops-4.1.0 /cops/
 COPY rsyncd.conf /etc/
 RUN chmod a+x /run.sh
 
