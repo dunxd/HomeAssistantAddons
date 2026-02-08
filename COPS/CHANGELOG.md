@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [2.1.1] - 2026-02-08
+
+- Incorporate [COPS 4.1.0](https://github.com/mikespub-org/seblucas-cops/releases/tag/4.1.0)
+
 ## [2.1] - 2026-02-06
 
 - Add korrasync feature to allow synchronising reading progress from koreader - see DOCS.md for more info
