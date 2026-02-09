@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bashio
+# shellcheck shell=bash
+
+bashio::log.green "Starting PHP-FPM via s6..."
+# -F means "force to stay in foreground"
+# -R means "allow running as root" (required for some Alpine setups)
+exec php-fpm -F -R

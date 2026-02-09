@@ -14,7 +14,20 @@ ARG BUILD_ARCH
 # Also install rsync. `apk add php` will install 8.1 today (July 2023), and assume in future alpine releases may install more
 # recent version.
 RUN apk add --no-cache \
-  nginx php${PHP_VERSION} php${PHP_VERSION}-fpm php${PHP_VERSION}-intl php${PHP_VERSION}-sqlite3 php${PHP_VERSION}-pdo_sqlite php${PHP_VERSION}-gd php${PHP_VERSION}-mbstring php${PHP_VERSION}-zip php${PHP_VERSION}-dom php${PHP_VERSION}-openssl php${PHP_VERSION}-xmlwriter php${PHP_VERSION}-session rsync
+  nginx \
+  php${PHP_VERSION} \
+  php${PHP_VERSION}-fpm \
+  php${PHP_VERSION}-intl \
+  php${PHP_VERSION}-sqlite3 \
+  php${PHP_VERSION}-pdo_sqlite \
+  php${PHP_VERSION}-gd \
+  php${PHP_VERSION}-mbstring \
+  php${PHP_VERSION}-zip \
+  php${PHP_VERSION}-dom \
+  php${PHP_VERSION}-openssl \
+  php${PHP_VERSION}-xmlwriter \
+  php${PHP_VERSION}-session \
+  rsync
 
 RUN ln -sf /usr/bin/php${PHP_VERSION} /usr/bin/php && \
     ln -sf /usr/sbin/php-fpm${PHP_VERSION} /usr/sbin/php-fpm
@@ -27,8 +40,10 @@ RUN sed -i 's/;error_log = log\/php84\/error.log/error_log = \/dev\/stderr/g' /e
 # Configure PHP-FPM to listen on 127.0.0.1:9000 instead of a socket
 RUN sed -i "s|listen = /.*|listen = 127.0.0.1:9000|g" /etc/php${PHP_VERSION}/php-fpm.d/www.conf
 
-# Copy NGINX config
-COPY nginx.conf /etc/nginx/http.d/default.conf
+COPY rootfs /
+
+RUN find /etc/s6-overlay/s6-rc.d -type f -name "run" -exec chmod 755 {} + && \
+    find /etc/s6-overlay/s6-rc.d -type f -name "up" -exec chmod 755 {} +
 
 # Install kepubify and korrosync- curl is already in alpine base image
 RUN \
@@ -52,6 +67,8 @@ COPY cops-4.1.0 /cops/
 COPY rsyncd.conf /etc/
 RUN chmod a+x /run.sh
 
+# Copy NGINX config
+COPY nginx.conf /etc/nginx/http.d/default.conf
 # NGINX needs the run directory to exist
 RUN mkdir -p /run/nginx
 
