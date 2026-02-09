@@ -1,0 +1,5 @@
+#!/command/execlineb -P
+# shellcheck shell=bash
+
+# Start PHP-FPM (always required for the web UI)
+php-fpm -D -R

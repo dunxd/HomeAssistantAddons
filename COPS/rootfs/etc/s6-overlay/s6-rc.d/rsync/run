@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv bashio
+# shellcheck shell=bash
+
+# Start rsync if enabled
+if bashio::config.true 'rsync'; then
+    bashio::log.green 'Starting rsync daemon...'
+    rsync --daemon
+fi

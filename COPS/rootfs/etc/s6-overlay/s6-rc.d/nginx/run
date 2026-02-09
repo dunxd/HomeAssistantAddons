@@ -1,0 +1,4 @@
+#!/command/execlineb -P
+# shellcheck shell=bash
+
+exec nginx -g "daemon off;" 2>&1

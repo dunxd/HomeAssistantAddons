@@ -1,0 +1,22 @@
+#!/usr/bin/with-contenv bashio
+# shellcheck shell=bash
+
+# Get the path from HA options
+MEDIA_PATH=$(bashio::config 'calibre_directory')
+
+# Generate rsyncd.conf
+bashio::log.info "Generating Rsync configuration for ${MEDIA_PATH}..."
+
+cat <<EOF > /etc/rsyncd.conf
+uid = root
+gid = root
+use chroot = no
+max connections = 4
+pid file = /run/rsyncd.pid
+
+[calibre]
+    path = ${MEDIA_PATH}
+    comment = Calibre Library
+    read only = no
+    lock file = /run/rsync.lock
+EOF
