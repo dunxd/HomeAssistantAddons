@@ -1,6 +1,9 @@
 {
   "name": "HA Add-ons Dev",
   "image": "ghcr.io/home-assistant/devcontainer:2-addons",
+  "features": {
+    "gchr.io/devcontainers/features/github-cli:1": {}
+  },
   "appPort": ["7123:8123", "7357:4357", "8000:8000"],
   "postStartCommand": "bash devcontainer_bootstrap",
   "runArgs": ["-e", "GIT_EDITOR=code --wait", "--privileged"],
@@ -23,7 +26,9 @@
         "editor.formatOnSave": true,
         "editor.formatOnType": true,
         "files.trimTrailingWhitespace": true,
-        "php.executablePath": "/usr/local/bin/php"
+        "php.executablePath": "/usr/local/bin/php",
+        "github.gitAuthentication": true,
+        "git.terminalAuthentication": true
       }
     }
   },
