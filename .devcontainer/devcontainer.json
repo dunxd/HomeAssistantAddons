@@ -30,5 +30,10 @@
   "mounts": [
     "type=volume,target=/var/lib/docker",
     "type=volume,target=/mnt/supervisor"
-  ]
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest"
+    }
+  }
 }
