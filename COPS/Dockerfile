@@ -19,6 +19,12 @@ RUN apk add --no-cache \
 RUN ln -sf /usr/bin/php${PHP_VERSION} /usr/bin/php && \
     ln -sf /usr/sbin/php-fpm${PHP_VERSION} /usr/sbin/php-fpm
 
+COPY rootfs /
+
+RUN chmod a+x /etc/cont-init.d/* \
+    && chmod a+x /etc/s6-overlay/s6-rc.d/*/run
+
+
 # Force PHP-FPM to log to stderr (which Docker captures)
 RUN sed -i 's/;error_log = log\/php84\/error.log/error_log = \/dev\/stderr/g' /etc/php${PHP_VERSION}/php-fpm.conf && \
     sed -i 's/;catch_workers_output = yes/catch_workers_output = yes/g' /etc/php${PHP_VERSION}/php-fpm.d/www.conf && \
@@ -54,5 +60,3 @@ RUN chmod a+x /run.sh
 
 # NGINX needs the run directory to exist
 RUN mkdir -p /run/nginx
-
-CMD ["/run.sh" ]
