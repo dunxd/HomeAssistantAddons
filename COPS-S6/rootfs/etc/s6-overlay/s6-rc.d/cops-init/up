@@ -1,0 +1,58 @@
+#!/usr/bin/with-contenv bashio
+# shellcheck shell=bash
+set -e
+
+if [ -f /usr/lib/bashio ]; then
+  # shellcheck source=/usr/lib/bashio
+  . /usr/lib/bashio
+fi
+
+bashio::log.info "(s6-rc oneshot) Applying configuration settings to COPS config file..."
+
+prepare_for_php() {
+    if ! bashio::config.has_value "$1"; then
+        echo -n ""
+        return
+    fi
+
+    local val
+    val=$(bashio::config "$1")
+    val=$(echo -n "$val" | tr -d '\000')
+    val="${val//\\/\\\\}"
+    val="${val//\'/\\\'}"
+    echo -n "$val"
+}
+
+TITLE=$(prepare_for_php 'title')
+LIBRARY_FOLDER="/media/$(prepare_for_php 'library_folder')"
+READER=$(prepare_for_php 'reader')
+CUSTOM_COLS=$(bashio::config 'custom_cols')
+
+COPS_CONFIG="/cops/config/local.php"
+CONFIG_STR=$(
+cat << END_HEREDOC_TITLE
+
+\$config['cops_title_default'] = '$TITLE';
+END_HEREDOC_TITLE
+)
+
+if bashio::config.has_value 'custom_cols'; then
+    CLEAN_COLS=$(echo "$CUSTOM_COLS" | tr -d '[]" ')
+    FORMATTED_COLS=$(echo "$CLEAN_COLS" | sed 's/,/","/g; s/^/"/; s/$/"/')
+    CONFIG_STR+=$(
+cat << END_HEREDOC_CUSTOM_COLUMNS
+
+\$config['cops_calibre_custom_column'] = [$FORMATTED_COLS];
+END_HEREDOC_CUSTOM_COLUMNS
+    )
+fi
+
+echo "$CONFIG_STR" >> "$COPS_CONFIG"
+
+bashio::log.info "(s6-rc oneshot) Configuration settings applied to COPS config file."
+
+mkdir -p "$LIBRARY_FOLDER"
+cd /cops || exit 0
+ln -sf "$LIBRARY_FOLDER" library
+
+exit 0
