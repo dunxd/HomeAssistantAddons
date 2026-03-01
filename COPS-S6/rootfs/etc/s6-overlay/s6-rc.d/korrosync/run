@@ -9,6 +9,7 @@ fi
 # Set Configuration
 export KORROSYNC_DB_PATH="/data/korrosync/sync.redb"
 export KORROSYNC_SERVER_ADDRESS="127.0.0.1:3000"
+export RUST_LOG="info"
 
 bashio::log.info "Starting KORROSYNC..."
 exec /usr/bin/korrosync
