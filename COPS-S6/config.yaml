@@ -1,5 +1,5 @@
 name: COPS-S6
-version: 0.2
+version: 1.13
 slug: ha-cops-s6
 description: "Fork of HA-COPS using S6-Overlay"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS-S6"
@@ -19,7 +19,7 @@ options:
   library_folder: books
   rsync: true
   reader: monocle
-  koreader_sync: true
+  koreader_sync: false
 schema:
   title: str
   library_folder: str

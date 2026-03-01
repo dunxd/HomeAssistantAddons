@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bashio
+# shellcheck shell=bash
+
+bashio::log.info "Starting PHP-FPM..."
+
+# -F: Stay in foreground (Required for s6)
+# -R: Allow running as root (Required for some HA setups)
+# (Note: we use 'exec' to hand over PID 1 control to PHP)
+exec php-fpm -F -R
