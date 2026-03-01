@@ -1,7 +1,7 @@
 name: "HA COPS"
-version: 2.2a
+version: "2.2a"
 slug: "ha-cops"
-description: "description: "Minimal Calibre library web interface""
+description: "Minimal Calibre library web interface"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
 panel_icon: mdi:library
 webui: "http://[HOST]:[PORT:8000]/index.php"
