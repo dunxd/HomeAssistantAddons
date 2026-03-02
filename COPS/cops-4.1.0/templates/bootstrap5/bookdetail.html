@@ -30,6 +30,7 @@
         >
         ({{=it.book.seriesIndex}})
       </h4>
+      <!-- download links-->
       {{?}} {{~it.book.datas:data:i}}
       <div class="btn-group">
         <a
@@ -40,6 +41,7 @@
           download
           ><i class="bi-download pe-1"></i>{{=data.format}}</a
         >
+        <!-- end download links -->
         {{? data.mail == 1}}
         <a
           id="mailButton"
@@ -102,7 +104,7 @@
       {{~}} {{? it.book.extraFiles != ""}}
       <p>
         <span class="fw-bold">{{=it.c.i18n.filesTitle}}</span>:
-        {{~it.book.extraFiles:extraFile:i}}<a href="{{=extraFile.url}}"
+        {{~it.book.extraFiles:extraFile:i}}<a href="{{=extraFile.url}}" download
           >{{=htmlspecialchars (extraFile.name)}}</a
         >
         {{~}}

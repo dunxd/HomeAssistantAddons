@@ -61,10 +61,11 @@
                 {{~}}
             </div>
             <div class="card-footer">
-                <!-- download buttons for each available format - added the download attribute -->
+                <!-- download buttons for each available format -->
                     {{~ entry.book.preferedData:data:i}}
                     <a href="{{=data.url}}" class="btn btn-primary btn-sm" role="button" download>{{=data.name}}</a>
                     {{~}}
+                <!-- end of download buttons-->
             </div>
         </div>
     {{~}}
