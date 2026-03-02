@@ -18,7 +18,7 @@
 <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 text-xs-center text-sm-left ">
     {% for data in it.book.datas %}
     <div class="btn-group">
-        <a title="Download // {{data.format}}" href="{{data.url}}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-download"></span> {{data.format}}</a>
+        <a title="Download // {{data.format}}" href="{{data.url}}" class="btn btn-primary" role="button" download><span class="glyphicon glyphicon-download"></span> {{data.format}}</a>
         {% if data.qrcode == 1 %}
         <a id="qrButton" class="btn btn-primary" role="button" title="QR Code" href="#" onclick="showQRCode('qrcode', '{{data.url}}'); return false;">
         <span class="glyphicon glyphicon-qrcode"></span></a>
@@ -92,7 +92,7 @@
     {% for column in it.book.customcolumns_preview  %}
     <p>
         <h4>
-            {{column.customColumnType.columnTitle}}: 
+            {{column.customColumnType.columnTitle}}:
             {% if column.htmlvalue != "" and column.url %}
                 {# @todo handle series, csv text etc. links #}
                 {{column.htmlvalue}}
@@ -104,7 +104,7 @@
     {% endfor %}
     {% if it.book.extraFiles != "" %}
     <p>
-        <h4>{{it.c.i18n.filesTitle}}: {% for extraFile in it.book.extraFiles %}<a href="{{extraFile.url}}">{{extraFile.name|escape}}</a> {% endfor %}</h4>
+        <h4>{{it.c.i18n.filesTitle}}: {% for extraFile in it.book.extraFiles %}<a href="{{extraFile.url}}" download>{{extraFile.name|escape}}</a> {% endfor %}</h4>
     </p>
     {% endif %}
     <p>
@@ -116,7 +116,7 @@
 </div>
 
 <div class="row">
-<div class="col-md-offset-2 col-md-8 col-sm-12">    
+<div class="col-md-offset-2 col-md-8 col-sm-12">
     {% if it.book.content != "" %}
     <br />
     <h4>{{it.c.i18n.contentTitle}}</h4>

@@ -10,13 +10,13 @@
     <h1><a title="{{=it.c.i18n.permalinkAlt}}" rel="bookmark" href="{{=it.book.detailurl}}">
         <span class="glyphicon glyphicon-link"></span></a>{{=htmlspecialchars (it.title)}}
     </h1>
-    <h4>{{=it.c.i18n.authorsTitle}}: 
+    <h4>{{=it.c.i18n.authorsTitle}}:
     {{~it.book.authors:author:i}}
     {{? i > 0}}, {{?}}<a href="{{=author.url}}">{{=htmlspecialchars (author.name)}}</a>
     {{~}}
     </h4>
     {{? it.book.tagsName != ""}}
-        <h4>{{=it.c.i18n.tagsTitle}}: 
+        <h4>{{=it.c.i18n.tagsTitle}}:
         {{~it.book.tags:tag:i}}
         {{? i > 0}}, {{?}}<a href="{{=tag.url}}">{{=htmlspecialchars (tag.name)}}</a>
         {{~}}
@@ -32,8 +32,8 @@
 <div class="col-md-2 col-sm-12">
     <div class="btn-group pull-right">
         {{~it.book.datas:data:i}}
-            <a title="Download // {{=data.format}}" href="{{=data.url}}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-download"></span> {{=data.format}}</a>
-            <a title="Open // {{=data.format}}" href="{{=data.viewUrl}}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-folder-open"></span></a>
+            <a title="Download // {{=data.format}}" href="{{=data.url}}" class="btn btn-primary" role="button" download><span class="glyphicon glyphicon-download"></span> {{=data.format}}</a>
+            <a title="Open // {{=data.format}}" href="{{=data.viewUrl}}" class="btn btn-primary" role="button" download><span class="glyphicon glyphicon-folder-open"></span></a>
             {{? data.mail == 1}}
             <a id="mailButton" class="btn btn-primary" role="button" title="Mail // {{=data.format}}" href="empty.php" onclick="sendToMailAddress (this, {{=data.id}}); return false;">
             <span class="glyphicon glyphicon-envelope"></span></a>
@@ -72,7 +72,7 @@
     {{~}}
     {{? it.book.extraFiles != ""}}
     <p>
-        <h4>{{=it.c.i18n.filesTitle}}: </h4>{{~it.book.extraFiles:extraFile:i}}<a href="{{=extraFile.url}}">{{=htmlspecialchars (extraFile.name)}}</a> {{~}}
+        <h4>{{=it.c.i18n.filesTitle}}: </h4>{{~it.book.extraFiles:extraFile:i}}<a href="{{=extraFile.url}}" download>{{=htmlspecialchars (extraFile.name)}}</a> {{~}}
     </p>
     {{?}}
     {{? it.book.content != ""}}
