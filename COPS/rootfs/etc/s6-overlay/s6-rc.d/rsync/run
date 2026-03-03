@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bashio
+# shellcheck shell=bash
+
+if ! bashio::config.true 'rsync'; then
+    # We exit 0 so s6 doesn't think the service "failed",
+    # it just finishes its job immediately.
+    exit 0
+fi
+
+bashio::log.info "Starting RSYNC..."
+# --no-detach keeps it in the foreground for s6 to monitor
+exec rsync --daemon --no-detach --config=/etc/rsyncd.conf

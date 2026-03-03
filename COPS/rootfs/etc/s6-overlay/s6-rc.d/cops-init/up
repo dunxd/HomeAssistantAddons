@@ -1,0 +1,3 @@
+#!/command/with-contenv sh
+# shellcheck shell=sh
+/etc/s6-overlay/s6-rc.d/cops-init/cops-init.sh

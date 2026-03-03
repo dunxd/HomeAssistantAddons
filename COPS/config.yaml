@@ -1,15 +1,14 @@
 name: "HA COPS"
-version: "2.1.1"
+version: "2.2"
 slug: "ha-cops"
 description: "Minimal Calibre library web interface"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
-init: false
 panel_icon: mdi:library
 webui: "http://[HOST]:[PORT:8000]/index.php"
-watchdog: "http://[HOST]:[PORT:8000]/index.php"
 arch:
-  - amd64
   - aarch64
+  - amd64
+init: false
 ports:
   8000/tcp: 8000
   873/tcp: 8873
@@ -20,7 +19,7 @@ options:
   library_folder: books
   rsync: true
   reader: monocle
-  koreader_sync: true
+  koreader_sync: false
 schema:
   title: str
   library_folder: str

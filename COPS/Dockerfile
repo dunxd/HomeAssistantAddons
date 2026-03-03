@@ -1,13 +1,19 @@
 ARG BUILD_FROM
+FROM $BUILD_FROM
+
+# Define different versions as build arguments
 ARG PHP_VERSION=84
 ARG KEPUBIFY_VERSION=4.0.4
 ARG KORROSYNC_VERSION=0.2.0
-FROM $BUILD_FROM
 
-ARG PHP_VERSION
-ARG KEPUBIFY_VERSION
-ARG KORROSYNC_VERSION
+# Get the build architecture as a build argument
 ARG BUILD_ARCH
+
+COPY rootfs /
+COPY cops-4.3.1 /cops/
+
+# Ensure oneshot scripts are executable after copying
+RUN chmod -R 755 /etc/s6-overlay/s6-rc.d/cops-init
 
 # Install requirements for add-on
 # PHP^8 required with GD image processing, libxml (in base), intl, json (in base), PDO sqlite3, DOM, openssl
@@ -27,9 +33,6 @@ RUN sed -i 's/;error_log = log\/php84\/error.log/error_log = \/dev\/stderr/g' /e
 # Configure PHP-FPM to listen on 127.0.0.1:9000 instead of a socket
 RUN sed -i "s|listen = /.*|listen = 127.0.0.1:9000|g" /etc/php${PHP_VERSION}/php-fpm.d/www.conf
 
-# Copy NGINX config
-COPY nginx.conf /etc/nginx/http.d/default.conf
-
 # Install kepubify and korrosync- curl is already in alpine base image
 RUN \
     case "${BUILD_ARCH}" in \
@@ -45,14 +48,3 @@ RUN \
     && tar -xzf /tmp/korrosync.tar.gz -C /usr/bin/ \
     && chmod a+x /usr/bin/korrosync \
     && rm /tmp/korrosync.tar.gz
-
-# Copy data for add-on
-COPY run.sh /
-COPY cops-4.1.0 /cops/
-COPY rsyncd.conf /etc/
-RUN chmod a+x /run.sh
-
-# NGINX needs the run directory to exist
-RUN mkdir -p /run/nginx
-
-CMD ["/run.sh" ]
