@@ -10,7 +10,7 @@ ARG KORROSYNC_VERSION=0.2.0
 ARG BUILD_ARCH
 
 COPY rootfs /
-COPY cops-4.1.0 /cops/
+COPY cops-4.3.1 /cops/
 
 # Ensure oneshot scripts are executable after copying
 RUN chmod -R 755 /etc/s6-overlay/s6-rc.d/cops-init
