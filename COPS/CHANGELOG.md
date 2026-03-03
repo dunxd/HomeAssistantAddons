@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [2.2.1] - 2026-03-03
+
+- Fix rsync path
+
 ## [2.2] - 2026-03-03
 
 - Incorporate [COPS 4.3.1](https://github.com/mikespub-org/seblucas-cops/releases/tag/4.3.1) which amongst other things fixes download of book files
