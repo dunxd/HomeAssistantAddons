@@ -1,5 +1,10 @@
 # HA COPS Changelog
 
+## [2.2] - 2026-03-03
+
+- Incorporate [COPS 4.3.1](https://github.com/mikespub-org/seblucas-cops/releases/tag/4.3.1) which amongst other things fixes download of book files
+- Switch from using monolithic run.sh file to using S6-Overlay which allows better handling of multiple services within the container. There are now 5 services!
+
 ## [2.1.1] - 2026-02-08
 
 - Incorporate [COPS 4.1.0](https://github.com/mikespub-org/seblucas-cops/releases/tag/4.1.0)
