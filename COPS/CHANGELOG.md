@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [2.2.2] - 2026-03-05
+
+- Fix permissions on files added via rsync
+
 ## [2.2.1] - 2026-03-03
 
 - Fix rsync path
