@@ -1,0 +1,25 @@
+#include <tunables/global>
+
+profile ha-cops /init flags=(complain) {
+  #include <abstractions/base>
+
+  # Capabilities
+  file,
+  signal (send) set=(kill,term,int,hup,cont),
+
+  # S6-Overlay
+  /init ix,
+  /run/{s6,s6-rc*,service}/** ix,
+
+  # Bashio
+  /usr/lib/bashio/** ix,
+  /tmp/** rwk,
+
+  # Allow the add-on's own files
+  /data/** rwk,
+
+  # Allow reading and writing to the HA media folder
+  /media/ rw,
+  /media/** rwk,
+
+}
