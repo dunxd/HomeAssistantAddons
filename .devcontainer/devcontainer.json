@@ -3,7 +3,15 @@
   "image": "ghcr.io/home-assistant/devcontainer:3-apps",
   "appPort": ["7123:8123", "7357:4357", "8000:8000"],
   "postStartCommand": "bash devcontainer_bootstrap",
-  "runArgs": ["-e", "GIT_EDITOR=code --wait", "--privileged"],
+  "runArgs": [
+    "-e",
+    "GIT_EDITOR=code --wait",
+    "--privileged",
+    "--volume=/sys/kernel/security:/sys/kernel/security:ro",
+    "--security-opt=apparmor=unconfined",
+    "--cap-add=SYS_ADMIN",
+    "--cap-add=MAC_ADMIN"
+  ],
   "workspaceFolder": "/mnt/supervisor/addons/local/${localWorkspaceFolderBasename}",
   "workspaceMount": "source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind,consistency=cached",
   "containerEnv": {

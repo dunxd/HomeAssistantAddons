@@ -4,18 +4,18 @@ profile ha-cops /init flags=(attach_disconnected,mediate_deleted,complain) {
   #include <abstractions/base>
 
   # Allow standard S6 overlay and Bashio (Home Assistant basics)
-  /init ix,
-  /bin/** ix,
-  /usr/bin/** ix,
-  /run/{s6,s6-rc*,service}/** ix,
-  /usr/lib/bashio/** ix,
+  #/init ix,
+  #/bin/** ix,
+  #/usr/bin/** ix,
+  #/run/{s6,s6-rc*,service}/** ix,
+  #/usr/lib/bashio/** ix,
 
   # COPS specific permissions
   # Allow PHP to read the library and write to logs/config
-  /data/** rw,
-  /media/** r,
+  # /data/** rw,
+  # /media/** r,
 
   # Allow rsync
-  /usr/bin/rsync ix,
+  #/usr/bin/rsync ix,
 
 }
