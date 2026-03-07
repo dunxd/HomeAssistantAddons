@@ -2,6 +2,7 @@
   "name": "HA Add-ons Dev",
   "image": "ghcr.io/home-assistant/devcontainer:3-apps",
   "appPort": ["7123:8123", "7357:4357", "8000:8000"],
+  "postCreateCommand": "sudo apk add apparmor-utils",
   "postStartCommand": "bash devcontainer_bootstrap",
   "runArgs": [
     "-e",
