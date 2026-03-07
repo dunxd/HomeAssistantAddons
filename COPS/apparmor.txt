@@ -1,21 +1,33 @@
 #include <tunables/global>
 
-profile ha-cops /init flags=(attach_disconnected,mediate_deleted,complain) {
+profile local_ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
   #include <abstractions/base>
+  #include <abstractions/nameservice>
 
-  # Allow standard S6 overlay and Bashio (Home Assistant basics)
-  #/init ix,
-  #/bin/** ix,
-  #/usr/bin/** ix,
-  #/run/{s6,s6-rc*,service}/** ix,
-  #/usr/lib/bashio/** ix,
+  # 1. FIX THE SOCKET CREATION (The error=-13 fix)
+  network inet stream,
+  network inet6 stream,
+  network unix stream,
 
-  # COPS specific permissions
-  # Allow PHP to read the library and write to logs/config
-  # /data/** rw,
-  # /media/** r,
+  # 2. GRANT CATEGORIES (The "Plumbing")
+  capability,
+  signal,
+  ptrace,
+  unix,
 
-  # Allow rsync
-  #/usr/bin/rsync ix,
+  # 3. STOP THE //null TRANSITIONS
+  # This is the single rule that forces everything into this profile
+  # so your audit logs are actually useful.
+  /** ix,
 
+  # 4. CAPTURE THE DATA (The "Objective")
+  # We allow everything in complain mode so we can see the paths.
+  / r,
+  /** rwlkm,
+
+  # 5. KNOWN PATHS
+  /data/** rw,
+  /cops/library/** rwlkm,
+  /media/** rwlkm,
+  /etc/rsyncd.conf r,
 }

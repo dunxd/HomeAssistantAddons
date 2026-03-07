@@ -1,18 +1,22 @@
 {
   "name": "HA Add-ons Dev",
   "image": "ghcr.io/home-assistant/devcontainer:3-apps",
-  "appPort": ["7123:8123", "7357:4357", "8000:8000"],
-  "postCreateCommand": "sudo apk add apparmor-utils",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y apparmor-utils",
   "postStartCommand": "bash devcontainer_bootstrap",
   "runArgs": [
     "-e",
     "GIT_EDITOR=code --wait",
     "--privileged",
-    "--volume=/sys/kernel/security:/sys/kernel/security:ro",
+    "--volume=/sys/kernel/security:/sys/kernel/security:rw",
     "--security-opt=apparmor=unconfined",
     "--cap-add=SYS_ADMIN",
-    "--cap-add=MAC_ADMIN"
+    "--cap-add=MAC_ADMIN",
+    "-p", "7123:8123",
+    "-p", "7357:4357",
+    "-p", "8000:8000",
+    "-p", "8873:8873"
   ],
+  "forwardPorts": [8123, 4357, 8000, 8873],
   "workspaceFolder": "/mnt/supervisor/addons/local/${localWorkspaceFolderBasename}",
   "workspaceMount": "source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind,consistency=cached",
   "containerEnv": {
@@ -37,7 +41,11 @@
     }
   },
   "mounts": [
-    "type=volume,target=/var/lib/docker",
-    "type=volume,target=/mnt/supervisor"
-  ]
+    // System Sockets and Cache (Bind Mounts)
+    { "source": "/var/cache/apparmor", "target": "/var/cache/apparmor", "type": "bind" },
+
+    // Persistent Data (Named Volumes)
+    { "source": "ha-docker-cache", "target": "/var/lib/docker", "type": "volume" },
+    { "source": "ha-supervisor-cache", "target": "/mnt/supervisor", "type": "volume" }
+]
 }
