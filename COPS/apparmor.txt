@@ -1,33 +1,35 @@
 #include <tunables/global>
 
 profile local_ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
+  # Basic Home Assistant apparmor profile from https://developers.home-assistant.io/docs/apps/presentation/#apparmor
+
   #include <abstractions/base>
-  #include <abstractions/nameservice>
 
-  # 1. FIX THE SOCKET CREATION (The error=-13 fix)
-  network inet stream,
-  network inet6 stream,
-  network unix stream,
+  # Capabilities
+  file,
+  signal (send) set=(kill,term,int,hup,cont),
 
-  # 2. GRANT CATEGORIES (The "Plumbing")
-  capability,
-  signal,
-  ptrace,
-  unix,
+  # S6-Overlay
+  /init ix,
+  /bin/** ix,
+  /usr/bin/** ix,
+  /run/{s6,s6-rc*,service}/** ix,
+  /package/** ix,
+  /command/** ix,
+  /etc/services.d/** rwix,
+  /etc/cont-init.d/** rwix,
+  /etc/cont-finish.d/** rwix,
+  /run/{,**} rwk,
+  /dev/tty rw,
 
-  # 3. STOP THE //null TRANSITIONS
-  # This is the single rule that forces everything into this profile
-  # so your audit logs are actually useful.
-  /** ix,
+  # Bashio
+  /usr/lib/bashio/** ix,
+  /tmp/** rwk,
 
-  # 4. CAPTURE THE DATA (The "Objective")
-  # We allow everything in complain mode so we can see the paths.
-  / r,
-  /** rwlkm,
-
-  # 5. KNOWN PATHS
+  # Access to options.json and other files within your addon
   /data/** rw,
-  /cops/library/** rwlkm,
-  /media/** rwlkm,
-  /etc/rsyncd.conf r,
+
+  # Basic profile ends
+
+  
 }
