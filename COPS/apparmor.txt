@@ -30,6 +30,4 @@ profile local_ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
   /data/** rw,
 
   # Basic profile ends
-
-  
 }
