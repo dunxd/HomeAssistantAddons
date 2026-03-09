@@ -46,4 +46,5 @@ profile local_ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
   capability setuid,
   capability dac_override,
   capability chown,
+  capability kill,
 }
