@@ -1,6 +1,6 @@
 #include <tunables/global>
 
-profile ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
+profile local_ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
   # Basic Home Assistant apparmor profile from https://developers.home-assistant.io/docs/apps/presentation/#apparmor
 
   #include <abstractions/base>
