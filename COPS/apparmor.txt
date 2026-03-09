@@ -1,4 +1,3 @@
-abi <abi/4.0>,
 #include <tunables/global>
 
 profile local_ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
