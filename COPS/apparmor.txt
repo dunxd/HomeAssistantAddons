@@ -47,4 +47,8 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
   capability dac_override,
   capability chown,
   capability kill,
+
+  # rsync requirements
+  capability fowner,
+  capability fsetid,
 }
