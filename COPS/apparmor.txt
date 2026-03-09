@@ -38,11 +38,13 @@ profile local_ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
   network inet6 stream,
   network inet dgram,
   network inet6 dgram,
+  network unix,
   network unix stream,
   network unix dgram,
 
   # nginx Capabilities
   capability setgid,
+  capability setuid,
   capability dac_override,
   capability chown,
 }
