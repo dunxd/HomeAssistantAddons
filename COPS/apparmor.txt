@@ -41,4 +41,5 @@ profile local_ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
 
   # nginx Capabilities
   capability setgid,
+  capability dac_override,
 }
