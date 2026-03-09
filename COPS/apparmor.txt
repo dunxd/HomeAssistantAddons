@@ -38,4 +38,7 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
   network inet dgram,
   network inet6 dgram,
   network unix stream,
+
+  # nginx Capabilities
+  capability setgid,
 }
