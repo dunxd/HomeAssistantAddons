@@ -1,0 +1,37 @@
+name: "HA COPS v2.1.1"
+version: "2.1.1"
+slug: "ha-cops-v211"
+description: "COPS using nginx but pre s6 overlay.  Use for testing.  Don't install alongside other versions of HA COPS"
+url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
+init: false
+panel_icon: mdi:library
+webui: "http://[HOST]:[PORT:8000]/index.php"
+watchdog: "http://[HOST]:[PORT:8000]/index.php"
+stage: experimental
+arch:
+  - amd64
+  - aarch64
+ports:
+  8000/tcp: 8000
+  873/tcp: 8873
+map:
+  - media:rw
+options:
+  title: "COPS"
+  library_folder: books
+  rsync: true
+  reader: monocle
+  koreader_sync: true
+schema:
+  title: str
+  library_folder: str
+  rsync: bool
+  reader: list(monocle|epubjs)
+  smtp_host: str?
+  smtp_username: str?
+  smtp_password: password?
+  smtp_secure: list(ssl|tls)?
+  smtp_port: int?
+  address_from: email?
+  custom_cols: str?
+  koreader_sync: bool

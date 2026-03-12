@@ -1,0 +1,34 @@
+configuration:
+  title:
+    name: Título da biblioteca
+    description: O nome de exibição da sua biblioteca, que será apresentado no topo da entrada da biblioteca.
+  library_folder:
+    name: Pasta da biblioteca
+    description: O nome da pasta, dentro da pasta media, onde os seus livros serão armazenados. Se a sua Biblioteca Calibre estiver numa partilha de rede, é aqui que esta é montada. Se estiver em  pasta local, este é o caminho relativo dentro da pasta media do HA. Por predefinição, isto é definido como books, com mapeamento para /media/books/.
+  rsync:
+    name: Ativar Rsync
+    description: Ativar o servidor Rsync na configuração. Note que se a sua biblioteca Calibre estiver numa partilha de rede, NÃO precisa disto.
+  reader:
+    name: Leitor no navegador
+    description: Selecione entre Epubjs, mais rico em funcionalidades, ou Monocle, o leitor original de leitura no navegador.
+  smtp_host:
+    name: Máquina do servidor de email
+    description: Se quiser ativar envio de livros por email (por exemplo, para um endereço de email do Kindle), adicione aqui o nome do servidor. Por ex. para Gmail use smtp.gmail.com.
+  smtp_username:
+    name: Nome de utilizador do servidor de email
+    description: O nome de utilizador que utiliza para se autenticar no seu servidor de email. Por ex. para o Gmail, seria o seu endereço de email.
+  smtp_password:
+    name: Senha do servidor de email
+    description: A senha para se autenticar no seu servidor de email.
+  smtp_secure:
+    name: SMTP seguro
+    description: Se o seu servidor de email utilizar encriptação, especifique SSL ou TLS. O Gmail usa SSL.
+  smtp_port:
+    name: Porta SMTP
+    description: Especifique a porta utilizada pelo seu servidor SMTP, caso utilize uma porta não padrão. Se utilizar TLS deve especificar 587.
+  address_from:
+    name: Endereço do email de envio
+    description: O endereço de email de onde os ficheiros que enviar parecerão ter sido enviados. Não se esqueça de autorizar no seu Kindle, na lista de emails de documentos pessoais aprovados, o email de remetente que configurou .
+network:
+  8000/tcp: A porta usada para aceder às páginas web da biblioteca.
+  873/tcp: A porta usada para Rsync.

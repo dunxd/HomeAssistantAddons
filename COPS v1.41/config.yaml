@@ -1,18 +1,16 @@
 name: "HA COPS v1.41"
 version: "1.41"
 slug: "ha-cops-v141"
-description: "Minimal Calibre library web interface"
+description: "v1.41 of HA COPS prior to nginx and s6 - use only for testing and don't install side by side with other versions of HA COPS"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
 init: false
 panel_icon: mdi:library
 webui: "http://[HOST]:[PORT:8000]/index.php"
 watchdog: "http://[HOST]:[PORT:8000]/index.php"
+stage: experimental
 arch:
-  - armv7
-  - armhf
   - amd64
   - aarch64
-  - i386
 ports:
   8000/tcp: 8000
   873/tcp: 8873
