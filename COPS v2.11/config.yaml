@@ -7,7 +7,7 @@ init: false
 panel_icon: mdi:library
 webui: "http://[HOST]:[PORT:8000]/index.php"
 watchdog: "http://[HOST]:[PORT:8000]/index.php"
-stage: experimental
+stage: deprecated
 arch:
   - amd64
   - aarch64
