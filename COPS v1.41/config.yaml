@@ -1,6 +1,6 @@
-name: "HA COPS"
+name: "HA COPS v1.41"
 version: "1.41"
-slug: "ha-cops"
+slug: "ha-cops-v141"
 description: "Minimal Calibre library web interface"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
 init: false
