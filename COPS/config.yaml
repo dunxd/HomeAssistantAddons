@@ -5,6 +5,7 @@ description: "Minimal Calibre library web interface"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
 panel_icon: mdi:library
 webui: "http://[HOST]:[PORT:8000]/index.php"
+stage: stable
 arch:
   - aarch64
   - amd64
