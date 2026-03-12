@@ -1,7 +1,7 @@
 name: "HA COPS v1.41"
 version: "1.41"
 slug: "ha-cops-v141"
-description: "v1.41 of HA COPS prior to nginx and s6 - use only for testing and don't install side by side with other versions of HA COPS"
+description: "v1.41 of HA COPS prior to nginx and s6 - do not run this at the same time as another version of HA COPS!"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
 init: false
 panel_icon: mdi:library

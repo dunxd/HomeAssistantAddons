@@ -1,7 +1,7 @@
 name: "HA COPS v2.1.1"
 version: "2.1.1"
 slug: "ha-cops-v211"
-description: "COPS using nginx but pre s6 overlay.  Use for testing.  Don't install alongside other versions of HA COPS"
+description: "v2.11 of HA COPS pre s6 overlay.  Use for testing.  Don't run alongside other versions of HA COPS!"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
 init: false
 panel_icon: mdi:library
