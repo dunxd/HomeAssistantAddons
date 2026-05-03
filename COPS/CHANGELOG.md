@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [2.2.3] - 2026-05-02
+
+- Update dockerfile to use FROM instead of BUILD_FROM - fixes issue where new installs don't work
+
 ## [2.2.2] - 2026-03-05
 
 - Fix permissions on files added via rsync
