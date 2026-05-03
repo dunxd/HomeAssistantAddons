@@ -1,5 +1,3 @@
-#ARG BUILD_FROM
-#FROM $BUILD_FROM
 FROM ghcr.io/home-assistant/base:latest
 
 # Define different versions as build arguments
