@@ -1,9 +1,5 @@
 # HA COPS Changelog
 
-## [2.3] - 2026-05-17
-
-- Add Apparmor
-
 ## [2.2.4] - 2026-05-17
 
 - Update COPS to [4.3.3](https://github.com/mikespub-org/seblucas-cops/releases/tag/4.3.3)
