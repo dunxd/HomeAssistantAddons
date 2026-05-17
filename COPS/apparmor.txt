@@ -10,6 +10,7 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
   capability setgid,
   capability sys_resource,
   capability dac_override,
+  capability kill,
   file,
   signal (send) set=(kill,term,int,hup,cont),
 
@@ -97,6 +98,8 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
     # Receive signals from S6-Overlay
     signal (receive) peer=*_ha-cops,
 
+    audit allow capability kill,
+
     # Core PHP-FPM binary and configuration read access
     /usr/sbin/php-fpm r,
     /etc/php*/** r,
@@ -134,6 +137,11 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
     # Receive signals from S6-Overlay
     signal (receive) peer=*_ha-cops,
 
+    capability chown,
+    capability setuid,
+    capability setgid,
+    capability fowner,
+    capability fsetid,
     capability dac_override,
     network inet stream,
 
@@ -146,7 +154,7 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
     /run/rsyncd.pid rwk,
 
     # Allow rsync to access and interact with any container process file descriptors
-    /proc/[0-9]*/fd/[0-9]* rcw,
+    /proc/[0-9]*/fd/[0-9]* rw,
 
     # Dynamic user-configured destination path inside /media
     /media/ r,
