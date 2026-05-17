@@ -1,7 +1,7 @@
-name: "HA COPS (Dev test)"
-version: "2.3h"
+name: "HA COPS (Apparpmor Test)"
+version: "2.3"
 slug: "ha-cops-dev"
-description: "Experimental Minimal Calibre library web interface"
+description: "Testing Apparmor with the Minimal Calibre library web interface"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
 panel_icon: mdi:library
 webui: "http://[HOST]:[PORT:8000]/index.php"
