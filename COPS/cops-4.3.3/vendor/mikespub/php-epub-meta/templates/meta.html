@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EPub Metadata</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ baseurl }}/assets/css/style.css">
+</head>
+<body>
+    <div class="container-fluid" id="wrapper">
+        {{ alert }}
+        <div class="row h-100">
+            <!-- Sidebar with book list -->
+            <div class="col-md-3 bg-light sidebar" id="booklist-container">
+                <div class="list-group" id="booklist">
+                    {{ booklist }}
+                </div>
+            </div>
+
+            <!-- Main content area -->
+            <div class="col-md-9 ms-sm-auto px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">EPub Metadata</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <a href="https://github.com/mikespub-org/php-epub-meta" class="btn btn-sm btn-outline-secondary" target="_blank">
+                                <i class="bi bi-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-info" role="alert">
+                    <i class="bi bi-info-circle-fill"></i>
+                    View and edit epub books stored in <code>{{ bookdir }}</code>
+                </div>
+
+                <div class="card mt-4 mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Quick Start</h5>
+                        <p class="card-text">
+                            <i class="bi bi-arrow-right"></i> Select a book from the sidebar to view and edit its metadata<br>
+                            <i class="bi bi-arrow-right"></i> Use the "Lookup Book Data" feature to automatically fill in metadata from online sources<br>
+                            <i class="bi bi-arrow-right"></i> Edit metadata manually using the form fields<br>
+                            <i class="bi bi-arrow-right"></i> Save your changes to update the epub file
+                        </p>
+                    </div>
+                </div>
+
+                <div class="license text-muted small mt-5">
+                    <hr>
+                    <p>{{ license }}</p>
+                    <p class="mb-0">
+                        Last updated: {{ last_updated }} by {{ current_user }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ baseurl }}/assets/js/script.js"></script>
+</div>
+</body>
+</html>

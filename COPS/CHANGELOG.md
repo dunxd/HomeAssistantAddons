@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [2.2.4] - 2026-05-17
+
+- Update COPS to [4.3.3](https://github.com/mikespub-org/seblucas-cops/releases/tag/4.3.3)
+
 ## [2.2.3] - 2026-05-02
 
 - Update dockerfile to use FROM instead of BUILD_FROM - fixes issue where new installs don't work

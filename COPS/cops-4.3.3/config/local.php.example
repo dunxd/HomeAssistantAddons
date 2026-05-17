@@ -1,0 +1,44 @@
+<?php
+
+if (!isset($config)) {
+    $config = [];
+}
+
+/*
+ ***************************************************
+ * Please read config/default.php for all possible
+ * configuration items
+ * For changes in config/default.php see CHANGELOG.md
+ ***************************************************
+ */
+
+/*
+ * The directory containing calibre's metadata.db file, with sub-directories
+ * containing all the formats.
+ * BEWARE : it has to end with a /
+ */
+$config['calibre_directory'] = './';
+
+/*
+ * Catalog's title
+ */
+$config['cops_title_default'] = "COPS";
+
+/*
+ * Set front controller to remove index.php/ from route URLs generated in COPS
+ *
+ * Note: this assumes your web server config will rewrite /... to /index.php/...
+ * - Apache: .htaccess
+ * - Nginx: nginx.conf
+ * - PHP built-in: router.php
+ * - ...
+ *
+ * $config['cops_front_controller'] = 'index.php';
+ */
+$config['cops_front_controller'] = '';
+
+/*
+ * Specify the ignored formats that will never display in COPS
+ * This will also stop downloading them, unless the files are under the web directory
+ */
+$config['cops_ignored_formats'] = ['ORIGINAL_EPUB', 'ORIGINAL_AZW3'];

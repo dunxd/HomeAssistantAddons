@@ -2,14 +2,16 @@ FROM ghcr.io/home-assistant/base:latest
 
 # Define different versions as build arguments
 ARG PHP_VERSION=84
+# Kepubify from https://github.com/pgaskin/kepubify
 ARG KEPUBIFY_VERSION=4.0.4
+# Korrosync from https://github.com/szaffarano/korrosync
 ARG KORROSYNC_VERSION=0.2.0
 
 # Get the build architecture as a build argument
 ARG BUILD_ARCH
 
 COPY rootfs /
-COPY cops-4.3.1 /cops/
+COPY cops-4.3.3 /cops/
 
 # Ensure oneshot scripts are executable after copying
 RUN chmod -R 755 /etc/s6-overlay/s6-rc.d/cops-init
