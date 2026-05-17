@@ -1,6 +1,6 @@
 #include <tunables/global>
 
-profile ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
+profile ha-cops flags=(attach_disconnected,mediate_deleted) {
   #include <abstractions/base>
   #include <abstractions/nameservice>
 
@@ -39,7 +39,7 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
   /usr/bin/rsync cx -> rsync,
   /usr/bin/korrosync cx -> korrosync,
 
-  profile nginx flags=(attach_disconnected,mediate_deleted,complain) {
+  profile nginx flags=(attach_disconnected,mediate_deleted) {
     #include <abstractions/base>
     #include <abstractions/nameservice>
 
@@ -81,7 +81,7 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
     /tmp/nginx/{,**} rwk,
   }
 
-  profile phpfpm flags=(attach_disconnected,mediate_deleted,complain) {
+  profile phpfpm flags=(attach_disconnected,mediate_deleted) {
     #include <abstractions/base>
 
     # Receive signals from S6-Overlay
@@ -117,7 +117,7 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
     /tmp/nginx/{,**} rwk,
   }
 
-  profile rsync flags=(attach_disconnected,mediate_deleted,complain) {
+  profile rsync flags=(attach_disconnected,mediate_deleted) {
     #include <abstractions/base>
     #include <abstractions/nameservice>
 
@@ -141,7 +141,7 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
     /data/** rw,
   }
 
-  profile korrosync flags=(attach_disconnected,mediate_deleted,complain) {
+  profile korrosync flags=(attach_disconnected,mediate_deleted) {
     #include <abstractions/base>
     #include <abstractions/nameservice>
 
