@@ -171,7 +171,11 @@ profile ha-cops-dev flags=(attach_disconnected,mediate_deleted) {
     # Receive signals from S6-Overlay
     audit allow signal (receive) peer=*_ha-cops*,
 
+    # Allow the binary to signal its own internal threads
+    signal peer=@{profile_name},
+
     network inet stream,
+    network inet dgram,
 
     /usr/bin/korrosync rm,
     /bin/bash rix,

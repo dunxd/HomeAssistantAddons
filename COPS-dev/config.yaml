@@ -1,5 +1,5 @@
 name: "HA COPS (Dev test)"
-version: "2.3e"
+version: "2.3f"
 slug: "ha-cops-dev"
 description: "Experimental Minimal Calibre library web interface"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
