@@ -56,7 +56,7 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
     network inet6 stream,
 
     # Core Nginx files and configuration
-    /usr/sbin/nginx r,
+    /usr/sbin/nginx rm,
     /etc/nginx/** r,
 
     # Access to options.json and other files within your addon
