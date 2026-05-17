@@ -1,5 +1,5 @@
 name: "HA COPS (Apparpmor Test)"
-version: "2.3"
+version: "2.3-beta"
 slug: "ha-cops-dev"
 description: "Testing Apparmor with the Minimal Calibre library web interface"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"

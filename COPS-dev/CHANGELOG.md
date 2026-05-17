@@ -2,7 +2,7 @@
 
 ## [2.3] - 2026-05-17
 
-- Add Apparmor
+- Add Apparmor - currently only in complain mode while in testing phase
 
 ## [2.2.4] - 2026-05-17
 
