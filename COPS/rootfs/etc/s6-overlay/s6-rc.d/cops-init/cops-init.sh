@@ -116,7 +116,6 @@ mkdir -p "$LIBRARY_FOLDER"
 cd /cops || return
 # Create a link to the configured directory called library - this works with
 # rsync as well as for locating the Calibre Library
-# Hint: The library folder can always be reached at /cops/library
 ln -sf "$LIBRARY_FOLDER" library
 
 mkdir -p /run/nginx
