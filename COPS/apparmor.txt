@@ -35,6 +35,8 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
 
   # Start new profile for service
   /usr/sbin/nginx cx -> nginx,
+  /usr/sbin/php-fpm cx -> phpfpm,
+  /usr/bin/rsync cx -> rsync,
 
   profile nginx flags=(attach_disconnected,mediate_deleted,complain) {
     #include <abstractions/base>
@@ -75,5 +77,58 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
     /tmp/nginx/{,**} rwk,
   }
 
+  profile phpfpm flags=(attach_disconnected,mediate_deleted,complain) {
+    #include <abstractions/base>
+
+    # Core PHP-FPM binary and configuration read access
+    /usr/sbin/php-fpm r,
+    /etc/php*/** r,
+
+    # Access required for basic execution framework
+    /bin/bash rix,
+    /bin/echo ix,
+    /etc/passwd r,
+    /dev/tty rw,
+
+    # Access to options.json and persistent add-on databases
+    /data/** rw,
+
+    # Access to the web application files (PHP needs read/write for caching/updates)
+    /cops/** rw,
+
+    # Access to user mapped volumes (Read/Write if COPS edits metadata/covers)
+    /share/** r,
+    /media/** r,
+
+    # PHP session storage and temporary execution directories
+    /var/lib/php/sessions/{,**} rwk,
+    /tmp/{,**} rwk,
+
+    # Communication bridge back to Nginx (Unix Domain Socket path)
+    # If your S6 script puts the socket in /run/nginx/ or /tmp/:
+    /run/nginx[._]* rwk,
+    /tmp/nginx/{,**} rwk,
+  }
+
+  profile rsync flags=(attach_disconnected,mediate_deleted,complain) {
+    #include <abstractions/base>
+    #include <abstractions/nameservice>
+
+    network inet stream,
+
+    /usr/bin/rsync rm,
+    /bin/bash rix,
+    /bin/echo ix,
+    /etc/passwd r,
+    /dev/tty rw,
+    /etc/rsyncd.conf r,
+
+    # Dynamic user-configured destination path inside /media
+    /media/ r,
+    /media/*/{,**} rwk,
+
+    # Access to options.json and persistent add-on databases
+    /data/** rw,
+  }
 
 }
