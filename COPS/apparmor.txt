@@ -1,6 +1,6 @@
 #include <tunables/global>
 
-profile ha-cops flags=(attach_disconnected,mediate_deleted) {
+profile ha-cops flags=(attach_disconnected,mediate_deleted,complain) {
   #include <abstractions/base>
   #include <abstractions/nameservice>
 
@@ -39,14 +39,18 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted) {
   /usr/bin/rsync cx -> rsync,
   /usr/bin/korrosync cx -> korrosync,
 
-  profile nginx flags=(attach_disconnected,mediate_deleted) {
+  profile nginx flags=(attach_disconnected,mediate_deleted,complain) {
     #include <abstractions/base>
     #include <abstractions/nameservice>
 
     # Receive signals from S6-Overlay
     signal (receive) peer=*_ha-cops,
 
+    capability chown,
+    capability setuid,
+    capability setgid,
     capability net_bind_service,
+    capability dac_override,
     network inet stream,
     network inet6 stream,
 
@@ -79,9 +83,15 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted) {
     # Nginx Temporary/Buffer Directories (Prevents 500 errors under load)
     /var/tmp/nginx/{,**} rwk,
     /tmp/nginx/{,**} rwk,
+
+    # PID file and Logging access
+    /run/nginx/nginx.pid rw,
+    /run/nginx/nginx.pid w,
+    /proc/*/fd/[0-9]* rw,
+    /etc/ssl/openssl.cnf r,
   }
 
-  profile phpfpm flags=(attach_disconnected,mediate_deleted) {
+  profile phpfpm flags=(attach_disconnected,mediate_deleted,complain) {
     #include <abstractions/base>
 
     # Receive signals from S6-Overlay
@@ -117,13 +127,14 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted) {
     /tmp/nginx/{,**} rwk,
   }
 
-  profile rsync flags=(attach_disconnected,mediate_deleted) {
+  profile rsync flags=(attach_disconnected,mediate_deleted,complain) {
     #include <abstractions/base>
     #include <abstractions/nameservice>
 
     # Receive signals from S6-Overlay
     signal (receive) peer=*_ha-cops,
 
+    capability dac_override,
     network inet stream,
 
     /usr/bin/rsync rm,
@@ -132,6 +143,7 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted) {
     /etc/passwd r,
     /dev/tty rw,
     /etc/rsyncd.conf r,
+    /run/rsyncd.pid rwk,
 
     # Dynamic user-configured destination path inside /media
     /media/ r,
@@ -141,7 +153,7 @@ profile ha-cops flags=(attach_disconnected,mediate_deleted) {
     /data/** rw,
   }
 
-  profile korrosync flags=(attach_disconnected,mediate_deleted) {
+  profile korrosync flags=(attach_disconnected,mediate_deleted,complain) {
     #include <abstractions/base>
     #include <abstractions/nameservice>
 
