@@ -1,0 +1,32 @@
+{
+    "name": "mikespub/epubjs-reader",
+    "description": "Epub.js Reader with zipfs.php",
+    "authors": [
+        {
+            "name": "fchasen",
+            "homepage": "https://github.com/futurepress/epubjs-reader",
+            "role": "Developer"
+        },
+        {
+            "name": "intity",
+            "homepage": "https://github.com/intity/epubreader-js",
+            "role": "Developer"
+        },
+        {
+            "name": "mikespub",
+            "homepage": "https://github.com/mikespub-org/intity-epubjs-reader",
+            "role": "Developer"
+        }
+    ],
+    "type": "library",
+    "license": "MIT",
+    "suggest": {
+        "mikespub/seblucas-cops": "COPS - Calibre OPDS (and HTML) PHP Server"
+    },
+    "autoload-dev": {
+        "files": ["app/functions.php"]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.5"
+    }
+}

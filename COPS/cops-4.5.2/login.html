@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COPS Sign in</title>
+    <script type="text/javascript" src="vendor/npm-asset/jquery/dist/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        #login-container {
+            border: 2px solid #000000;
+            padding: 20px;
+            width: 80%;
+            max-width: 400px;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"] {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.5em;
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(document).ready(function()
+        {
+            $('#loginForm').on("submit", function()
+            {
+              var username = $('#user').val();
+              var password = $('#password').val();
+
+              $.ajax(
+                {
+                  url      : 'index.php',
+                  type     : 'POST',
+                  data     : { username: username, password: password },
+                  success  : function(){ window.location = 'index.php'; },
+                  error    : function(){ alert('Bad Login Details');},
+                }
+              );
+              return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input id="user" type="text" placeholder="Username" required="required" />
+            <input id="password" type="password" placeholder="Password" required="required" />
+            <input id="submit" type="submit" value="Login" />
+        </form>
+    </div>
+</body>
+</html>
