@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [2.2.5] - 2026-05-26
+
+- Update COPS to [4.5.2](https://github.com/mikespub-org/seblucas-cops/releases/tag/4.5.2)
+
 ## [2.2.4] - 2026-05-17
 
 - Update COPS to [4.3.3](https://github.com/mikespub-org/seblucas-cops/releases/tag/4.3.3)
