@@ -5,13 +5,13 @@ ARG PHP_VERSION=84
 # Kepubify from https://github.com/pgaskin/kepubify
 ARG KEPUBIFY_VERSION=4.0.4
 # Korrosync from https://github.com/szaffarano/korrosync
-ARG KORROSYNC_VERSION=0.2.0
+ARG KORROSYNC_VERSION=0.4.0
 
 # Get the build architecture as a build argument
 ARG BUILD_ARCH
 
 COPY rootfs /
-COPY cops-4.5.2 /cops/
+COPY cops-4.5.4 /cops/
 
 # Ensure oneshot scripts are executable after copying
 RUN chmod -R 755 /etc/s6-overlay/s6-rc.d/cops-init
