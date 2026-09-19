@@ -1,5 +1,10 @@
 # HA COPS Changelog
 
+## [2.2.6] - 2026-09-19
+
+- Update COPS to [4.5.4](https://github.com/mikespub-org/seblucas-cops/releases#release-4.5.4) - adds random book feature
+- Update Korrosync to [0.4.0](https://github.com/szaffarano/korrosync/releases#release-v0.4.0)
+
 ## [2.2.5] - 2026-05-26
 
 - Update COPS to [4.5.2](https://github.com/mikespub-org/seblucas-cops/releases/tag/4.5.2)
