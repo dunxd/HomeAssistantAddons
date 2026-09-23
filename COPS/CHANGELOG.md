@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [2.2.7] - 2026-09-23
+
+- Fix internal path to kebpubify - see [#122](https://github.com/dunxd/HomeAssistantAddons/issues/122)
+
 ## [2.2.6] - 2026-09-19
 
 - Update COPS to [4.5.4](https://github.com/mikespub-org/seblucas-cops/releases#release-4.5.4) - adds random book feature
