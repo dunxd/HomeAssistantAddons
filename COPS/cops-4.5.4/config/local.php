@@ -17,7 +17,7 @@ if (!isset($config)) {
  * containing all the formats.
  * BEWARE : it has to end with a /
  */
-$config['calibre_directory'] = 'library/';
+$config['calibre_directory'] = '/cops/library/';
 
 /*
  * Specify the ignored formats that will never display in COPS
