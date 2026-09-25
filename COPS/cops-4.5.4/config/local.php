@@ -106,6 +106,6 @@ $config['cops_front_controller'] = 'index.php';
 
 /* Add kepubify path to support converting kepub files */
 $config['cops_kepubify_path'] = '/usr/bin/kepubify';
-$config['cops_provide_kepub'] = '0';
+$config['cops_provide_kepub'] = '1';
 
 /* HA-COPS add-on config gets added after this line */
