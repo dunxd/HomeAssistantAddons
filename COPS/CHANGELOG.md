@@ -2,8 +2,7 @@
 
 ## [2.2.7] - 2026-09-23
 
-- Fix internal path to kebpubify - see [#122](https://github.com/dunxd/HomeAssistantAddons/issues/122)
-- Change path to library folder in config from relative to absolute
+- Fix kebpubify - see [#122](https://github.com/dunxd/HomeAssistantAddons/issues/122)
 
 ## [2.2.6] - 2026-09-19
 
