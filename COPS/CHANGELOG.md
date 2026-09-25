@@ -1,6 +1,6 @@
 # HA COPS Changelog
 
-## [2.2.7] - 2026-09-23
+## [2.2.8] - 2026-09-23
 
 - Fix kebpubify - see [#122](https://github.com/dunxd/HomeAssistantAddons/issues/122)
 
