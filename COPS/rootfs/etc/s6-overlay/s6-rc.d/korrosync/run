@@ -12,4 +12,4 @@ export KORROSYNC_SERVER_ADDRESS="127.0.0.1:3000"
 export RUST_LOG="info"
 
 bashio::log.info "Starting KORROSYNC..."
-exec /usr/bin/korrosync
+exec /usr/bin/korrosync serve
