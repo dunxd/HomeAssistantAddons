@@ -1,9 +1,13 @@
 # HA COPS Changelog
 
-## [2.2.7] - 2026-10-17
+## [2.2.9] - 2026-10-17
 
 - Update Korrosync to [0.4.2](https://github.com/szaffarano/korrosync/releases#release-v0.4.2)
 - Fix Korrosync start command
+
+## [2.2.8] - 2026-09-23
+
+- Fix kebpubify - see [#122](https://github.com/dunxd/HomeAssistantAddons/issues/122)
 
 ## [2.2.6] - 2026-09-19
 
