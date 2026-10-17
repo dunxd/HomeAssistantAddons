@@ -17,7 +17,7 @@ if (!isset($config)) {
  * containing all the formats.
  * BEWARE : it has to end with a /
  */
-$config['calibre_directory'] = 'library/';
+$config['calibre_directory'] = '/cops/library/';
 
 /*
  * Specify the ignored formats that will never display in COPS
@@ -105,7 +105,7 @@ $config['cops_home_page'] = 'ALL_RECENT_BOOKS';
 $config['cops_front_controller'] = 'index.php';
 
 /* Add kepubify path to support converting kepub files */
-$config['cops_kepubify_path'] = '/root/go/bin/kepubify';
+$config['cops_kepubify_path'] = '/usr/bin/kepubify';
 $config['cops_provide_kepub'] = '1';
 
 /* HA-COPS add-on config gets added after this line */
