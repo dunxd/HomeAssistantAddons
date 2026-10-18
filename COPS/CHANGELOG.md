@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [2.2.10] - 2026-10-17
+
+- Add thumbnail cacheing directory so COPS doesn't create thumbs every time
+
 ## [2.2.9] - 2026-10-17
 
 - Update Korrosync to [0.4.2](https://github.com/szaffarano/korrosync/releases#release-v0.4.2)
