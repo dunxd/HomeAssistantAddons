@@ -108,4 +108,14 @@ $config['cops_front_controller'] = 'index.php';
 $config['cops_kepubify_path'] = '/usr/bin/kepubify';
 $config['cops_provide_kepub'] = '1';
 
+/*
+ * Directory to keep resized thumbnails: allow to resize thumbnails only on first access, then use this cache.
+ * $config['cops_thumbnail_handling'] must be ""
+ * "" : don't cache thumbnail
+ * "/tmp/cache/" (example) : will generate thumbnails in /tmp/cache/
+ * BEWARE : it has to end with a /
+ */
+$config['cops_thumbnail_handling'] = "";
+$config['cops_thumbnail_cache_directory'] = "/data/cache/";
+
 /* HA-COPS add-on config gets added after this line */
