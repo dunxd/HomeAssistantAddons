@@ -115,6 +115,7 @@ $config['cops_provide_kepub'] = '1';
  * "/tmp/cache/" (example) : will generate thumbnails in /tmp/cache/
  * BEWARE : it has to end with a /
  */
-$config['cops_thumbnail_cache_directory'] = '/data/cache/';
+$config['cops_thumbnail_handling'] = "";
+$config['cops_thumbnail_cache_directory'] = "/data/cache/";
 
 /* HA-COPS add-on config gets added after this line */

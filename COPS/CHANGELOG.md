@@ -1,8 +1,8 @@
 # HA COPS Changelog
 
-## [2.2.10] - 2026-10-17
+## [2.2.10] - 2026-10-19
 
-- Add thumbnail cacheing directory so COPS doesn't create thumbs every time
+- Add thumbnail cacheing so COPS doesn't create cover thumbnails every time pages are loaded
 
 ## [2.2.9] - 2026-10-17
 
