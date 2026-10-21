@@ -118,4 +118,9 @@ $config['cops_provide_kepub'] = '1';
 $config['cops_thumbnail_handling'] = "";
 $config['cops_thumbnail_cache_directory'] = "/data/cache/";
 
+/*
+ * Number of random books to show (0 to disable)
+ */
+$config['cops_random_books'] = '5';
+
 /* HA-COPS add-on config gets added after this line */

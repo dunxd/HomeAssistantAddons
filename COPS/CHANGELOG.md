@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [2.1.12] - 2026-10-21
+
+- Add random books page - show 5 books at random
+
 ## [2.2.11] - 2026-10-21
 
 - Update to use PHP 8.5

@@ -10,6 +10,11 @@
           <li class="nav-item">
             <a class="nav-link{{? it.page == "recent" }} active{{?}}" href="{{=it.baseurl}}?page=recent"{{? it.page == "recent" }} aria-current="page"{{?}}>{{=it.c.i18n.recentTitle}}</a>
           </li>
+          {{? !it.c.config.ignored_categories.random && it.c.config.random_books > 0 }}
+          <li class="nav-item">
+            <a class="nav-link{{? it.page == "random" }} active{{?}}" href="{{=it.baseurl}}?page=random"{{? it.page == "random" }} aria-current="page"{{?}}>{{=it.c.i18n.randomTitle}}</a>
+          </li>
+          {{?}}
           {{? !it.c.config.ignored_categories.author }}
           <li class="nav-item">
             <a class="nav-link{{? it.page == "authors" }} active{{?}}" href="{{=it.baseurl}}?page=authors"{{? it.page == "authors" }} aria-current="page"{{?}}>{{=it.c.i18n.authorsTitle}}</a>
@@ -133,15 +138,15 @@
           </li>
           {{?}}
       {{?}}
-      {{? it.download && it.entriesCount > 1 }} 
+      {{? it.download && it.entriesCount > 1 }}
           <li class="nav-item p-1 border-start border-secondary-subtle ms-1">{{=it.c.i18n.downloadAllTitle}}</li>
           {{~it.download:link:idx}}
           <li class="nav-item sm">
-            <a class="btn btn-primary btn-sm me-1 p-1 border-0" href="{{=link.url}}" style="-bs-btn-border-radius: 6px; --bs-btn-font-size: .8rem;" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{=it.c.i18n.downloadAllTooltip}}"> 
+            <a class="btn btn-primary btn-sm me-1 p-1 border-0" href="{{=link.url}}" style="-bs-btn-border-radius: 6px; --bs-btn-font-size: .8rem;" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{=it.c.i18n.downloadAllTooltip}}">
               <i class="bi-file-earmark-zip pe-1"></i>{{=link.format}}
-            </a> 
+            </a>
           </li>
-          {{~}} 
+          {{~}}
       {{?}}
       </ul>
     </nav>
