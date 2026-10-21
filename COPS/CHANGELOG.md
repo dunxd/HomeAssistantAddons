@@ -1,5 +1,10 @@
 # HA COPS Changelog
 
+## [2.2.11] - 2026-10-21
+
+- Update to use PHP 8.5
+- Update to use [Korrosync 0.4.3](https://github.com/szaffarano/korrosync/releases/tag/v0.4.3)
+
 ## [2.2.10] - 2026-10-19
 
 - Add thumbnail cacheing so COPS doesn't create cover thumbnails every time pages are loaded
