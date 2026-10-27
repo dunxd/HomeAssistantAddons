@@ -1,0 +1,27 @@
+<footer class="fixed-bottom" style="font-size: 0.8rem;">
+    <ul class="nav nav-pills bg-body-tertiary justify-content-end" data-bs-theme="dark">
+        {{? it.c.config.use_client_shelves }}
+        <li class="nav-item">
+            <a class="nav-link{{? it.page == "shelves"}} active{{?}}" href="{{=it.shelvesurl}}" id="shelf-nav" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{=it.c.i18n.shelvesTitle || "Shelves"}}">
+            <i class="bi-bookshelf pe-1"></i>{{=it.c.i18n.shelvesTitle || "Shelves"}}
+            <span id="shelf-count" class="badge text-bg-secondary ms-1" style="display:none">0</span>
+            </a>
+        </li>
+        {{?}}
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick='Cookies.set("template", "default", { expires: 365 }); window.location.reload(true); ' data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{=it.c.i18n.defaultTemplate}}">
+          <i class="bi-escape pe-1"></i> {{=it.c.i18n.defaultTemplate}}
+        </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link{{? it.page == "customize"}} active{{?}}" href="{{=it.customizeurl}}" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{=it.c.i18n.customizeTitle}}">
+            <i class="bi-tools pe-1"></i>{{=it.c.i18n.customizeTitle}}
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link{{? it.page == "about"}} active{{?}}" href="{{=it.abouturl}}" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{=it.c.i18n.aboutTitle}}">
+            <i class="bi-info-circle pe-1"></i>{{=it.c.i18n.aboutTitle}}
+            </a>
+        </li>
+      </ul>
+  </footer>
