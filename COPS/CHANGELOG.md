@@ -1,9 +1,10 @@
 # HA COPS Changelog
 
-## [2.2.12] - 2026-10-27
+## [2.2.13] - 2026-10-27
 
 - Update COPS to [4.6.2](https://github.com/mikespub-org/seblucas-cops/releases/tag/4.6.1)
 - Update Korrosync to [0.4.4](https://github.com/szaffarano/korrosync/releases/tag/v0.4.4)
+- Add menu option to show 5 randomly selected books
 
 ## [2.2.11] - 2026-10-21
 
