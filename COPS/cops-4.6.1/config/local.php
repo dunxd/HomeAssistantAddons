@@ -120,4 +120,7 @@ $config['cops_thumbnail_cache_directory'] = "/data/cache/";
 
 $config['cops_random_books'] = '5';
 
+// Added to support ingress
+$config['cops_full_url'] = $_SERVER['HTTP_X_INGRESS_PATH'] ?? '';
+
 /* HA-COPS add-on config gets added after this line */
