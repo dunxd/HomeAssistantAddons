@@ -2,7 +2,7 @@
 
 ## [3.0] - 2026-11-01
 
-- Add Home Assistant ingress support.
+- Add Home Assistant ingress support. Currently this keeps the Home Assistant side bar menu in place, but the eReader feature hides it.
 - Preserve direct HTTP, Korrosync, and rsync access alongside ingress.
 
 ## [2.2.13] - 2026-10-27
