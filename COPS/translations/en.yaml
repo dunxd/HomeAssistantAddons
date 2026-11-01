@@ -36,6 +36,5 @@ configuration:
     name: Activate Koreader sync server
     description: This enables the Korrosync server allowing users of your library who use Koreader to sync their reading progress across devices
 network:
-  8000/tcp: The port used to access the library web pages.
-  873/tcp: The port used for rsync.
-  8001/tcp: The port used for korrosync.
+  8000/tcp: Direct HTTP access to the library and Korrosync (not needed for the browser when using ingress).
+  873/tcp: The port used for rsync (not available through ingress).

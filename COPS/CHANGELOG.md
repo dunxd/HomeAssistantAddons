@@ -1,5 +1,10 @@
 # HA COPS Changelog
 
+## [3.0] - 2026-11-01
+
+- Add Home Assistant ingress support.
+- Preserve direct HTTP, Korrosync, and rsync access alongside ingress.
+
 ## [2.2.13] - 2026-10-27
 
 - Update COPS to [4.6.2](https://github.com/mikespub-org/seblucas-cops/releases/tag/4.6.1)
