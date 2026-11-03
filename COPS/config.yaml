@@ -1,5 +1,5 @@
 name: "HA COPS"
-version: "3.0"
+version: "3.0.1"
 slug: "ha-cops"
 description: "Minimal Calibre library web interface"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
@@ -11,6 +11,7 @@ ingress_port: 8000
 webui: "http://[HOST]:[PORT:8000]/index.php"
 watchdog: "http://[HOST]:[PORT:8000]/feed"
 stage: stable
+homeassistant_api: true
 arch:
   - aarch64
   - amd64
