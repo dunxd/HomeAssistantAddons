@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [3.0.1] - in development
+
+- Add library statistics to Home Assistant sensor `sensor.cops_library_stats`
+
 ## [3.0] - 2026-11-01
 
 - Add Home Assistant ingress support. Currently this keeps the Home Assistant side bar menu in place, but the eReader feature hides it.
