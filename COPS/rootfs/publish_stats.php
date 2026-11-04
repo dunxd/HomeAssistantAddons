@@ -35,6 +35,10 @@ try {
     $latestTitle = $latestBook['title'] ?? 'None';
     $latestAuthor = $latestBook['author_name'] ?? 'Unknown';
     $latestDate = $latestBook['timestamp'] ?? '';
+    $latestId = $latestBook['id'] ?? 0;
+    $latestFolder = intdiv($latestId,1000);
+    $latest_cover_url = "/covers/{$latestFolder}/{$latestId}.jpg";
+
 
     // Build the Home Assistant sensor payload
     $payload = [
@@ -43,10 +47,11 @@ try {
             'friendly_name' => 'HA COPS Library Stats',
             'icon' => 'mdi:bookshelf',
             'total_books' => $totalBooks,
-            'latest_title' => $latestTitle,
-            'latest_author' => $latestAuthor,
-            'latest_date_added' => $latestDate,
-            'last_updated' => gmdate('Y-m-d\TH:i:s\Z')
+            'latest_book_title' => $latestTitle,
+            'latest_book_author' => $latestAuthor,
+            'latest_book_date_added' => $latestDate,
+            'latest_book_cover_relative_url' => $latest_cover_url,
+            'stats_last_updated' => gmdate('Y-m-d\TH:i:s\Z')
         ]
     ];
 
