@@ -2,7 +2,13 @@
 
 ## [3.0.1] - in development
 
-- Add library statistics to Home Assistant sensor `sensor.cops_library_stats`
+- Add library statistics to Home Assistant sensor `sensor.cops_library_stats`. The following stats are created:
+  - Total number of books
+  - Total number of authors
+  - Total number of tags (often used for genres)
+  - Total number of series
+  - Total number of languages
+  - Details about the latest book added to your library - title, author, relative cover URL, and when it was added.
 
 ## [3.0] - 2026-11-01
 
