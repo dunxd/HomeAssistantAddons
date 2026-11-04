@@ -1,9 +1,9 @@
 name: "HA COPS"
-version: "3.0.1"
+version: "3.0.1d"
 slug: "ha-cops"
 description: "Minimal Calibre library web interface"
 url: "https://github.com/dunxd/HomeAssistantAddons/tree/main/COPS"
-panel_icon: mdi:library
+panel_icon: mdi:bookshelf
 panel_title: "HA COPS"
 panel_admin: false
 ingress: true
