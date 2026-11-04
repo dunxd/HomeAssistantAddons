@@ -49,7 +49,7 @@ try {
         'state' => (string)$totalBooks,
         'attributes' => [
             'friendly_name' => 'HA COPS Library Stats',
-            'icon' => 'mdi:bookshelf',
+            'icon' => 'mdi:book-information-variant',
             'total_books' => $totalBooks,
             'total_authors' => $totalAuthors,
             'total_tags' => $totalTags,
