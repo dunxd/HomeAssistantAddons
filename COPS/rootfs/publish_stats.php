@@ -20,6 +20,10 @@ try {
 
     // 1. Get total book count
     $totalBooks = (int)$pdo->query('SELECT COUNT(*) FROM books')->fetchColumn();
+    $totalAuthors = (int)$pdo->query('SELECT COUNT(*) FROM authors')->fetchColumn();
+    $totalTags = (int)$pdo->query('SELECT COUNT(*) FROM tags')->fetchColumn();
+    $totalSeries = (int)$pdo->query('SELECT COUNT(*) FROM series')->fetchColumn();
+    $totalLanguages = (int)$pdo->query('SELECT COUNT(*) FROM languages')->fetchColumn();
 
     // 2. Fetch details for the latest added book
     $stmt = $pdo->query('
@@ -47,6 +51,10 @@ try {
             'friendly_name' => 'HA COPS Library Stats',
             'icon' => 'mdi:bookshelf',
             'total_books' => $totalBooks,
+            'total_authors' => $totalAuthors,
+            'total_tags' => $totalTags,
+            'total_series' => $totalSeries,
+            'total_languages' => $totalLanguages,
             'latest_book_title' => $latestTitle,
             'latest_book_author' => $latestAuthor,
             'latest_book_date_added' => $latestDate,
