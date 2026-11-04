@@ -130,3 +130,11 @@ mkdir -p /run/nginx
 if bashio::config.true 'koreader_sync'; then
     mkdir -p /data/korrosync
 fi
+
+# If calibre database already exists run the publish_stats.php script to publish stats to Home Assistant
+if [ -f "$LIBRARY_FOLDER/metadata.db" ]; then
+    echo "Calibre database found, publishing stats to Home Assistant"
+    php /publish_stats.php
+else
+    echo "Calibre database not found, skipping publishing stats to Home Assistant"
+fi
