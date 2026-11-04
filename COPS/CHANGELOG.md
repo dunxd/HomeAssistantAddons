@@ -1,5 +1,16 @@
 # HA COPS Changelog
 
+## [3.0.1] - 2026-11-04
+
+- Add library statistics to Home Assistant sensor `sensor.cops_library_stats`. The following stats are created:
+  - Total number of books
+  - Total number of authors
+  - Total number of tags (often used for genres)
+  - Total number of series
+  - Total number of languages
+  - Details about the latest book added to your library - title, author, relative cover URL, and when it was added.
+    You can use these in your dashboards or automations! Stats are updated each time the Calibre database is changed, or once on startup of the app.
+
 ## [3.0] - 2026-11-01
 
 - Add Home Assistant ingress support. Currently this keeps the Home Assistant side bar menu in place, but the eReader feature hides it.

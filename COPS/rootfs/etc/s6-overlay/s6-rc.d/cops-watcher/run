@@ -1,0 +1,10 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+exec 2>&1
+
+# Watch /cops/library parent directory for changes to metadata.db
+inotifywait -m -q -e close_write,moved_to --format '%f' /cops/library | while read -r filename; do
+    if [ "$filename" = "metadata.db" ]; then
+        php /publish_stats.php > /dev/null 2>&1
+    fi
+done
