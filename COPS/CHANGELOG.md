@@ -1,6 +1,6 @@
 # HA COPS Changelog
 
-## [3.0.1] - in development
+## [3.0.1] - 2026-11-04
 
 - Add library statistics to Home Assistant sensor `sensor.cops_library_stats`. The following stats are created:
   - Total number of books
