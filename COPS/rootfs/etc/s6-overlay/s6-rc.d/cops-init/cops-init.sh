@@ -131,6 +131,12 @@ if bashio::config.true 'koreader_sync'; then
     mkdir -p /data/korrosync
 fi
 
+# Get the hostname and port to use in building URLs
+APP_HOST=$(bashio::info.hostname)
+APP_PORT=$(bashio::app.port 8000)
+export COPS_HOST="$APP_HOST"
+export COPS_PORT="$APP_PORT"
+
 # If calibre database already exists run the publish_stats.php script to publish stats to Home Assistant
 if [ -f "$LIBRARY_FOLDER/metadata.db" ]; then
     echo "Calibre database found, publishing stats to Home Assistant"
