@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [3.0.2] - 2026-11-06
+
+- Add hostname for cover image URL attribute in `sensor.cops_library_stats`
+
 ## [3.0.1] - 2026-11-04
 
 - Add library statistics to Home Assistant sensor `sensor.cops_library_stats`. The following stats are created:
