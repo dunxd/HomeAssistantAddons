@@ -41,8 +41,9 @@ try {
     $latestDate = $latestBook['timestamp'] ?? '';
     $latestId = $latestBook['id'] ?? 0;
     $latestFolder = intdiv($latestId,1000);
-    $latest_cover_url = "/covers/{$latestFolder}/{$latestId}.jpg";
-
+    $host = getenv('COPS_HOST');
+    $port = getenv('COPS_PORT');
+    $latest_cover_url = "http://{$host}:{$port}/covers/{$latestFolder}/{$latestId}.jpg";
 
     // Build the Home Assistant sensor payload
     $payload = [
@@ -58,7 +59,7 @@ try {
             'latest_book_title' => $latestTitle,
             'latest_book_author' => $latestAuthor,
             'latest_book_date_added' => $latestDate,
-            'latest_book_cover_relative_url' => $latest_cover_url,
+            'latest_book_cover_url' => $latest_cover_url,
             'stats_last_updated' => gmdate('Y-m-d\TH:i:s\Z')
         ]
     ];
