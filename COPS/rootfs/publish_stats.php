@@ -145,7 +145,6 @@ try {
         foreach ($http_response_header as $header) {
             if (preg_match('/^HTTP\/\S+\s+(\d{3})/', $header, $matches) === 1) {
                 $responseCode = (int)$matches[1];
-                break;
             }
         }
 
@@ -164,7 +163,8 @@ try {
     }
 
     if ($response === false || $responseCode < 200 || $responseCode >= 300) {
-        error_log("HA COPS Stats: Failed to post sensor data to Supervisor API after {$attempt} attempt(s) (HTTP {$responseCode}).");
+        $responseDetails = is_string($response) ? substr($response, 0, 500) : 'No response body';
+        error_log("HA COPS Stats: Failed to post sensor data to Supervisor API after {$attempt} attempt(s) (HTTP {$responseCode}): {$responseDetails}");
         exit(1);
     }
 
