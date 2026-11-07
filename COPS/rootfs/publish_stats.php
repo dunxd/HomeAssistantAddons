@@ -134,10 +134,37 @@ try {
     ];
 
     $context = stream_context_create($options);
-    $response = file_get_contents('http://supervisor/core/api/states/sensor.cops_library_stats', false, $context);
+    $maxAttempts = 7;
+    $retryDelay = 10;
+    $response = false;
+    $responseCode = 0;
+    for ($attempt = 1; $attempt <= $maxAttempts; $attempt++) {
+        $http_response_header = [];
+        $responseCode = 0;
+        $response = @file_get_contents('http://supervisor/core/api/states/sensor.cops_library_stats', false, $context);
+        foreach ($http_response_header as $header) {
+            if (preg_match('/^HTTP\/\S+\s+(\d{3})/', $header, $matches) === 1) {
+                $responseCode = (int)$matches[1];
+                break;
+            }
+        }
 
-    if ($response === false) {
-        error_log("HA COPS Stats: Failed to post sensor data to Supervisor API.");
+        if ($response !== false && $responseCode >= 200 && $responseCode < 300) {
+            break;
+        }
+
+        if ($responseCode >= 400 && $responseCode < 500 && $responseCode !== 429) {
+            break;
+        }
+
+        if ($attempt < $maxAttempts) {
+            sleep($retryDelay);
+            $retryDelay = min($retryDelay * 2, 30);
+        }
+    }
+
+    if ($response === false || $responseCode < 200 || $responseCode >= 300) {
+        error_log("HA COPS Stats: Failed to post sensor data to Supervisor API after {$attempt} attempt(s) (HTTP {$responseCode}).");
         exit(1);
     }
 
