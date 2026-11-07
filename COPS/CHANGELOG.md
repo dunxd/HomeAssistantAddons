@@ -1,6 +1,6 @@
 # HA COPS Changelog
 
-## [3.0.4] - 2026-11-07
+## [3.0.6] - 2026-11-07
 
 - Sensors created by apps are only temporary. HA COPS creates the sensor when it starts, but during a reboot of the Home Assistant host HA COPS usually starts faster than Home Assistant Core. The publish_stats.php now waits and reattempts creating the sensor if it doesn't work first time.
 
