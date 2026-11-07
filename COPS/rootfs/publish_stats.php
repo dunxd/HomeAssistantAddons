@@ -40,10 +40,49 @@ try {
     $latestAuthor = $latestBook['author_name'] ?? 'Unknown';
     $latestDate = $latestBook['timestamp'] ?? '';
     $latestId = $latestBook['id'] ?? 0;
-    $latestFolder = intdiv($latestId,1000);
     $host = getenv('COPS_HOST');
     $port = getenv('COPS_PORT');
-    $latest_cover_url = "http://{$host}:{$port}/covers/{$latestFolder}/{$latestId}.jpg";
+    $copsBaseUrl = "http://{$host}:{$port}";
+    $makeAbsoluteUrl = static function ($url) use ($copsBaseUrl) {
+        if (!is_string($url) || $url === '') {
+            return '';
+        }
+        if (preg_match('~^https?://~i', $url) === 1) {
+            return $url;
+        }
+        if (str_starts_with($url, '//')) {
+            return 'http:' . $url;
+        }
+        return $copsBaseUrl . '/' . ltrim($url, '/');
+    };
+    $latestDetailUrl = '';
+    $latestThumbUrl = '';
+    if ($latestId > 0) {
+        $apiOptions = [
+            'http' => [
+                'method' => 'GET',
+                'ignore_errors' => true,
+                'timeout' => 10
+            ]
+        ];
+        $apiResponse = @file_get_contents(
+            "http://localhost:8000/restapi/books/{$latestId}",
+            false,
+            stream_context_create($apiOptions)
+        );
+
+        if ($apiResponse === false) {
+            error_log("HA COPS Stats: Failed to fetch latest book details from REST API.");
+        } else {
+            $apiBook = json_decode($apiResponse, true);
+            $detailUrl = $apiBook['book']['detailurl'] ?? '';
+            if (is_string($detailUrl) && str_starts_with($detailUrl, '/restapi/')) {
+                $detailUrl = substr($detailUrl, strlen('/restapi'));
+            }
+            $latestDetailUrl = $makeAbsoluteUrl($detailUrl);
+            $latestThumbUrl = $makeAbsoluteUrl($apiBook['book']['thumbnailurl'] ?? '');
+        }
+    }
 
     // Build the Home Assistant sensor payload
     $payload = [
@@ -59,7 +98,9 @@ try {
             'latest_book_title' => $latestTitle,
             'latest_book_author' => $latestAuthor,
             'latest_book_date_added' => $latestDate,
-            'latest_book_cover_url' => $latest_cover_url,
+            'latest_book_detail_url' => $latestDetailUrl,
+            'latest_book_thumb_url' => $latestThumbUrl,
+            'latest_book_cover_url' => $latestThumbUrl,
             'stats_last_updated' => gmdate('Y-m-d\TH:i:s\Z')
         ]
     ];
