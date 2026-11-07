@@ -66,7 +66,7 @@ try {
             ]
         ];
         $apiResponse = @file_get_contents(
-            "http://localhost:8000/restapi/books/{$latestId}",
+            "http://localhost:{$port}/restapi/books/{$latestId}",
             false,
             stream_context_create($apiOptions)
         );
