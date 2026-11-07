@@ -15,7 +15,8 @@ try {
     // Open SQLite database in read-only mode using native PDO
     $pdo = new PDO('sqlite:' . $dbPath, null, null, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::SQLITE_ATTR_OPEN_FLAGS => PDO::SQLITE_OPEN_READONLY
     ]);
 
     // 1. Get total book count
