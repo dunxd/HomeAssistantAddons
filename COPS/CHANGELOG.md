@@ -1,5 +1,9 @@
 # HA COPS Changelog
 
+## [3.0.3] - 2026-11-06
+
+- Use COPS api to get cover thumburl and detailurl for latest book
+
 ## [3.0.2] - 2026-11-06
 
 - Add hostname for cover image URL attribute in `sensor.cops_library_stats`

@@ -2,6 +2,12 @@
 # shellcheck shell=bash
 exec 2>&1
 
+# The watcher depends on nginx and PHP-FPM, so the initial publish can use the REST API.
+APP_HOST=$(bashio::info.hostname)
+APP_PORT=$(bashio::app.port 8000)
+export COPS_HOST="$APP_HOST"
+export COPS_PORT="$APP_PORT"
+
 # Watch /cops/library parent directory for changes to metadata.db
 inotifywait -m -q -e close_write,moved_to --format '%f' /cops/library | while read -r filename; do
     if [ "$filename" = "metadata.db" ]; then

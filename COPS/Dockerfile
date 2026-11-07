@@ -14,7 +14,7 @@ COPY rootfs /
 COPY cops-4.6.1 /cops/
 
 # Ensure oneshot scripts are executable after copying
-RUN chmod -R 755 /etc/s6-overlay/s6-rc.d/cops-init
+RUN chmod -R 755 /etc/s6-overlay/s6-rc.d/cops-init /etc/s6-overlay/s6-rc.d/cops-stats
 
 # Install requirements for add-on
 # PHP^8 required with GD image processing, libxml (in base), intl, json (in base), PDO sqlite3, DOM, openssl
