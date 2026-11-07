@@ -41,9 +41,12 @@ try {
     $latestDate = $latestBook['timestamp'] ?? '';
     if ($latestDate !== '') {
         try {
-            $latestDate = (new DateTimeImmutable($latestDate))->format(DateTimeInterface::ATOM);
+            $latestDate = (new DateTimeImmutable($latestDate))
+                ->setTimezone(new DateTimeZone('UTC'))
+                ->format('Y-m-d\TH:i:s\Z');
         } catch (Exception $e) {
             error_log("HA COPS Stats: Could not parse latest book timestamp: " . $e->getMessage());
+            $latestDate = '';
         }
     }
     $latestId = $latestBook['id'] ?? 0;
