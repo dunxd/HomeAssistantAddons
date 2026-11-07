@@ -39,6 +39,13 @@ try {
     $latestTitle = $latestBook['title'] ?? 'None';
     $latestAuthor = $latestBook['author_name'] ?? 'Unknown';
     $latestDate = $latestBook['timestamp'] ?? '';
+    if ($latestDate !== '') {
+        try {
+            $latestDate = (new DateTimeImmutable($latestDate))->format(DateTimeInterface::ATOM);
+        } catch (Exception $e) {
+            error_log("HA COPS Stats: Could not parse latest book timestamp: " . $e->getMessage());
+        }
+    }
     $latestId = $latestBook['id'] ?? 0;
     $host = getenv('COPS_HOST');
     $port = getenv('COPS_PORT');
