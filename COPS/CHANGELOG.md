@@ -2,7 +2,7 @@
 
 ## [3.0.3] - 2026-11-06
 
-- Use COPS api to get thumburl and detailurl about latest book
+- Use COPS api to get cover thumburl and detailurl for latest book
 
 ## [3.0.2] - 2026-11-06
 

@@ -99,8 +99,7 @@ try {
             'latest_book_author' => $latestAuthor,
             'latest_book_date_added' => $latestDate,
             'latest_book_detail_url' => $latestDetailUrl,
-            'latest_book_thumb_url' => $latestThumbUrl,
-            'latest_book_cover_url' => $latestThumbUrl,
+            'latest_book_cover_thumb_url' => $latestThumbUrl,
             'stats_last_updated' => gmdate('Y-m-d\TH:i:s\Z')
         ]
     ];
