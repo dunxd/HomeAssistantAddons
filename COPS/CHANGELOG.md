@@ -1,6 +1,6 @@
 # HA COPS Changelog
 
-## [3.0.3] - 2026-11-06
+## [3.0.3] - 2026-11-07
 
 - Use COPS api to get cover thumburl and detailurl for latest book
 
