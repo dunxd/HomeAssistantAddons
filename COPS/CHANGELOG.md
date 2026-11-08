@@ -1,6 +1,6 @@
 # HA COPS Changelog
 
-## [3.1.1] - 2026-11-08
+## [3.1.2] - 2026-11-08
 
 - Rollback version to code base same as 3.0
 - Update s6-overlay user bundles location
