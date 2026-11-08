@@ -1,5 +1,10 @@
 # HA COPS Changelog
 
+## [3.1.1] - 2026-11-08
+
+- Rollback version to code base same as 3.0
+- Update s6-overlay user bundles location
+
 ## [3.0] - 2026-11-01
 
 - Add Home Assistant ingress support. Currently this keeps the Home Assistant side bar menu in place, but the eReader feature hides it.
