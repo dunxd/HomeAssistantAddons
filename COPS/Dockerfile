@@ -3,9 +3,9 @@ FROM ghcr.io/home-assistant/base:latest
 # Define different versions as build arguments
 ARG PHP_VERSION=85
 # Kepubify from https://github.com/pgaskin/kepubify
-ARG KEPUBIFY_VERSION=4.0.4
+ARG KEPUBIFY_VERSION=5.0.0
 # Korrosync from https://github.com/szaffarano/korrosync
-ARG KORROSYNC_VERSION=0.4.4
+ARG KORROSYNC_VERSION=0.4.5
 
 # Get the build architecture as a build argument
 ARG BUILD_ARCH

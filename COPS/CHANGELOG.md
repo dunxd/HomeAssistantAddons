@@ -1,5 +1,10 @@
 # HA COPS Changelog
 
+## [3.1.4] - 2026-11-09
+
+- Update [Kepubify to version 5.0](https://github.com/pgaskin/kepubify/releases/tag/v5.0.0)
+- Update [Korrosync to version 0.4.5](https://github.com/szaffarano/korrosync/releases/tag/v0.4.5)
+
 ## [3.1.3] - 2026-11-08
 
 - Rollback version to code base same as 3.0
