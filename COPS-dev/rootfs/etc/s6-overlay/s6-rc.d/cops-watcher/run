@@ -13,6 +13,8 @@ export COPS_PORT="$APP_PORT"
 DB_PATH=/cops/library/metadata.db
 POLL_INTERVAL=60
 
+# Use file metadata rather than reading or hashing the whole database.
+# An absent database has an empty signature; stat errors are returned to the caller.
 get_db_signature() {
     if [ ! -e "$DB_PATH" ]; then
         return 0
@@ -20,6 +22,7 @@ get_db_signature() {
     stat -c '%y:%s:%i' "$DB_PATH"
 }
 
+# Suppress the publisher's success output but leave errors visible in the add-on log.
 publish_stats() {
     if ! php /publish-stats.php > /dev/null; then
         bashio::log.warning "Stats publish failed; will retry on the next poll."
@@ -27,6 +30,8 @@ publish_stats() {
     fi
 }
 
+# Publish once at startup, even if the database has not changed.
+# Record its signature only after a successful publish so failures are retried.
 last_signature=""
 if current_signature=$(get_db_signature); then
     if [ -n "$current_signature" ] && publish_stats; then
@@ -36,6 +41,7 @@ else
     bashio::log.error "Could not inspect $DB_PATH."
 fi
 
+# Poll for changes; clear the baseline if the file disappears so its return is detected.
 while true; do
     sleep "$POLL_INTERVAL"
 
