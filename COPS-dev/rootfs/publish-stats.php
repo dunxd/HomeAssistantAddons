@@ -83,7 +83,7 @@ try {
         );
 
         if ($apiResponse === false) {
-            error_log("HA COPS Stats: Failed to fetch latest book details from REST API.");
+            error_log("HA COPS Stats: Failed to fetch latest book details from REST API. http://localhost:{$port}/restapi/books/{$latestId}");
         } else {
             $apiBook = json_decode($apiResponse, true);
             $detailUrl = $apiBook['book']['detailurl'] ?? '';
