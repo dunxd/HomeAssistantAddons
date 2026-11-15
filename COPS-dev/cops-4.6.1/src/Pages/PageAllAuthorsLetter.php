@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * COPS (Calibre OPDS PHP Server) class file
+ *
+ * @license    GPL v2 or later (https://www.gnu.org/licenses/gpl.html)
+ * @author     Sébastien Lucas <sebastien@slucas.fr>
+ * @author     mikespub
+ */
+
+namespace SebLucas\Cops\Pages;
+
+use SebLucas\Cops\Calibre\Author;
+use SebLucas\Cops\Calibre\BaseList;
+use InvalidArgumentException;
+
+class PageAllAuthorsLetter extends Page
+{
+    protected $className = Author::class;
+
+    /**
+     * Summary of initializeContent
+     * @return void
+     */
+    public function initializeContent()
+    {
+        // this would be the first letter - override here
+        $this->idGet = $this->request->get('letter', null, '/^[\p{L}\p{N}]$/u');
+        if (is_null($this->idGet)) {
+            throw new InvalidArgumentException('Invalid Letter');
+        }
+        $this->getEntries();
+        $this->idPage = Author::getEntryIdByLetter($this->idGet);
+        $count = $this->totalNumber;
+        if ($count == -1) {
+            $count = count($this->entryArray);
+        }
+        $this->title = str_format($this->localize("splitByLetter.letter"), str_format($this->localize("authorword", $count), (string) $count), (string) $this->idGet);
+        $this->parentTitle = "";  // $this->localize("authors.title");
+        $filterParams = $this->request->getFilterParams();
+        $this->parentUri = $this->getRoute(Author::ROUTE_ALL, $filterParams);
+    }
+
+    /**
+     * Summary of getEntries
+     * @return void
+     */
+    public function getEntries()
+    {
+        $baselist = new BaseList($this->className, $this->request, $this->getDbContext());
+        $this->entryArray = $baselist->getEntriesByFirstLetter($this->idGet, $this->n);
+        $this->totalNumber = $baselist->countEntriesByFirstLetter($this->idGet);
+        $this->sorted = $baselist->orderBy;
+    }
+}

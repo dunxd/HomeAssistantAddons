@@ -41,7 +41,11 @@ If you are using this method, you should probably disable the rsync server in th
 
 ## Accessing your library
 
-You can access your library in your browser at http://_ha-ip-address-or-name_:8000. You can change the port if necessary. Ingress does not currently work.
+You can open the library inside Home Assistant using the add-on's **Open Web UI** button or its sidebar entry. Home Assistant ingress handles authentication for this interface.
+
+Direct access is also available in a browser at http://_ha-ip-address-or-name_:8000. You can change the port if necessary. This direct HTTP port does not use Home Assistant authentication, so do not expose it to the internet.
+
+Ingress is for the browser interface. Clients such as KOReader and rsync need direct network access to the add-on, for example over your local network or VPN.
 
 You can also access an OPDS feed of your library in apps like [Librera reader (Android)](https://librera.mobi/) or [KOReader])https://koreader.rocks/) allowing you to easily browse your library and download books into the reader. The feed is available at http://_ha-ip-address-or-name_:8000/feed
 
@@ -49,7 +53,11 @@ You can also access an OPDS feed of your library in apps like [Librera reader (A
 
 Users of koreader can now sync their reading progress across multiple devices. To do this, first Activate Koreader sync server from the Add-on config page and restart.
 
-Then configure koreader's Progress Sync feature to specify http://_ha-ip-address-or-name_:8000/sync, and use the Register/Login feature to set up a sync account. Then on your other devices, use the same server location, username and password to sync progress. You need to have copies of the book/document you are syncing on both the device you started reading on and on the device you want to continue reading on. Each person that uses the library can sync their own devices by using a different username and password
+Then configure koreader's Progress Sync feature to specify http://_ha-ip-address-or-name_:8000/sync, and use the Register/Login feature to set up a sync account. Use the direct HTTP address rather than the Home Assistant ingress URL; KOReader cannot use the browser's ingress session. Then on your other devices, use the same server location, username and password to sync progress. You need to have copies of the book/document you are syncing on both the device you started reading on and on the device you want to continue reading on. Each person that uses the library can sync their own devices by using a different username and password
+
+Korrosync is served through HTTP port 8000 at `/sync`; it does not use a separate port. The Korrosync server must be enabled in the add-on options.
+
+Rsync uses TCP port 873 in the add-on, mapped to host port 8873 by default. It is not available through ingress. Keep the port mapping enabled and the rsync option on to sync books from another computer.
 
 ## Emailing ePubs
 
