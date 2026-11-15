@@ -8,14 +8,47 @@ APP_PORT=$(bashio::app.port 8000)
 export COPS_HOST="$APP_HOST"
 export COPS_PORT="$APP_PORT"
 
-# Publish the initial stats if the library database is already available.
-if [ -f /cops/library/metadata.db ]; then
-    php /publish-stats.php > /dev/null
+# Remote filesystems may not deliver inotify events, so poll metadata.db's
+# modification time, size, and inode instead.
+DB_PATH=/cops/library/metadata.db
+POLL_INTERVAL=60
+
+get_db_signature() {
+    if [ ! -e "$DB_PATH" ]; then
+        return 0
+    fi
+    stat -c '%y:%s:%i' "$DB_PATH"
+}
+
+publish_stats() {
+    if ! php /publish-stats.php > /dev/null; then
+        bashio::log.warning "Stats publish failed; will retry on the next poll."
+        return 1
+    fi
+}
+
+last_signature=""
+if current_signature=$(get_db_signature); then
+    if [ -n "$current_signature" ] && publish_stats; then
+        last_signature="$current_signature"
+    fi
+else
+    bashio::log.error "Could not inspect $DB_PATH."
 fi
 
-# Watch /cops/library parent directory for changes to metadata.db
-inotifywait -m -q -e close_write,moved_to --format '%f' /cops/library | while read -r filename; do
-    if [ "$filename" = "metadata.db" ]; then
-        php /publish-stats.php > /dev/null
+while true; do
+    sleep "$POLL_INTERVAL"
+
+    if ! current_signature=$(get_db_signature); then
+        bashio::log.error "Could not inspect $DB_PATH."
+        continue
+    fi
+
+    if [ "$current_signature" != "$last_signature" ]; then
+        if [ -z "$current_signature" ]; then
+            last_signature=""
+        elif publish_stats; then
+            last_signature="$current_signature"
+        fi
     fi
 done

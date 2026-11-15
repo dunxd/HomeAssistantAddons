@@ -1,7 +1,7 @@
 <?php
 /**
  * HA COPS Library Stats Publisher
- * Runs via inotify-tools s6 service when /media/books/metadata.db changes.
+ * Runs via the cops-watcher s6 service when metadata.db changes.
  */
 
 $dbPath = '/cops/library/metadata.db';
