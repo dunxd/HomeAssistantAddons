@@ -53,6 +53,17 @@ try {
             return '';
         }
     };
+    $firstBookTimestamp = $pdo->query("
+        SELECT timestamp
+        FROM books
+        WHERE timestamp IS NOT NULL AND timestamp != ''
+        ORDER BY timestamp ASC, id ASC
+        LIMIT 1
+    ")->fetchColumn();
+    $libraryEstablishedDate = $formatTimestamp(
+        is_string($firstBookTimestamp) ? $firstBookTimestamp : null,
+        'first'
+    );
     $latestDate = $formatTimestamp($latestBook['timestamp'] ?? null, 'latest');
     $latestId = $latestBook['id'] ?? 0;
     $latestApiBook = [];
@@ -87,6 +98,7 @@ try {
             'total_tags' => $totalTags,
             'total_series' => $totalSeries,
             'total_languages' => $totalLanguages,
+            'library_established_date' => $libraryEstablishedDate,
             'latest_book_title' => $latestTitle,
             'latest_book_author' => $latestAuthor,
             'latest_book_date_added' => $latestDate,

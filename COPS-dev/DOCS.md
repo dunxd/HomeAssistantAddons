@@ -51,7 +51,7 @@ You can also access an OPDS feed of your library in apps like [Librera reader (A
 
 ### Home Assistant library sensors
 
-The add-on publishes `sensor.cops_library_stats` at startup and when `metadata.db` changes. It includes library totals and details for the latest book.
+The add-on publishes `sensor.cops_library_stats` at startup and when `metadata.db` changes. It includes library totals, the date the first book was added, and details for the latest book.
 
 It also publishes the separate `sensor.cops_random_book` at startup and once each UTC hour. The selected book remains the same for the hour unless it is removed or becomes the latest book. If the library has no other book to choose, the sensor reports `none`.
 
