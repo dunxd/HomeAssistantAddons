@@ -1,5 +1,10 @@
 # HA COPS Changelog
 
+## [3.2] - dev version
+
+- Update [Korrosync to version 0.4.6](https://github.com/szaffarano/korrosync)
+- Publish `sensor.cops_library_stats` and `sensor.cops_library_stats` to Home Assistant for use in Dashboards and automations.
+
 ## [3.1.4] - 2026-11-09
 
 - Update [Kepubify to version 5.0](https://github.com/pgaskin/kepubify/releases/tag/v5.0.0)
