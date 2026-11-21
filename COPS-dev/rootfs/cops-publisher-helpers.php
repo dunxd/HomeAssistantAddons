@@ -141,12 +141,16 @@ function fetchCopsBookDetails(
     if (is_string($detailUrl) && str_starts_with($detailUrl, '/restapi/')) {
         $detailUrl = substr($detailUrl, strlen('/restapi'));
     }
+    $thumbnailUrl = copsMakeAbsoluteUrl($book['thumbnailurl'] ?? '', $ingressUrl);
+    if ($thumbnailUrl === '') {
+        $thumbnailUrl = copsMakeAbsoluteUrl('images/icons/icon144.png', $ingressUrl);
+    }
 
     return [
         'title' => is_string($apiData['title'] ?? null) ? $apiData['title'] : '',
         'author' => is_string($book['authorsName'] ?? null) ? $book['authorsName'] : '',
         'detail_url' => copsMakeAbsoluteUrl($detailUrl, $ingressUrl),
-        'thumbnail_url' => copsMakeAbsoluteUrl($book['thumbnailurl'] ?? '', $ingressUrl)
+        'thumbnail_url' => $thumbnailUrl
     ];
 }
 
