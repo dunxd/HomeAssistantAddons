@@ -1,8 +1,57 @@
 # HA COPS Changelog
 
-## [2.3] - 2026-05-17
+## [3.2] - dev version
 
-- Add Apparmor - currently only in complain mode while in testing phase
+- Update [Korrosync to version 0.4.6](https://github.com/szaffarano/korrosync)
+- Publish `sensor.cops_library_stats` and `sensor.cops_library_stats` to Home Assistant for use in Dashboards and automations.
+
+## [3.1.4] - 2026-11-09
+
+- Update [Kepubify to version 5.0](https://github.com/pgaskin/kepubify/releases/tag/v5.0.0)
+- Update [Korrosync to version 0.4.5](https://github.com/szaffarano/korrosync/releases/tag/v0.4.5)
+
+## [3.1.3] - 2026-11-08
+
+- Rollback version to code base same as 3.0
+- Update s6-overlay user bundles location
+
+## [3.0] - 2026-11-01
+
+- Add Home Assistant ingress support. Currently this keeps the Home Assistant side bar menu in place, but the eReader feature hides it.
+- Preserve direct HTTP, Korrosync, and rsync access alongside ingress.
+
+## [2.2.13] - 2026-10-27
+
+- Update COPS to [4.6.2](https://github.com/mikespub-org/seblucas-cops/releases/tag/4.6.1)
+- Update Korrosync to [0.4.4](https://github.com/szaffarano/korrosync/releases/tag/v0.4.4)
+- Add menu option to show 5 randomly selected books
+
+## [2.2.11] - 2026-10-21
+
+- Update to use PHP 8.5
+- Update to use [Korrosync 0.4.3](https://github.com/szaffarano/korrosync/releases/tag/v0.4.3)
+
+## [2.2.10] - 2026-10-19
+
+- Add thumbnail cacheing so COPS doesn't create cover thumbnails every time pages are loaded
+
+## [2.2.9] - 2026-10-17
+
+- Update Korrosync to [0.4.2](https://github.com/szaffarano/korrosync/releases#release-v0.4.2)
+- Fix Korrosync start command
+
+## [2.2.8] - 2026-09-23
+
+- Fix kebpubify - see [#122](https://github.com/dunxd/HomeAssistantAddons/issues/122)
+
+## [2.2.6] - 2026-09-19
+
+- Update COPS to [4.5.4](https://github.com/mikespub-org/seblucas-cops/releases#release-4.5.4) - adds random book feature
+- Update Korrosync to [0.4.0](https://github.com/szaffarano/korrosync/releases#release-v0.4.0) - upstream updates
+
+## [2.2.5] - 2026-05-26
+
+- Update COPS to [4.5.2](https://github.com/mikespub-org/seblucas-cops/releases/tag/4.5.2)
 
 ## [2.2.4] - 2026-05-17
 

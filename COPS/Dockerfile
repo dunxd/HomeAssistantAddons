@@ -5,7 +5,7 @@ ARG PHP_VERSION=85
 # Kepubify from https://github.com/pgaskin/kepubify
 ARG KEPUBIFY_VERSION=5.0.0
 # Korrosync from https://github.com/szaffarano/korrosync
-ARG KORROSYNC_VERSION=0.4.5
+ARG KORROSYNC_VERSION=0.4.6
 
 # Get the build architecture as a build argument
 ARG BUILD_ARCH

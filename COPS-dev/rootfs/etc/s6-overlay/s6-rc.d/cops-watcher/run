@@ -1,0 +1,61 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+exec 2>&1
+
+# The local REST API is queried on the add-on's internal port.
+APP_PORT=$(bashio::app.port 8000)
+export COPS_PORT="$APP_PORT"
+
+# Remote filesystems may not deliver inotify events, so poll metadata.db's
+# modification time, size, and inode instead.
+DB_PATH=/cops/library/metadata.db
+POLL_INTERVAL=60
+
+# Use file metadata rather than reading or hashing the whole database.
+# An absent database has an empty signature; stat errors are returned to the caller.
+get_db_signature() {
+    if [ ! -e "$DB_PATH" ]; then
+        return 0
+    fi
+    stat -c '%y:%s:%i' "$DB_PATH"
+}
+
+# Suppress the publisher's success output but leave errors visible in the add-on log.
+publish_stats() {
+    if ! php /publish-stats.php > /dev/null; then
+        bashio::log.warning "Stats publish failed; will retry on the next poll."
+        return 1
+    fi
+}
+
+# Publish once at startup and after database changes.
+# Record the signature only after success so failures are retried.
+last_signature=""
+if current_signature=$(get_db_signature); then
+    if [ -n "$current_signature" ] && publish_stats; then
+        last_signature="$current_signature"
+    fi
+else
+    bashio::log.error "Could not inspect $DB_PATH."
+fi
+
+# Poll for changes; clear the baseline if the file disappears so its return is detected.
+while true; do
+    sleep "$POLL_INTERVAL"
+
+    if ! current_signature=$(get_db_signature); then
+        bashio::log.error "Could not inspect $DB_PATH."
+        continue
+    fi
+
+    if [ -z "$current_signature" ]; then
+        last_signature=""
+        continue
+    fi
+
+    if [ "$current_signature" != "$last_signature" ]; then
+        if publish_stats; then
+            last_signature="$current_signature"
+        fi
+    fi
+done
