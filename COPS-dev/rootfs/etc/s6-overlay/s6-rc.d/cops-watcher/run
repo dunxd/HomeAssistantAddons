@@ -2,10 +2,8 @@
 # shellcheck shell=bash
 exec 2>&1
 
-# The watcher depends on nginx and PHP-FPM, so the initial publish can use the REST API.
-APP_HOST=$(bashio::info.hostname)
+# The local REST API is queried on the add-on's internal port.
 APP_PORT=$(bashio::app.port 8000)
-export COPS_HOST="$APP_HOST"
 export COPS_PORT="$APP_PORT"
 
 # Remote filesystems may not deliver inotify events, so poll metadata.db's
@@ -30,8 +28,8 @@ publish_stats() {
     fi
 }
 
-# Publish once at startup, even if the database has not changed.
-# Record its signature only after a successful publish so failures are retried.
+# Publish once at startup and after database changes.
+# Record the signature only after success so failures are retried.
 last_signature=""
 if current_signature=$(get_db_signature); then
     if [ -n "$current_signature" ] && publish_stats; then
@@ -50,10 +48,13 @@ while true; do
         continue
     fi
 
+    if [ -z "$current_signature" ]; then
+        last_signature=""
+        continue
+    fi
+
     if [ "$current_signature" != "$last_signature" ]; then
-        if [ -z "$current_signature" ]; then
-            last_signature=""
-        elif publish_stats; then
+        if publish_stats; then
             last_signature="$current_signature"
         fi
     fi

@@ -1,10 +1,11 @@
 <?php
 /**
  * HA COPS Library Stats Publisher
- * Runs via the cops-watcher s6 service when metadata.db changes.
+ * Runs via the cops-watcher s6 service when stats need refreshing.
  */
 
 $dbPath = '/cops/library/metadata.db';
+require_once '/cops-publisher-helpers.php';
 
 if (!file_exists($dbPath)) {
     error_log("HA COPS Stats: Database not found at {$dbPath}");
@@ -31,69 +32,49 @@ try {
         FROM books b
         LEFT JOIN books_authors_link bal ON b.id = bal.book
         LEFT JOIN authors a ON bal.author = a.id
-        ORDER BY b.timestamp DESC
+        ORDER BY b.timestamp DESC, b.id DESC
         LIMIT 1
     ');
     $latestBook = $stmt->fetch();
 
     $latestTitle = $latestBook['title'] ?? 'None';
     $latestAuthor = $latestBook['author_name'] ?? 'Unknown';
-    $latestDate = $latestBook['timestamp'] ?? '';
-    if ($latestDate !== '') {
+    $formatTimestamp = static function (?string $timestamp, string $bookType): string {
+        if ($timestamp === null || $timestamp === '') {
+            return '';
+        }
+
         try {
-            $latestDate = (new DateTimeImmutable($latestDate))
+            return (new DateTimeImmutable($timestamp))
                 ->setTimezone(new DateTimeZone('UTC'))
                 ->format('Y-m-d\TH:i:s\Z');
         } catch (Exception $e) {
-            error_log("HA COPS Stats: Could not parse latest book timestamp: " . $e->getMessage());
-            $latestDate = '';
-        }
-    }
-    $latestId = $latestBook['id'] ?? 0;
-    # hostname and port are made environment variables by cops-watcher
-    $host = getenv('COPS_HOST');
-    $port = getenv('COPS_PORT');
-    $copsBaseUrl = "http://{$host}:{$port}";
-    $makeAbsoluteUrl = static function ($url) use ($copsBaseUrl) {
-        if (!is_string($url) || $url === '') {
+            error_log("HA COPS Stats: Could not parse {$bookType} book timestamp: " . $e->getMessage());
             return '';
         }
-        if (preg_match('~^https?://~i', $url) === 1) {
-            return $url;
-        }
-        if (str_starts_with($url, '//')) {
-            return 'http:' . $url;
-        }
-        return $copsBaseUrl . '/' . ltrim($url, '/');
     };
-    $latestDetailUrl = '';
-    $latestThumbUrl = '';
-    if ($latestId > 0) {
-        $apiOptions = [
-            'http' => [
-                'method' => 'GET',
-                'ignore_errors' => true,
-                'timeout' => 10
-            ]
-        ];
-        $apiResponse = @file_get_contents(
-            "http://localhost:{$port}/restapi/books/{$latestId}",
-            false,
-            stream_context_create($apiOptions)
+    $latestDate = $formatTimestamp($latestBook['timestamp'] ?? null, 'latest');
+    $latestId = $latestBook['id'] ?? 0;
+    $latestApiBook = [];
+    if ((int)$latestId > 0) {
+        $ingressUrl = fetchCopsIngressUrl('HA COPS Stats');
+        if ($ingressUrl === false) {
+            exit(1);
+        }
+        $port = (string)getenv('COPS_PORT');
+        $latestApiBook = fetchCopsBookDetails(
+            (int)$latestId,
+            'latest',
+            $port,
+            $ingressUrl,
+            'HA COPS Stats'
         );
-
-        if ($apiResponse === false) {
-            error_log("HA COPS Stats: Failed to fetch latest book details from REST API. http://localhost:{$port}/restapi/books/{$latestId}");
-        } else {
-            $apiBook = json_decode($apiResponse, true);
-            $detailUrl = $apiBook['book']['detailurl'] ?? '';
-            if (is_string($detailUrl) && str_starts_with($detailUrl, '/restapi/')) {
-                $detailUrl = substr($detailUrl, strlen('/restapi'));
-            }
-            $latestDetailUrl = $makeAbsoluteUrl($detailUrl);
-            $latestThumbUrl = $makeAbsoluteUrl($apiBook['book']['thumbnailurl'] ?? '');
+        if ($latestApiBook === []) {
+            exit(1);
         }
     }
+    $latestDetailUrl = $latestApiBook['detail_url'] ?? '';
+    $latestThumbUrl = $latestApiBook['thumbnail_url'] ?? '';
 
     // Build the Home Assistant sensor payload
     $payload = [
@@ -115,57 +96,7 @@ try {
         ]
     ];
 
-    // Fetch the Supervisor token passed automatically into the container environment
-    $supervisorToken = getenv('SUPERVISOR_TOKEN');
-    if (!$supervisorToken) {
-        error_log("HA COPS Stats: SUPERVISOR_TOKEN not set in environment.");
-        exit(1);
-    }
-
-    // Configure native HTTP stream context (no cURL dependency required)
-    $options = [
-        'http' => [
-            'method'  => 'POST',
-            'header'  => "Authorization: Bearer {$supervisorToken}\r\n" .
-                         "Content-Type: application/json\r\n",
-            'content' => json_encode($payload),
-            'ignore_errors' => true,
-            'timeout' => 10
-        ]
-    ];
-
-    $context = stream_context_create($options);
-    $maxAttempts = 7;
-    $retryDelay = 10;
-    $response = false;
-    $responseCode = 0;
-    for ($attempt = 1; $attempt <= $maxAttempts; $attempt++) {
-        $http_response_header = [];
-        $responseCode = 0;
-        $response = @file_get_contents('http://supervisor/core/api/states/sensor.cops_library_stats', false, $context);
-        foreach ($http_response_header as $header) {
-            if (preg_match('/^HTTP\/\S+\s+(\d{3})/', $header, $matches) === 1) {
-                $responseCode = (int)$matches[1];
-            }
-        }
-
-        if ($response !== false && $responseCode >= 200 && $responseCode < 300) {
-            break;
-        }
-
-        if ($responseCode >= 400 && $responseCode < 500 && $responseCode !== 429) {
-            break;
-        }
-
-        if ($attempt < $maxAttempts) {
-            sleep($retryDelay);
-            $retryDelay = min($retryDelay * 2, 30);
-        }
-    }
-
-    if ($response === false || $responseCode < 200 || $responseCode >= 300) {
-        $responseDetails = is_string($response) ? substr($response, 0, 500) : 'No response body';
-        error_log("HA COPS Stats: Failed to post sensor data to Supervisor API after {$attempt} attempt(s) (HTTP {$responseCode}): {$responseDetails}");
+    if (!publishHaState('sensor.cops_library_stats', $payload, 'HA COPS Stats')) {
         exit(1);
     }
 

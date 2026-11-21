@@ -1,0 +1,65 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+exec 2>&1
+
+# The local REST API is queried on the add-on's internal port.
+APP_PORT=$(bashio::app.port 8000)
+export COPS_PORT="$APP_PORT"
+
+DB_PATH=/cops/library/metadata.db
+POLL_INTERVAL=60
+
+get_db_signature() {
+    if [ ! -e "$DB_PATH" ]; then
+        return 0
+    fi
+    stat -c '%y:%s:%i' "$DB_PATH"
+}
+
+publish_random_book() {
+    if ! php /publish-random-book.php "$@" > /dev/null; then
+        bashio::log.warning "Random-book publish failed; will retry on the next poll."
+        return 1
+    fi
+}
+
+# Publish on startup, then on database changes or at each new UTC hour.
+last_signature=""
+last_hour=$(date -u '+%Y-%m-%d-%H')
+if current_signature=$(get_db_signature); then
+    if [ -n "$current_signature" ] && publish_random_book --startup; then
+        last_signature="$current_signature"
+    fi
+else
+    bashio::log.error "Could not inspect $DB_PATH."
+fi
+
+while true; do
+    sleep "$POLL_INTERVAL"
+    current_hour=$(date -u '+%Y-%m-%d-%H')
+
+    if ! current_signature=$(get_db_signature); then
+        bashio::log.error "Could not inspect $DB_PATH."
+        continue
+    fi
+
+    if [ -z "$current_signature" ]; then
+        last_signature=""
+        last_hour="$current_hour"
+        continue
+    fi
+
+    if [ "$current_signature" != "$last_signature" ] || [ "$current_hour" != "$last_hour" ]; then
+        if [ -z "$last_signature" ]; then
+            if publish_random_book --startup; then
+                last_signature="$current_signature"
+                last_hour="$current_hour"
+            fi
+        else
+            if publish_random_book; then
+                last_signature="$current_signature"
+                last_hour="$current_hour"
+            fi
+        fi
+    fi
+done

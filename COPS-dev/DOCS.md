@@ -49,6 +49,12 @@ Ingress is for the browser interface. Clients such as KOReader and rsync need di
 
 You can also access an OPDS feed of your library in apps like [Librera reader (Android)](https://librera.mobi/) or [KOReader])https://koreader.rocks/) allowing you to easily browse your library and download books into the reader. The feed is available at http://_ha-ip-address-or-name_:8000/feed
 
+### Home Assistant library sensors
+
+The add-on publishes `sensor.cops_library_stats` at startup and when `metadata.db` changes. It includes library totals and details for the latest book.
+
+It also publishes the separate `sensor.cops_random_book` at startup and once each UTC hour. The selected book remains the same for the hour unless it is removed or becomes the latest book. If the library has no other book to choose, the sensor reports `none`.
+
 ## Syncing reading progress
 
 Users of koreader can now sync their reading progress across multiple devices. To do this, first Activate Koreader sync server from the Add-on config page and restart.
